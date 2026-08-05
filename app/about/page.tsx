@@ -12,18 +12,19 @@ export default function AboutPage() {
 
       <div className="space-y-6 text-white/65 text-sm leading-relaxed mb-12">
         <p>
-          I&apos;m a student developer at Acalanes High School (expected graduation May 2028, GPA 4.29)
-          building software at the intersection of financial analysis, AI-assisted workflows, and
-          practical operations.
+          I&apos;m a student developer at Acalanes High School (Lafayette, CA — expected graduation
+          May 2028) building software at the intersection of financial analysis, AI-assisted
+          workflows, and practical operations.
         </p>
         <p>
           My work started with a real problem: landlords and property investors lack accessible
-          tools for real-time rental market analysis. That led me to build{" "}
+          tools for rental market analysis. That led me to build{" "}
           <Link href="/projects/rentmax-ai" className="text-blue-400 hover:text-blue-300 transition-colors">
             RentMax AI
           </Link>
-          , a live SaaS platform that combines market data pipelines with AI-driven pricing insights.
-          I designed it, built the full stack, and deployed it — sole engineer.
+          , a live SaaS platform that combines property analysis calculations with AI-generated
+          explanations. I designed it, built the full stack, and handle ongoing production
+          operations — sole engineer.
         </p>
         <p>
           Before that I built{" "}
@@ -34,29 +35,35 @@ export default function AboutPage() {
           OpenAI API, distributed as installable binaries on GitHub.
         </p>
         <p>
-          Outside of building, I serve as Treasurer and Director of Fundraising for Acalanes
-          Robotics (FRC Team 7686), where I manage the team budget and submitted a formal
-          sponsorship proposal to the Rotary Club of Lafayette. I also founded Voices United, a
-          student civic engagement organization.
+          Outside of software, I serve as Treasurer and Director of Fundraising for Acalanes
+          Robotics (FRC Team 7686), where I manage the budget and lead sponsor outreach. I also
+          founded Voices United, a beginner-friendly English conversation and ESL practice program
+          for young non-native speakers in the Lafayette community.
         </p>
         <p>
-          I&apos;m interested in how software intersects with finance and operations — building tools
-          that make real processes faster, smarter, or more accessible.
+          In Summer 2026 I completed a two-week private wealth management internship at Clarus
+          Wealth Group in Houston, gaining exposure to commercial real estate, estate planning,
+          and retirement planning.
+        </p>
+        <p>
+          I&apos;m interested in how software, finance, and data intersect — building tools that make
+          real processes faster, smarter, or more accessible.
         </p>
       </div>
 
       <div className="border border-white/10 bg-white/[0.03] rounded-xl p-6 space-y-5">
         <div>
           <p className="text-xs font-mono text-white/30 uppercase tracking-widest mb-2">Education</p>
-          <p className="text-sm text-white/80">Acalanes High School</p>
-          <p className="text-xs text-white/40 mt-0.5">Expected May 2028 · GPA 4.29</p>
+          <p className="text-sm text-white/80">Acalanes High School · Lafayette, CA</p>
+          <p className="text-xs text-white/40 mt-0.5">Expected May 2028 · GPA ~4.0 unweighted / 4.2 weighted</p>
         </div>
         <div>
           <p className="text-xs font-mono text-white/30 uppercase tracking-widest mb-2">Coursework</p>
           <ul className="text-sm text-white/60 space-y-1">
             <li>AP Computer Science Principles</li>
+            <li>AP Computer Science A (upcoming)</li>
             <li>AP Statistics (UC Scout)</li>
-            <li>USF Wall Street Academy</li>
+            <li>USF Pre-College Finance Program</li>
           </ul>
         </div>
         <div>

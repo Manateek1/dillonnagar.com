@@ -15,29 +15,25 @@ export const skills: SkillCategory[] = [
     skills: [
       { name: "TypeScript", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
       { name: "JavaScript", proofProject: "VisualCover", proofSlug: "visualcover" },
-      { name: "Python", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
-      { name: "HTML/CSS" },
+      { name: "Python" },
+      { name: "HTML/CSS", proofProject: "VisualCover", proofSlug: "visualcover" },
     ],
   },
   {
     category: "Frontend",
     skills: [
-      { name: "Next.js", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
       { name: "React", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
-      { name: "Tailwind CSS", proofProject: "DropSplit AI" },
+      { name: "Vite", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
+      { name: "Next.js", proofProject: "DropSplit AI" },
+      { name: "Tailwind CSS" },
     ],
   },
   {
-    category: "Backend",
+    category: "Backend & APIs",
     skills: [
-      { name: "Node.js", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
+      { name: "Supabase", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
+      { name: "Vercel Functions", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
       { name: "REST APIs", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
-    ],
-  },
-  {
-    category: "Databases",
-    skills: [
-      { name: "PostgreSQL", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
     ],
   },
   {
@@ -47,10 +43,10 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    category: "AI / ML",
+    category: "AI",
     skills: [
-      { name: "OpenAI API", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
-      { name: "Prompt Engineering", proofProject: "VisualCover", proofSlug: "visualcover" },
+      { name: "OpenAI API", proofProject: "VisualCover", proofSlug: "visualcover" },
+      { name: "Prompt Engineering", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
     ],
   },
   {
@@ -60,17 +56,17 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    category: "Deployment",
+    category: "Monitoring & Deployment",
     skills: [
+      { name: "Sentry", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
       { name: "Vercel", proofProject: "RentMax AI", proofSlug: "rentmax-ai" },
-      { name: "GitHub Actions" },
-      { name: "Git" },
+      { name: "Git / GitHub" },
     ],
   },
   {
     category: "Finance & Operations",
     skills: [
-      { name: "Financial Analysis", proofProject: "Clarus Group" },
+      { name: "Financial Analysis", proofProject: "Clarus Wealth Group" },
       { name: "Budgeting", proofProject: "Acalanes Robotics" },
       { name: "Digital Marketing", proofProject: "Lakewood Ace Hardware" },
     ],

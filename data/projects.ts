@@ -17,11 +17,11 @@ export const projects: Project[] = [
   {
     slug: "rentmax-ai",
     name: "RentMax AI",
-    tagline: "AI-powered rental property analytics platform",
+    tagline: "Rental property analysis platform with AI-driven insights",
     description:
-      "A live SaaS platform that analyzes rental properties using real-time market data and AI-driven insights to help landlords and investors make better pricing decisions.",
+      "A live SaaS platform that helps landlords and property investors analyze rent ranges, cash flow, cap rate, and returns — with AI explanations and exportable reports.",
     role: "Founder and developer — sole engineer across frontend, backend, and infrastructure",
-    stack: ["Next.js", "TypeScript", "Python", "PostgreSQL", "Stripe", "OpenAI", "Vercel"],
+    stack: ["React", "Vite", "TypeScript", "Supabase", "Stripe", "Sentry", "Vercel"],
     status: "live",
     liveUrl: "https://rentmaxai.com",
     featured: true,
@@ -30,7 +30,7 @@ export const projects: Project[] = [
   {
     slug: "visualcover",
     name: "VisualCover",
-    tagline: "Desktop app for generating AI cover letters",
+    tagline: "Desktop app for generating AI-tailored cover letters",
     description:
       "A cross-platform desktop application that generates tailored cover letters using AI, with a clean UI and PDF export. Built with Electron and released on GitHub.",
     role: "Founder and developer — sole engineer",
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     name: "DropSplit AI",
     tagline: "AI-assisted expense splitting for groups",
     description:
-      "A Next.js MVP for intelligent group expense splitting with AI-categorized receipts. Prototype stage — core scaffold complete.",
+      "A Next.js MVP for intelligent group expense splitting. Prototype stage — core scaffold complete.",
     role: "Founder and developer",
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     status: "prototype",
