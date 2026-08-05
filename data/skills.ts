@@ -52,7 +52,8 @@ export const skills: SkillCategory[] = [
   {
     category: "Desktop",
     skills: [
-      { name: "Electron", proofProject: "VisualCover", proofSlug: "visualcover" },
+      { name: "Tauri", proofProject: "VisualCover", proofSlug: "visualcover" },
+      { name: "Rust", proofProject: "VisualCover", proofSlug: "visualcover" },
     ],
   },
   {

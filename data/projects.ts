@@ -30,11 +30,11 @@ export const projects: Project[] = [
   {
     slug: "visualcover",
     name: "VisualCover",
-    tagline: "Desktop app for generating AI-tailored cover letters",
+    tagline: "Desktop privacy screen curtain for Windows and macOS",
     description:
-      "A cross-platform desktop application that generates tailored cover letters using AI, with a clean UI and PDF export. Built with Electron and released on GitHub.",
+      "A desktop app that covers all connected monitors with a PIN-protected curtain while background programs keep running. Designed for leaving automation, downloads, and servers running while the screen is hidden from view.",
     role: "Founder and developer — sole engineer",
-    stack: ["Electron", "JavaScript", "HTML/CSS", "OpenAI API"],
+    stack: ["Tauri", "Rust", "TypeScript", "GitHub Actions"],
     status: "live",
     githubUrl: "https://github.com/Manateek1/VisualCover",
     featured: true,

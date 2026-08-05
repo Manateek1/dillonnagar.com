@@ -8,54 +8,67 @@ export default function VisualCoverPage() {
   return (
     <CaseStudyLayout
       name="VisualCover"
-      tagline="Desktop app for generating tailored AI cover letters"
+      tagline="Desktop privacy screen curtain for Windows 11 and macOS"
       status="live"
-      stack={["Electron", "JavaScript", "HTML/CSS", "OpenAI API"]}
+      stack={["Tauri", "Rust", "TypeScript", "GitHub Actions"]}
       githubUrl="https://github.com/Manateek1/VisualCover"
       sections={[
         {
-          title: "Problem",
+          title: "What it does",
           content:
-            "Writing tailored cover letters for each job application is time-consuming and repetitive. Generic templates don't account for the specific job description, company, or the applicant's unique experience.",
-        },
-        {
-          title: "Solution",
-          content:
-            "VisualCover is a cross-platform desktop application that generates tailored cover letters using AI. Users paste a job description and their resume summary, and the app produces a formatted, position-specific cover letter they can export as a PDF.",
+            "VisualCover places a full-screen, always-on-top curtain over every connected monitor while Windows or macOS stays signed in and background programs keep running. A 4–12 digit PIN removes the cover. It is a casual-access barrier — not a security boundary — designed for hiding the desktop from a passerby while leaving automation, downloads, and servers untouched.",
         },
         {
           title: "Role",
           content:
-            "Founder and developer — sole engineer. Designed the UI, built the Electron wrapper, integrated the OpenAI API, and managed the release engineering pipeline for distributing installable binaries on GitHub.",
+            "Founder and developer — sole engineer. Designed the product, built the Tauri app in Rust and TypeScript, set up GitHub Actions CI for Windows and macOS builds, and released installable binaries on GitHub.",
         },
         {
           title: "Tech Stack",
           content: [
-            "Electron — cross-platform desktop app wrapper (macOS, Windows, Linux)",
-            "JavaScript — application logic and UI scripting",
-            "HTML/CSS — interface layout and styling",
-            "OpenAI API — cover letter generation from structured prompts",
+            "Tauri — cross-platform desktop framework (Rust backend + TypeScript frontend)",
+            "Rust — native window management, PIN hashing (Argon2id), tray menu, idle detection",
+            "TypeScript / Node.js — frontend UI and configuration screens",
+            "GitHub Actions — CI pipeline that builds the Windows NSIS installer and macOS app on push to main",
+            "NSIS — Windows installer packaging",
           ],
         },
         {
-          title: "Key Features",
+          title: "Features",
           content: [
-            "Paste job description and resume summary to generate a tailored cover letter",
-            "Editable output before export",
-            "PDF export built into the app",
-            "Clean, minimal desktop UI — no account required",
-            "Runs fully offline after API key setup (no data stored externally)",
+            "Covers all detected monitors with borderless, always-on-top windows",
+            "Configurable clock, date, and solid or gradient background",
+            "PIN stored as an Argon2id hash — the raw PIN is never saved",
+            "Launch at sign-in, cover-after-launch, and optional Windows idle activation",
+            "System tray menu for quick access",
+            "Emergency unlock shortcut (Ctrl+Alt+Shift+U) — disabled by default",
+            "Background apps (Plex, Python, Chrome, Playwright, scheduled tasks) continue running while covered",
+            "Compatibility mode prevents the cover from stealing focus from automation",
+          ],
+        },
+        {
+          title: "Background Automation",
+          content:
+            "VisualCover is designed to leave background automation running while the screen is hidden. Tested with GoodMorningBot — a Windows automation that generates images with Fooocus and sends them via WhatsApp Web using Playwright — confirming that DOM/CDP-based browser automation continues while the cover is active.",
+        },
+        {
+          title: "Release Engineering",
+          content: [
+            "Windows: GitHub Actions builds the NSIS installer on windows-latest, runs all frontend and Rust gates, and uploads as a workflow artifact",
+            "Releases: pushing a version tag (e.g. v0.2.0) triggers the Release workflow, creates a public GitHub Release, and attaches the installer",
+            "macOS: DMG and .app distributed via GitHub Releases for Apple Silicon and Intel",
+            "Versions synchronized across package.json, Cargo.toml, and Tauri config — CI asserts this before releasing",
           ],
         },
         {
           title: "Security Boundary",
           content:
-            "The OpenAI API key is stored locally on the user's machine and is never transmitted to any server other than OpenAI directly. No user data, resume content, or generated letters are stored or logged. The app makes direct API calls from the desktop process.",
+            "VisualCover explicitly is not a security product. It cannot defend against Task Manager, Ctrl+Alt+Delete, user switching, UAC prompts, elevated software, or process termination. It is a visual curtain intended to hide the desktop from casual passersby — not authentication, encryption, or an endpoint-security tool.",
         },
         {
-          title: "Release Engineering",
+          title: "Current Status",
           content:
-            "Packaged using electron-builder to produce distributable binaries for macOS and Windows. Releases are published on GitHub with platform-specific installers. Users can download and install without building from source.",
+            "v0.2.0 released on GitHub. Supports 64-bit Windows 11 and macOS (Apple Silicon and Intel). Available as a direct download from GitHub Releases.",
         },
       ]}
     />
