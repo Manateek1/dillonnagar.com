@@ -67,7 +67,7 @@ export const leadership: ExperienceItem[] = [
     type: "leadership",
     bullets: [
       "Manages team budget and financial tracking for a competitive FIRST Robotics program",
-      "Submitted a formal sponsorship proposal to the Rotary Club of Lafayette",
+      "Submitted a formal $3,000+ sponsorship proposal to the Rotary Club of Lafayette",
       "Leads sponsor outreach to companies including Almond, SparkFun, and Markforged",
       "Targeting at least $5,000 in sponsorship for the 2026–2027 season",
     ],
