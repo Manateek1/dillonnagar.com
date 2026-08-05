@@ -5,7 +5,7 @@ export type Project = {
   description: string;
   role: string;
   stack: string[];
-  status: "live" | "prototype" | "in-progress";
+  status: "live" | "prototype" | "in-development" | "in-progress";
   liveUrl?: string;
   githubUrl?: string;
   featured: boolean;
@@ -39,6 +39,46 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Manateek1/VisualCover",
     featured: true,
     caseStudy: "/projects/visualcover",
+  },
+  {
+    slug: "larpchat-ai",
+    name: "LarpChat AI",
+    tagline: "Tier-based AI chat and image platform with full auth and rate limiting",
+    description:
+      "A full-stack AI web app with guest, free, and plus tiers. Supports chat and image generation, Supabase auth, IP-based guest limits, daily usage tracking, and structured server-side logging.",
+    role: "Founder and developer — sole engineer",
+    stack: ["React", "TypeScript", "Express", "Supabase", "OpenAI API", "Vercel"],
+    status: "live",
+    liveUrl: "https://larpchatai.vercel.app",
+    githubUrl: "https://github.com/Manateek1/larpchatai",
+    featured: false,
+    caseStudy: "/projects/larpchat-ai",
+  },
+  {
+    slug: "chudgames",
+    name: "ChudGames",
+    tagline: "Browser game launcher with 10 playable games",
+    description:
+      "A web game launcher and arcade suite featuring 10 playable games built on a shared engine. Includes Neon Dodger, Asteroids Pulse, FortLite, Pong, and more — with daily challenges, achievements, and mobile support.",
+    role: "Founder and developer — sole engineer",
+    stack: ["React", "Vite", "TypeScript", "WebAudio API"],
+    status: "live",
+    liveUrl: "https://chudgames.vercel.app",
+    githubUrl: "https://github.com/Manateek1/ChudGames",
+    featured: false,
+    caseStudy: "/projects/chudgames",
+  },
+  {
+    slug: "capital-in-code",
+    name: "Capital in Code",
+    tagline: "A portfolio of coding and investing experiments",
+    description:
+      "A public portfolio of quantitative research projects exploring market questions with code, financial data, models, and written analysis. First project: CIC-001, The Overnight Effect.",
+    role: "Founder and researcher",
+    stack: ["Python", "Data Analysis", "Financial Modeling"],
+    status: "in-development",
+    githubUrl: "https://github.com/Manateek1/Capital-in-Code",
+    featured: false,
   },
   {
     slug: "dropsplit-ai",

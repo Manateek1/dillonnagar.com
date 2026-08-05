@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           className={`text-xs px-2 py-0.5 rounded-full font-mono shrink-0 ${
             project.status === "live"
               ? "bg-green-500/10 text-green-400 border border-green-500/20"
-              : project.status === "in-progress"
+              : project.status === "in-progress" || project.status === "in-development"
               ? "bg-yellow-500/10 text-yellow-400 border border-yellow-500/20"
               : "bg-white/5 text-white/40 border border-white/10"
           }`}
