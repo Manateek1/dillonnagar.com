@@ -27,12 +27,16 @@ export default function AboutPage() {
           operations — sole engineer.
         </p>
         <p>
-          Before that I built{" "}
+          I&apos;ve also built{" "}
           <Link href="/projects/visualcover" className="text-blue-400 hover:text-blue-300 transition-colors">
             VisualCover
           </Link>
-          , a cross-platform Electron desktop app that generates tailored cover letters using the
-          OpenAI API, distributed as installable binaries on GitHub.
+          , a desktop privacy curtain for Windows and macOS written in Rust and TypeScript with
+          Tauri, and{" "}
+          <Link href="/projects/larpchat-ai" className="text-blue-400 hover:text-blue-300 transition-colors">
+            LarpChat AI
+          </Link>
+          , a tier-based AI chat platform with server-side plan enforcement and rate limiting.
         </p>
         <p>
           Outside of software, I serve as Treasurer and Director of Fundraising for Acalanes

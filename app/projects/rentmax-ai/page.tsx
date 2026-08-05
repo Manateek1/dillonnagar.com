@@ -10,7 +10,7 @@ export default function RentMaxAIPage() {
       name="RentMax AI"
       tagline="Rental property analysis platform with AI-driven insights"
       status="live"
-      stack={["React", "Vite", "TypeScript", "Supabase", "Stripe", "Sentry", "Vercel"]}
+      stack={["React", "Vite", "Supabase", "Stripe", "OpenAI", "Sentry", "Vercel"]}
       liveUrl="https://rentmaxai.com"
       sections={[
         {
@@ -31,13 +31,15 @@ export default function RentMaxAIPage() {
         {
           title: "Tech Stack",
           content: [
-            "React + Vite + TypeScript — frontend application",
-            "Supabase — database, authentication, and Row Level Security",
+            "React 19 + Vite — frontend application",
+            "Supabase — Postgres, authentication, and Row Level Security",
             "Vercel Functions — serverless backend API endpoints",
-            "Stripe — subscription billing with webhook infrastructure",
+            "Stripe — subscription billing with a signed webhook receiver and durable retry queue",
             "OpenAI API — AI-generated property analysis explanations",
+            "RapidAPI, HUD, and Census — upstream rental and housing market data",
+            "Resend — transactional and contact-form email delivery",
+            "Recharts — analysis and comparison visualizations",
             "Sentry — error monitoring and production issue tracking",
-            "Vercel — deployment and hosting",
           ],
         },
         {
@@ -61,13 +63,14 @@ export default function RentMaxAIPage() {
         {
           title: "Security",
           content: [
-            "Row Level Security on all Supabase tables — users can only access their own data",
-            "Server-side authorization checks before any data is returned",
-            "IDOR prevention: no user can request another user's reports by ID",
-            "Stripe handles all payment data — no card numbers touch the application",
-            "All API keys stored as environment variables, never exposed to the client",
-            "XSS protection and Content Security Policy headers",
-            "Rate limiting on API routes to prevent abuse",
+            "Supabase Row Level Security with auth.uid() ownership policies is the primary isolation boundary for saved reports",
+            "Stripe plan state is derived server-side — no client metadata can unlock paid features",
+            "Sensitive API routes enforce origin checks, payload validation, and rate limiting",
+            "Content-Security-Policy, Strict-Transport-Security, and X-Frame-Options headers set at the edge",
+            "No raw HTML rendering of user-controlled values, guarding report names, notes, and addresses against XSS",
+            "Prompt-injection hardening: the analyze route passes report fields as labeled untrusted data rather than instructions",
+            "Server-only secrets for the Supabase service role, Stripe, OpenAI, RapidAPI, Resend, and Sentry",
+            "Documented security policy and reporting channel at legal@rentmaxai.com",
           ],
         },
         {

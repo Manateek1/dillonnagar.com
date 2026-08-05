@@ -21,7 +21,7 @@ export const projects: Project[] = [
     description:
       "A live SaaS platform that helps landlords and property investors analyze rent ranges, cash flow, cap rate, and returns — with AI explanations and exportable reports.",
     role: "Founder and developer — sole engineer across frontend, backend, and infrastructure",
-    stack: ["React", "Vite", "TypeScript", "Supabase", "Stripe", "Sentry", "Vercel"],
+    stack: ["React", "Vite", "Supabase", "Stripe", "OpenAI", "Sentry", "Vercel"],
     status: "live",
     liveUrl: "https://rentmaxai.com",
     featured: true,
@@ -83,23 +83,25 @@ export const projects: Project[] = [
   {
     slug: "dropsplit-ai",
     name: "DropSplit AI",
-    tagline: "AI-assisted expense splitting for groups",
+    tagline: "AI swim coaching platform for middle and high school swimmers",
     description:
-      "A Next.js MVP for intelligent group expense splitting. Prototype stage — core scaffold complete.",
+      "A chat-first AI swim coach that generates weekly training plans, explains sets, recommends event focus, logs swim times from natural language, and charts progress over time. MVP stage.",
     role: "Founder and developer",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    status: "prototype",
+    stack: ["Next.js", "TypeScript", "Supabase", "OpenAI", "Stripe", "Tailwind CSS"],
+    status: "in-development",
+    githubUrl: "https://github.com/Manateek1/DropSplitAI",
     featured: false,
   },
   {
     slug: "altofi",
     name: "AltoFi",
-    tagline: "Personal finance dashboard for young adults",
+    tagline: "Frontend concept for a financial technology product",
     description:
-      "A prototype personal finance dashboard focused on budgeting and financial literacy for students and young adults.",
+      "A frontend-only React and Vite framework for a fintech concept — design system, marketing pages, and a dashboard preview. Deliberately handles no money, accounts, or sensitive data. Prototype stage.",
     role: "Founder and developer",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    stack: ["React", "Vite", "TypeScript"],
     status: "prototype",
+    githubUrl: "https://github.com/Manateek1/Altofi",
     featured: false,
   },
 ];
