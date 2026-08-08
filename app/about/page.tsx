@@ -45,7 +45,7 @@ export default function AboutPage() {
           for young non-native speakers in the Lafayette community.
         </p>
         <p>
-          In Summer 2026 I completed a two-week private wealth management internship at Clarus
+          In Summer 2026 I completed a private wealth management internship at Clarus
           Wealth Group in Houston, gaining exposure to commercial real estate, estate planning,
           and retirement planning.
         </p>
@@ -60,15 +60,6 @@ export default function AboutPage() {
           <p className="text-xs font-mono text-white/30 uppercase tracking-widest mb-2">Education</p>
           <p className="text-sm text-white/80">Acalanes High School · Lafayette, CA</p>
           <p className="text-xs text-white/40 mt-0.5">Expected May 2028 · GPA ~4.0 unweighted / 4.2 weighted</p>
-        </div>
-        <div>
-          <p className="text-xs font-mono text-white/30 uppercase tracking-widest mb-2">Coursework</p>
-          <ul className="text-sm text-white/60 space-y-1">
-            <li>AP Computer Science Principles</li>
-            <li>AP Computer Science A (upcoming)</li>
-            <li>AP Statistics (UC Scout)</li>
-            <li>USF Pre-College Finance Program</li>
-          </ul>
         </div>
         <div>
           <p className="text-xs font-mono text-white/30 uppercase tracking-widest mb-2">Contact</p>

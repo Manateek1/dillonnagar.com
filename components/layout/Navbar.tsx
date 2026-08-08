@@ -8,7 +8,6 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
-  { href: "/skills", label: "Skills" },
   { href: "/about", label: "About" },
 ];
 
@@ -76,6 +75,22 @@ export default function Navbar() {
           >
             <LinkedinIcon />
           </a>
+          <a
+            href="https://www.instagram.com/dillonnagar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-white/50 hover:text-white transition-colors"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.tiktok.com/@dillonnagar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-white/50 hover:text-white transition-colors"
+          >
+            TikTok
+          </a>
           <Link
             href="/contact"
             className="text-sm font-medium px-3 py-1.5 rounded border border-white/15 text-white/70 hover:border-white/30 hover:text-white transition-all"
@@ -123,6 +138,12 @@ export default function Navbar() {
             </a>
             <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white">
               <LinkedinIcon />
+            </a>
+            <a href="https://www.instagram.com/dillonnagar" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white">
+              Instagram
+            </a>
+            <a href="https://www.tiktok.com/@dillonnagar" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white">
+              TikTok
             </a>
             <Link href="/contact" onClick={() => setMenuOpen(false)} className="text-sm text-white/70 border border-white/15 px-3 py-1.5 rounded">
               Contact

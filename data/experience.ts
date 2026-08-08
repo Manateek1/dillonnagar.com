@@ -27,7 +27,7 @@ export const experience: ExperienceItem[] = [
     period: "Summer 2026",
     type: "professional",
     bullets: [
-      "Completed two-week internship at a wealth management firm in Houston",
+      "Completed a private wealth management internship at a firm in Houston",
       "Gained exposure to commercial real estate, estate planning, trusts, and retirement planning",
       "Supported competitor analysis and prepared materials for client review sessions",
       "Participated in pro bono financial planning sessions and advisor-client meetings",

@@ -25,6 +25,22 @@ export default function Footer() {
             LinkedIn
           </a>
           <a
+            href="https://www.instagram.com/dillonnagar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white/60 transition-colors"
+          >
+            Instagram
+          </a>
+          <a
+            href="https://www.tiktok.com/@dillonnagar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white/60 transition-colors"
+          >
+            TikTok
+          </a>
+          <a
             href="mailto:dillon.nagar@gmail.com"
             className="hover:text-white/60 transition-colors"
           >
