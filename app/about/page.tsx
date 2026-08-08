@@ -62,6 +62,18 @@ export default function AboutPage() {
           <p className="text-xs text-white/40 mt-0.5">Expected May 2028 · GPA ~4.0 unweighted / 4.2 weighted</p>
         </div>
         <div>
+          <p className="text-xs font-mono text-white/30 uppercase tracking-widest mb-2">Published Writing</p>
+          <a
+            href="https://lamorindaweekly.com/articles/2025/letters-to-the-editor-12-17-2025/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-white/60 hover:text-white transition-colors"
+          >
+            Rising housing costs and limited housing options in Lamorinda ↗
+          </a>
+          <p className="text-xs text-white/40 mt-0.5">Lamorinda Weekly · December 17, 2025</p>
+        </div>
+        <div>
           <p className="text-xs font-mono text-white/30 uppercase tracking-widest mb-2">Contact</p>
           <div className="flex flex-wrap gap-4 text-sm">
             <a href="mailto:dillon.nagar@gmail.com" className="text-white/50 hover:text-white transition-colors">
