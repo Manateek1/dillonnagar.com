@@ -54,6 +54,18 @@ export const projects: Project[] = [
     caseStudy: "/projects/visualcover",
   },
   {
+    slug: "nexus-forge",
+    name: "Nexus Forge",
+    tagline: "Private Windows desktop workspace for local language models",
+    description:
+      "An Electron desktop app for chatting with models that run on your own PC through Ollama. It discovers local models, sends prompts only to the local Ollama server, and builds a Windows installer without bundling model weights or chat data.",
+    role: "Founder and developer",
+    stack: ["Electron", "React", "Vite", "Ollama", "Windows"],
+    status: "prototype",
+    githubUrl: "https://github.com/Manateek1/NexusForge",
+    featured: false,
+  },
+  {
     slug: "larpchat-ai",
     name: "LarpChat AI",
     tagline: "Tier-based AI chat and image platform with full auth and rate limiting",
