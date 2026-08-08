@@ -71,12 +71,13 @@ export const projects: Project[] = [
   {
     slug: "capital-in-code",
     name: "Capital in Code",
-    tagline: "A portfolio of coding and investing experiments",
+    tagline: "Independent quantitative research at the intersection of markets and code",
     description:
-      "A public portfolio of quantitative research projects exploring market questions with code, financial data, models, and written analysis. First project: CIC-001, The Overnight Effect.",
+      "An independent research portfolio that explores investing questions with code, financial data, charts, and plain-language analysis. CIC-001, The Overnight Effect, examines where SPY's historical adjusted growth occurred.",
     role: "Founder and researcher",
-    stack: ["Python", "Data Analysis", "Financial Modeling"],
-    status: "in-development",
+    stack: ["Python", "Quantitative Research", "Financial Modeling"],
+    status: "live",
+    liveUrl: "https://capitalincode.vercel.app",
     githubUrl: "https://github.com/Manateek1/Capital-in-Code",
     featured: false,
   },
