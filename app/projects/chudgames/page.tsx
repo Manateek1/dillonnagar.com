@@ -1,7 +1,7 @@
 import CaseStudyLayout from "@/components/projects/CaseStudyLayout";
 
 export const metadata = {
-  title: "ChudGames — Dillon Nagar",
+  title: "ChudGames",
 };
 
 export default function ChudGamesPage() {

@@ -1,38 +1,44 @@
 import Link from "next/link";
+import OrbitalField from "@/components/effects/OrbitalField";
+import ScrambleText from "@/components/ui/ScrambleText";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 
 export default function Hero() {
   return (
-    <section className="max-w-5xl mx-auto px-6 pt-24 pb-20">
-      <p className="text-sm font-mono text-blue-500 mb-4">Available for internships & collaboration</p>
-      <h1 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white leading-tight mb-6">
-        Dillon Nagar
-      </h1>
-      <p className="text-lg text-white/60 max-w-2xl leading-relaxed mb-8">
-        Student developer building software at the intersection of financial analysis,
-        AI-assisted workflows, and practical operations.
-      </p>
-      <div className="flex flex-wrap items-center gap-3">
-        <Link
-          href="/projects"
-          className="text-sm font-medium px-4 py-2 rounded bg-blue-500 text-white hover:bg-blue-400 transition-colors"
-        >
-          View Projects
-        </Link>
-        <a
-          href="mailto:dillon.nagar@gmail.com"
-          className="text-sm font-medium px-4 py-2 rounded border border-white/15 text-white/70 hover:border-white/30 hover:text-white transition-all"
-        >
-          Get in touch
-        </a>
-        <a
-          href="https://github.com/Manateek1"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-white/40 hover:text-white/70 transition-colors"
-        >
-          github.com/Manateek1 ↗
-        </a>
+    <section className="hero-shell" id="home" data-reveal>
+      <div className="hero-axis" aria-hidden="true"><i /><i /><i /></div>
+      <div className="hero-content">
+        <div className="hero-copy">
+          <p className="availability-line"><span />Available for internships &amp; collaboration</p>
+          <h1>
+            <ScrambleText text="Dillon" className="hero-name-line" />
+            <ScrambleText text="Nagar" className="hero-name-line" />
+          </h1>
+          <p className="hero-description">
+            Student developer building software at the intersection of financial analysis,
+            AI-assisted workflows, and practical operations.
+          </p>
+          <div className="hero-actions">
+            <Link href="/projects" className="signal-button signal-button-primary" data-magnetic>
+              <span>View Projects</span><ArrowIcon />
+            </Link>
+            <a href="mailto:dillon.nagar@gmail.com" className="signal-button" data-magnetic>
+              <span>Get in touch</span><ArrowIcon />
+            </a>
+            <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer" className="hero-github" data-magnetic>
+              github.com/Manateek1 <ArrowIcon direction="up-right" />
+            </a>
+          </div>
+          <p className="coordinate-readout" data-coordinates aria-hidden="true">X 000.0&nbsp; / &nbsp;Y 000.0</p>
+        </div>
+
+        <div className="orbital-field">
+          <OrbitalField />
+          <div className="field-label field-label-top" aria-hidden="true"><span>DATA FIELD_01</span><i /></div>
+          <div className="field-label field-label-node" aria-hidden="true"><span>ORBITAL NODE</span><strong>ACTIVE</strong></div>
+        </div>
       </div>
+      <div className="hero-bottom-rail" aria-hidden="true"><span>SCROLL TO EXPLORE</span><i /></div>
     </section>
   );
 }

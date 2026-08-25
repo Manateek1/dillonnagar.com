@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Badge from "@/components/ui/Badge";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 
 type Section = {
   title: string;
@@ -26,62 +27,58 @@ export default function CaseStudyLayout({
   sections,
 }: CaseStudyProps) {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
-      <Link href="/projects" className="text-sm text-white/40 hover:text-white/70 transition-colors mb-8 inline-block">
-        ← All Projects
+    <div className="page-shell case-study-page">
+      <Link href="/projects" className="case-study-back" data-magnetic>
+        <ArrowIcon direction="left" /> All Projects
       </Link>
 
-      <div className="mb-10">
-        <div className="flex items-center gap-3 mb-3">
-          <h1 className="text-3xl font-semibold text-white">{name}</h1>
-          <span
-            className={`text-xs px-2 py-0.5 rounded-full font-mono ${
-              status === "live"
-                ? "bg-green-500/10 text-green-400 border border-green-500/20"
-                : "bg-white/5 text-white/40 border border-white/10"
-            }`}
-          >
-            {status}
-          </span>
+      <header className="case-study-hero" data-reveal>
+        <div className="case-study-title-row">
+          <div>
+            <p className="section-code">PROJECT FILE / {name.toUpperCase()}</p>
+            <h1>{name}</h1>
+          </div>
+          <span className={`status-signal status-${status}`}><i />{status}</span>
         </div>
-        <p className="text-white/50 text-lg mb-5">{tagline}</p>
-        <div className="flex flex-wrap gap-1.5 mb-5">
+        <p className="case-study-tagline">{tagline}</p>
+        <div className="case-study-stack">
           {stack.map((tech) => (
             <Badge key={tech}>{tech}</Badge>
           ))}
         </div>
-        <div className="flex gap-4">
+        <div className="case-study-actions">
           {liveUrl && (
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
-              Live site ↗
+            <a href={liveUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
+              Live site <ArrowIcon direction="up-right" />
             </a>
           )}
           {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-white/70 transition-colors">
-              GitHub ↗
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
+              GitHub <ArrowIcon direction="up-right" />
             </a>
           )}
         </div>
-      </div>
+      </header>
 
-      <div className="border-t border-white/8 pt-10 space-y-10">
-        {sections.map((section) => (
-          <div key={section.title}>
-            <h2 className="text-sm font-mono text-white/40 uppercase tracking-widest mb-3">
-              {section.title}
-            </h2>
+      <div className="case-study-sections">
+        {sections.map((section, index) => (
+          <section key={section.title} data-reveal>
+            <div className="case-study-section-label">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h2>{section.title}</h2>
+            </div>
             {Array.isArray(section.content) ? (
-              <ul className="space-y-2">
+              <ul>
                 {section.content.map((item, i) => (
-                  <li key={i} className="text-white/70 text-sm leading-relaxed pl-4 border-l border-white/10">
-                    {item}
+                  <li key={i}>
+                    <span aria-hidden="true" />{item}
                   </li>
                 ))}
               </ul>
             ) : (
-              <p className="text-white/70 text-sm leading-relaxed">{section.content}</p>
+              <p>{section.content}</p>
             )}
-          </div>
+          </section>
         ))}
       </div>
     </div>

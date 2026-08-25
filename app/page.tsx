@@ -1,6 +1,7 @@
 import Hero from "@/components/home/Hero";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
 import ExperienceSnapshot from "@/components/home/ExperienceSnapshot";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 
 export default function Home() {
   return (
@@ -8,18 +9,22 @@ export default function Home() {
       <Hero />
       <FeaturedProjects />
       <ExperienceSnapshot />
-      <section className="border-t border-white/8">
-        <div className="max-w-5xl mx-auto px-6 py-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-white/40 text-sm">Let&apos;s build something together.</p>
-          <div className="flex items-center gap-6 text-sm">
-            <a href="mailto:dillon.nagar@gmail.com" className="text-white/50 hover:text-white transition-colors">
-              dillon.nagar@gmail.com
+      <section className="contact-band" data-reveal>
+        <div className="contact-orbit" aria-hidden="true"><i /><i /><i /></div>
+        <div>
+          <p className="section-code">SECTION_04</p>
+          <h2>Let&apos;s build<br />something together.</h2>
+        </div>
+        <div className="contact-actions">
+          <a href="mailto:dillon.nagar@gmail.com" className="contact-email" data-magnetic>
+            dillon.nagar@gmail.com
+          </a>
+          <div>
+            <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer" data-magnetic>
+              LinkedIn <ArrowIcon direction="up-right" />
             </a>
-            <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
-              LinkedIn ↗
-            </a>
-            <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
-              GitHub ↗
+            <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer" data-magnetic>
+              GitHub <ArrowIcon direction="up-right" />
             </a>
           </div>
         </div>

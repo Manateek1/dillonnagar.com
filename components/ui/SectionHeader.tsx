@@ -6,9 +6,10 @@ export default function SectionHeader({
   subtitle?: string;
 }) {
   return (
-    <div className="mb-10">
-      <h2 className="text-2xl font-semibold tracking-tight text-white">{title}</h2>
-      {subtitle && <p className="mt-2 text-white/50 text-sm">{subtitle}</p>}
+    <div className="page-heading" data-reveal>
+      <p className="section-code">DN / INDEX</p>
+      <h1>{title}</h1>
+      {subtitle && <p>{subtitle}</p>}
     </div>
   );
 }

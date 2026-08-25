@@ -1,7 +1,7 @@
 import CaseStudyLayout from "@/components/projects/CaseStudyLayout";
 
 export const metadata = {
-  title: "RentMax AI — Dillon Nagar",
+  title: "RentMax AI",
 };
 
 export default function RentMaxAIPage() {

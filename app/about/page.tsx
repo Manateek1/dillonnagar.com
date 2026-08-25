@@ -1,16 +1,23 @@
 import SectionHeader from "@/components/ui/SectionHeader";
 import Link from "next/link";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 
 export const metadata = {
-  title: "About — Dillon Nagar",
+  title: "About",
 };
 
 export default function AboutPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
+    <div className="page-shell about-page">
       <SectionHeader title="About" />
 
-      <div className="space-y-6 text-white/65 text-sm leading-relaxed mb-12">
+      <div className="about-layout">
+      <aside className="about-signal" data-reveal>
+        <span>01 / ORIGIN</span>
+        <p>Software × Finance × Operations</p>
+        <i aria-hidden="true" />
+      </aside>
+      <div className="about-story" data-reveal>
         <p>
           I&apos;m a student developer at Acalanes High School (Lafayette, CA — expected graduation
           May 2028) building software at the intersection of financial analysis, AI-assisted
@@ -19,7 +26,7 @@ export default function AboutPage() {
         <p>
           My work started with a real problem: landlords and property investors lack accessible
           tools for rental market analysis. That led me to build{" "}
-          <Link href="/projects/rentmax-ai" className="text-blue-400 hover:text-blue-300 transition-colors">
+          <Link href="/projects/rentmax-ai" className="inline-signal-link">
             RentMax AI
           </Link>
           , a live SaaS platform that combines property analysis calculations with AI-generated
@@ -28,12 +35,12 @@ export default function AboutPage() {
         </p>
         <p>
           I&apos;ve also built{" "}
-          <Link href="/projects/visualcover" className="text-blue-400 hover:text-blue-300 transition-colors">
+          <Link href="/projects/visualcover" className="inline-signal-link">
             VisualCover
           </Link>
           , a desktop privacy curtain for Windows and macOS written in Rust and TypeScript with
           Tauri, and{" "}
-          <Link href="/projects/larpchat-ai" className="text-blue-400 hover:text-blue-300 transition-colors">
+          <Link href="/projects/larpchat-ai" className="inline-signal-link">
             LarpChat AI
           </Link>
           , a tier-based AI chat platform with server-side plan enforcement and rate limiting.
@@ -54,36 +61,36 @@ export default function AboutPage() {
           real processes faster, smarter, or more accessible.
         </p>
       </div>
+      </div>
 
-      <div className="border border-white/10 bg-white/[0.03] rounded-xl p-6 space-y-5">
-        <div>
-          <p className="text-xs font-mono text-white/30 uppercase tracking-widest mb-2">Education</p>
-          <p className="text-sm text-white/80">Acalanes High School · Lafayette, CA</p>
-          <p className="text-xs text-white/40 mt-0.5">Expected May 2028 · GPA ~4.0 unweighted / 4.2 weighted</p>
+      <div className="about-facts" data-reveal>
+        <div className="about-fact">
+          <p>Education</p>
+          <strong>Acalanes High School · Lafayette, CA</strong>
+          <span>Expected May 2028 · GPA ~4.0 unweighted / 4.2 weighted</span>
         </div>
-        <div>
-          <p className="text-xs font-mono text-white/30 uppercase tracking-widest mb-2">Published Writing</p>
+        <div className="about-fact">
+          <p>Published Writing</p>
           <a
             href="https://lamorindaweekly.com/articles/2025/letters-to-the-editor-12-17-2025/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-white/60 hover:text-white transition-colors"
           >
-            Rising housing costs and limited housing options in Lamorinda ↗
+            Rising housing costs and limited housing options in Lamorinda <ArrowIcon direction="up-right" />
           </a>
-          <p className="text-xs text-white/40 mt-0.5">Lamorinda Weekly · December 17, 2025</p>
+          <span>Lamorinda Weekly · December 17, 2025</span>
         </div>
-        <div>
-          <p className="text-xs font-mono text-white/30 uppercase tracking-widest mb-2">Contact</p>
-          <div className="flex flex-wrap gap-4 text-sm">
-            <a href="mailto:dillon.nagar@gmail.com" className="text-white/50 hover:text-white transition-colors">
+        <div className="about-fact">
+          <p>Contact</p>
+          <div className="about-contact-links">
+            <a href="mailto:dillon.nagar@gmail.com">
               dillon.nagar@gmail.com
             </a>
-            <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
-              LinkedIn ↗
+            <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer">
+              LinkedIn <ArrowIcon direction="up-right" />
             </a>
-            <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-colors">
-              GitHub ↗
+            <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer">
+              GitHub <ArrowIcon direction="up-right" />
             </a>
           </div>
         </div>

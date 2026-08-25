@@ -1,7 +1,7 @@
 import CaseStudyLayout from "@/components/projects/CaseStudyLayout";
 
 export const metadata = {
-  title: "LarpChat AI — Dillon Nagar",
+  title: "LarpChat AI",
 };
 
 export default function LarpChatAIPage() {

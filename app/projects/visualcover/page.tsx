@@ -1,7 +1,7 @@
 import CaseStudyLayout from "@/components/projects/CaseStudyLayout";
 
 export const metadata = {
-  title: "VisualCover — Dillon Nagar",
+  title: "VisualCover",
 };
 
 export default function VisualCoverPage() {

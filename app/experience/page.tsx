@@ -3,38 +3,34 @@ import ExperienceItem from "@/components/experience/ExperienceItem";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata = {
-  title: "Experience — Dillon Nagar",
+  title: "Experience",
 };
 
 export default function ExperiencePage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
+    <div className="page-shell experience-page">
       <SectionHeader
         title="Experience"
         subtitle="Professional work, independent projects, and leadership roles."
       />
 
-      <div className="mb-14">
-        <h2 className="text-xs font-mono text-white/30 uppercase tracking-widest mb-8">
-          Professional
-        </h2>
-        <div>
+      <section className="experience-track" data-reveal>
+        <div className="experience-track-heading"><span>01</span><h2>Professional</h2><i /></div>
+        <div className="experience-track-items">
           {experience.map((item) => (
             <ExperienceItem key={`${item.org}-${item.title}`} item={item} />
           ))}
         </div>
-      </div>
+      </section>
 
-      <div>
-        <h2 className="text-xs font-mono text-white/30 uppercase tracking-widest mb-8">
-          Leadership & Community
-        </h2>
-        <div>
+      <section className="experience-track" data-reveal>
+        <div className="experience-track-heading"><span>02</span><h2>Leadership &amp; Community</h2><i /></div>
+        <div className="experience-track-items">
           {leadership.map((item) => (
             <ExperienceItem key={`${item.org}-${item.title}`} item={item} />
           ))}
         </div>
-      </div>
+      </section>
     </div>
   );
 }

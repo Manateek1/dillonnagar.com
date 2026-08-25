@@ -1,50 +1,44 @@
 import Link from "next/link";
 import { Project } from "@/data/projects";
 import Badge from "@/components/ui/Badge";
+import ArrowIcon from "@/components/ui/ArrowIcon";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="border border-white/10 bg-white/[0.03] rounded-xl p-6 hover:-translate-y-0.5 transition-transform duration-150 flex flex-col">
-      <div className="flex items-start justify-between mb-3">
+    <article className="project-index-card" data-tilt data-reveal>
+      <div className="tilt-surface">
+      <div className="project-card-number" aria-hidden="true">{project.slug.slice(0, 2).toUpperCase()}</div>
+      <div className="project-card-heading">
         <div>
-          <h3 className="font-medium text-white">{project.name}</h3>
-          <p className="text-xs text-white/40 mt-0.5">{project.role.split("—")[0].trim()}</p>
+          <h3>{project.name}</h3>
+          <p>{project.role.split("—")[0].trim()}</p>
         </div>
-        <span
-          className={`text-xs px-2 py-0.5 rounded-full font-mono shrink-0 ${
-            project.status === "live"
-              ? "bg-green-500/10 text-green-400 border border-green-500/20"
-              : project.status === "in-progress" || project.status === "in-development"
-              ? "bg-yellow-500/10 text-yellow-400 border border-yellow-500/20"
-              : "bg-white/5 text-white/40 border border-white/10"
-          }`}
-        >
-          {project.status}
-        </span>
+        <span className={`status-signal status-${project.status}`}><i />{project.status}</span>
       </div>
-      <p className="text-sm text-white/50 leading-relaxed mb-4 flex-1">{project.description}</p>
-      <div className="flex flex-wrap gap-1.5 mb-5">
+      <p className="project-card-description">{project.description}</p>
+      <div className="project-card-stack">
         {project.stack.map((tech) => (
           <Badge key={tech}>{tech}</Badge>
         ))}
       </div>
-      <div className="flex items-center gap-4 flex-wrap">
+      <div className="project-card-actions">
         {project.caseStudy && (
-          <Link href={project.caseStudy} className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
-            Case Study →
+          <Link href={project.caseStudy} data-magnetic>
+            Case Study <ArrowIcon />
           </Link>
         )}
         {project.liveUrl && (
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-white/70 transition-colors">
-            Live site ↗
+          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
+            Live site <ArrowIcon direction="up-right" />
           </a>
         )}
         {project.githubUrl && (
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-white/40 hover:text-white/70 transition-colors">
-            GitHub ↗
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
+            GitHub <ArrowIcon direction="up-right" />
           </a>
         )}
       </div>
-    </div>
+      </div>
+    </article>
   );
 }

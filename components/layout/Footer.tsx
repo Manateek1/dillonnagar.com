@@ -20,17 +20,18 @@ function TiktokIcon() {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/8 mt-24">
-      <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-white/30 text-xs">
-          © {new Date().getFullYear()} Dillon Nagar
-        </p>
-        <div className="flex items-center gap-6 text-xs text-white/30">
+    <footer className="site-footer">
+      <div className="footer-signal" aria-hidden="true"><i /></div>
+      <div className="footer-inner">
+        <div className="footer-brand">
+          <span>DN</span>
+          <p>© {new Date().getFullYear()} Dillon Nagar</p>
+        </div>
+        <div className="footer-links">
           <a
             href="https://github.com/Manateek1"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white/60 transition-colors"
           >
             GitHub
           </a>
@@ -38,7 +39,6 @@ export default function Footer() {
             href="https://linkedin.com/in/dillonnagar"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white/60 transition-colors"
           >
             LinkedIn
           </a>
@@ -46,7 +46,6 @@ export default function Footer() {
             href="https://www.instagram.com/dillonnagar"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white/60 transition-colors"
             aria-label="Instagram"
           >
             <InstagramIcon />
@@ -55,21 +54,16 @@ export default function Footer() {
             href="https://www.tiktok.com/@dillonnagar"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-white/60 transition-colors"
             aria-label="TikTok"
           >
             <TiktokIcon />
           </a>
-          <a
-            href="mailto:dillon.nagar@gmail.com"
-            className="hover:text-white/60 transition-colors"
-          >
+          <a href="mailto:dillon.nagar@gmail.com">
             Email
           </a>
-          <Link href="/contact" className="hover:text-white/60 transition-colors">
-            Contact
-          </Link>
+          <Link href="/contact">Contact</Link>
         </div>
+        <p className="footer-note">Built to be explored.</p>
       </div>
     </footer>
   );
