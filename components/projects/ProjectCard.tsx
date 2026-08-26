@@ -7,7 +7,6 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="project-index-card" data-tilt data-reveal>
       <div className="tilt-surface">
-      <div className="project-card-number" aria-hidden="true">{project.slug.slice(0, 2).toUpperCase()}</div>
       <div className="project-card-heading">
         <div>
           <h3>{project.name}</h3>

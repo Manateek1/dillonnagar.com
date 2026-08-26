@@ -51,7 +51,6 @@ export default function ProjectRunway({ projects }: { projects: Project[] }) {
             data-tilt
             aria-current={depth === 0 ? "true" : undefined}
             tabIndex={0}
-            onPointerEnter={() => setActiveIndex(index)}
             onFocusCapture={() => setActiveIndex(index)}
             onClick={(event) => {
               if (!(event.target as Element).closest("a")) setActiveIndex(index);

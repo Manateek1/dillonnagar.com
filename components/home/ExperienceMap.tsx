@@ -20,7 +20,7 @@ const lanes = [
   {
     category: "Leadership",
     items: [
-      "Treasurer & Fundraising Director — Acalanes Robotics FRC 7686",
+      "Fundraising Director — Acalanes Robotics FRC 7686",
       "Founder & Organizer — Voices United",
     ],
   },

@@ -61,7 +61,7 @@ export const experience: ExperienceItem[] = [
 
 export const leadership: ExperienceItem[] = [
   {
-    title: "Treasurer & Director of Fundraising",
+    title: "Director of Fundraising",
     org: "Acalanes Robotics / FRC Team 7686",
     period: "2024 – Present",
     type: "leadership",

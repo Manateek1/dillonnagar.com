@@ -46,7 +46,7 @@ export default function AboutPage() {
           , a tier-based AI chat platform with server-side plan enforcement and rate limiting.
         </p>
         <p>
-          Outside of software, I serve as Treasurer and Director of Fundraising for Acalanes
+          Outside of software, I serve as Director of Fundraising for Acalanes
           Robotics (FRC Team 7686), where I manage the budget and lead sponsor outreach. I also
           founded Voices United, a beginner-friendly English conversation and ESL practice program
           for young non-native speakers in the Lafayette community.

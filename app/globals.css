@@ -301,7 +301,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .project-index-card { min-height: 29rem; }
 .project-index-card .tilt-surface { display: flex; flex-direction: column; overflow: hidden; padding: clamp(1.5rem, 3vw, 2.5rem); border: 1px solid var(--line); border-radius: 0.65rem; background: linear-gradient(145deg, rgba(15, 18, 28, 0.75), rgba(7, 9, 14, 0.82)); }
 .project-index-card:hover .tilt-surface { border-color: rgba(var(--signal-rgb), 0.48); box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.3), 0 0 2rem rgba(var(--signal-rgb), 0.07); }
-.project-card-number { position: absolute; z-index: 1; top: 1.25rem; right: 1.5rem; color: rgba(184, 192, 208, 0.1); font: 4rem/1 var(--font-geist-mono); }
 .project-card-heading, .project-card-description, .project-card-stack, .project-card-actions { position: relative; z-index: 2; }
 .project-card-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
 .project-card-heading h3 { font-size: clamp(1.5rem, 3vw, 2.45rem); font-weight: 600; letter-spacing: -0.045em; }
