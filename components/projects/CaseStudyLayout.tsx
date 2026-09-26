@@ -41,23 +41,27 @@ export default function CaseStudyLayout({
           <span className={`status-signal status-${status}`}><i />{status}</span>
         </div>
         <p className="case-study-tagline">{tagline}</p>
-        <div className="case-study-stack">
-          {stack.map((tech) => (
-            <Badge key={tech}>{tech}</Badge>
-          ))}
-        </div>
-        <div className="case-study-actions">
-          {liveUrl && (
-            <a href={liveUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
-              Live site <ArrowIcon direction="up-right" />
-            </a>
-          )}
-          {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
-              GitHub <ArrowIcon direction="up-right" />
-            </a>
-          )}
-        </div>
+        {stack.length > 0 ? (
+          <div className="case-study-stack">
+            {stack.map((tech) => (
+              <Badge key={tech}>{tech}</Badge>
+            ))}
+          </div>
+        ) : null}
+        {liveUrl || githubUrl ? (
+          <div className="case-study-actions">
+            {liveUrl && (
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
+                Live site <ArrowIcon direction="up-right" />
+              </a>
+            )}
+            {githubUrl && (
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
+                GitHub <ArrowIcon direction="up-right" />
+              </a>
+            )}
+          </div>
+        ) : null}
       </header>
 
       <div className="case-study-sections">

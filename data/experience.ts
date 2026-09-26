@@ -35,43 +35,51 @@ export const experience: ExperienceItem[] = [
     skills: ["Financial Analysis", "Estate Planning", "Portfolio Research"],
   },
   {
-    title: "Internet Marketing & Operations",
-    org: "Lakewood Ace Hardware",
-    period: "Sept 2025 – Present",
+    title: "Digital Marketing & Operations",
+    org: "Ace Hardware",
+    period: "Current",
     type: "professional",
     bullets: [
-      "Creates and manages social media content and digital marketing for a local hardware store",
-      "Writes customer-facing responses and handles community-oriented online communications",
-      "Supports e-commerce operations and inventory coordination",
+      "Supports digital operations through social media content, customer-review responses, paid search, and online listings",
+      "Assists with marketing planning and related store operations",
     ],
     skills: ["Digital Marketing", "Social Media", "E-commerce"],
   },
   {
-    title: "Operations Assistant",
+    title: "Athletics & Event Operations",
     org: "Acalanes Union High School District",
-    period: "Aug 2024 – Present",
+    period: "Since 2024",
     type: "professional",
     bullets: [
-      "Supports district operations with administrative and logistical coordination",
-      "Assists with data management and internal communications",
+      "Supports game and school-event logistics, including announcements, scoreboard and shot-clock operation, and event setup",
+      "Helps with entrances, equipment, and event setup and breakdown",
     ],
-    skills: ["Operations", "Administration"],
+    skills: ["Event Operations", "Logistics"],
   },
 ];
 
 export const leadership: ExperienceItem[] = [
   {
-    title: "Director of Fundraising",
-    org: "Acalanes Robotics / FRC Team 7686",
-    period: "2024 – Present",
+    title: "Operations Director",
+    org: "Aquabot / Acalanes Robotics · FTC Team 26567",
+    period: "2025 – Present",
     type: "leadership",
     bullets: [
-      "Manages team budget and financial tracking for a competitive FIRST Robotics program",
-      "Submitted a formal $3,000+ sponsorship proposal to the Rotary Club of Lafayette",
-      "Leads sponsor outreach to companies including Almond, SparkFun, and Markforged",
-      "Targeting at least $5,000 in sponsorship for the 2026–2027 season",
+      "Contributes to team operations, sponsorship outreach, mentor connections, and company-visit planning",
+      "Mentors younger students and contributes to mechanical design and prototyping",
     ],
-    skills: ["Budgeting", "Fundraising", "Sponsorship Outreach"],
+    skills: ["Operations", "Sponsorship Outreach", "Mentorship", "Mechanical Design"],
+  },
+  {
+    title: "Founder & President",
+    org: "Acalanes Data Science Club",
+    period: "Aug 2026 – Present",
+    type: "leadership",
+    bullets: [
+      "Founded a beginner-friendly, project-driven club focused on data, AI, and code",
+      "Introduces members to a question-to-insight workflow through small projects",
+    ],
+    skills: ["Data Science", "Project Leadership"],
   },
   {
     title: "Founder & Organizer",
@@ -79,9 +87,9 @@ export const leadership: ExperienceItem[] = [
     period: "2025 – Present",
     type: "leadership",
     bullets: [
-      "Founded a beginner-friendly English conversation and ESL practice program for young non-native speakers",
-      "Organizes library-based sessions and one-on-one conversation practice",
-      "Coordinates with local organizers to schedule participants and grow the program",
+      "Founded a beginner-friendly English conversation and tutoring program for young English learners",
+      "Organizes in-person and online sessions and prepares conversation activities",
+      "Coordinates with local organizers and supports volunteer participation",
     ],
   },
 ];

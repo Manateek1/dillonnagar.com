@@ -8,7 +8,7 @@ export default function ChudGamesPage() {
   return (
     <CaseStudyLayout
       name="ChudGames"
-      tagline="Browser game launcher and arcade suite with 10 playable games"
+      tagline="Browser arcade built on a shared game engine"
       status="live"
       stack={["React", "Vite", "TypeScript", "WebAudio API"]}
       liveUrl="https://chudgames.vercel.app"
@@ -17,12 +17,12 @@ export default function ChudGamesPage() {
         {
           title: "What it is",
           content:
-            "ChudGames is a browser-based game launcher featuring 10 playable games built on a shared engine. It includes a neon-styled UI, daily challenges, local achievements, high score tracking, and full mobile/touch support.",
+            "ChudGames is a browser-based game launcher and arcade with a collection of games, including Apex Run and FortLite. It includes a neon UI, daily challenges, local achievements, high-score tracking, and desktop and mobile input.",
         },
         {
           title: "Role",
           content:
-            "Founder and developer — sole engineer. Designed and built the shared game engine, launcher shell, and all 10 games.",
+            "Founder and developer — sole engineer. Designed and built the shared game engine, launcher shell, and its games.",
         },
         {
           title: "Tech Stack",
@@ -34,17 +34,12 @@ export default function ChudGamesPage() {
           ],
         },
         {
-          title: "Games",
+          title: "Selected Games",
           content: [
+            "Apex Run",
             "Neon Dodger",
             "Asteroids Pulse",
-            "Brick Breaker Blitz",
             "FortLite",
-            "Void Survival",
-            "Rhythm Tap",
-            "Precision Runner",
-            "Fusion 2048",
-            "Memory Match",
             "Pong Neon (single player + two-player duel)",
           ],
         },

@@ -43,13 +43,14 @@ export default function AboutPage() {
           <Link href="/projects/larpchat-ai" className="inline-signal-link">
             LarpChat AI
           </Link>
-          , a tier-based AI chat platform with server-side plan enforcement and rate limiting.
+          , an AI chat and image-generation prototype in development.
         </p>
         <p>
-          Outside of software, I serve as Director of Fundraising for Acalanes
-          Robotics (FRC Team 7686), where I manage the budget and lead sponsor outreach. I also
-          founded Voices United, a beginner-friendly English conversation and ESL practice program
-          for young non-native speakers in the Lafayette community.
+          Outside of software, I serve as Operations Director for Aquabot, Acalanes Robotics&apos; FTC
+          Team 26567, contributing to sponsorship outreach, team logistics, and mentoring younger
+          students. I founded Acalanes Data Science Club, a beginner-friendly, project-driven group
+          exploring questions with data, AI, and code. I also founded Voices United, a
+          beginner-friendly English conversation program for young English learners.
         </p>
         <p>
           In Summer 2026 I completed a private wealth management internship at Clarus
@@ -67,7 +68,7 @@ export default function AboutPage() {
         <div className="about-fact">
           <p>Education</p>
           <strong>Acalanes High School · Lafayette, CA</strong>
-          <span>Expected May 2028 · GPA ~4.0 unweighted / 4.2 weighted</span>
+          <span>Expected May 2028</span>
         </div>
         <div className="about-fact">
           <p>Published Writing</p>
