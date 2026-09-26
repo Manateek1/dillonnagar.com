@@ -43,7 +43,7 @@ export default function AboutPage() {
           <Link href="/projects/larpchat-ai" className="inline-signal-link">
             LarpChat AI
           </Link>
-          , a live AI chat and image-generation demo with paid tiers, still under major development.
+          , a live AI chat and image-generation demo that I&apos;m continuing to develop.
         </p>
         <p>
           Outside of software, I serve as Logistics Lead for Aquabot, Acalanes Robotics&apos; FTC

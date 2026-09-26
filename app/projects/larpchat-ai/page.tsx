@@ -15,7 +15,7 @@ export default function LarpChatAIPage() {
       sections={[
         {
           title: "What it is",
-          content: "An active AI chat and image-generation demo with official paid tiers.",
+          content: "A live AI chat and image-generation demo.",
         },
         {
           title: "Role",
@@ -23,7 +23,7 @@ export default function LarpChatAIPage() {
         },
         {
           title: "Current Status",
-          content: "The demo is live with paid tiers. The product is still under development and needs major work.",
+          content: "The demo is live and usable, and I continue to develop the product.",
         },
       ]}
     />

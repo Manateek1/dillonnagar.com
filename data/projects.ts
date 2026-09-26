@@ -70,7 +70,7 @@ export const projects: Project[] = [
     name: "LarpChat AI",
     tagline: "Live AI chat and image-generation demo",
     description:
-      "An active demo with official paid tiers that is still under major development.",
+      "A live AI chat and image-generation demo, currently in active development.",
     role: "Founder and developer",
     stack: [],
     status: "live",
