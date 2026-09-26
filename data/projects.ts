@@ -68,12 +68,13 @@ export const projects: Project[] = [
   {
     slug: "larpchat-ai",
     name: "LarpChat AI",
-    tagline: "AI chat and image-generation prototype",
+    tagline: "Live AI chat and image-generation demo",
     description:
-      "An in-development prototype exploring an AI chat and image-generation experience.",
+      "An active demo with official paid tiers that is still under major development.",
     role: "Founder and developer",
     stack: [],
-    status: "prototype",
+    status: "live",
+    liveUrl: "https://larpchatai.vercel.app",
     featured: false,
     caseStudy: "/projects/larpchat-ai",
   },

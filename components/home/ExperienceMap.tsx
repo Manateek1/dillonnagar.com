@@ -13,14 +13,14 @@ const lanes = [
     category: "Finance & Operations",
     items: [
       "Private Wealth Management Intern — Clarus Group",
-      "Athletics & Event Operations — Acalanes UHSD",
+      "Athletic Assistant — Acalanes UHSD",
       "Digital Operations — Ace Hardware",
     ],
   },
   {
     category: "Leadership",
     items: [
-      "Operations Director — Aquabot, FTC Team 26567",
+      "Logistics Lead — Aquabot, FTC Team 26567",
       "Founder & President — Acalanes Data Science Club",
       "Founder & Organizer — Voices United",
     ],

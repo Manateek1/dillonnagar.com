@@ -43,12 +43,12 @@ export default function AboutPage() {
           <Link href="/projects/larpchat-ai" className="inline-signal-link">
             LarpChat AI
           </Link>
-          , an AI chat and image-generation prototype in development.
+          , a live AI chat and image-generation demo with paid tiers, still under major development.
         </p>
         <p>
-          Outside of software, I serve as Operations Director for Aquabot, Acalanes Robotics&apos; FTC
-          Team 26567, contributing to sponsorship outreach, team logistics, and mentoring younger
-          students. I founded Acalanes Data Science Club, a beginner-friendly, project-driven group
+          Outside of software, I serve as Logistics Lead for Aquabot, Acalanes Robotics&apos; FTC
+          Team 26567. The role covers partnerships, operations, outreach, and social media, along with
+          mentoring younger students. I founded Acalanes Data Science Club, a beginner-friendly, project-driven group
           exploring questions with data, AI, and code. I also founded Voices United, a
           beginner-friendly English conversation program for young English learners.
         </p>

@@ -46,7 +46,7 @@ export const experience: ExperienceItem[] = [
     skills: ["Digital Marketing", "Social Media", "E-commerce"],
   },
   {
-    title: "Athletics & Event Operations",
+    title: "Athletic Assistant",
     org: "Acalanes Union High School District",
     period: "Since 2024",
     type: "professional",
@@ -60,15 +60,16 @@ export const experience: ExperienceItem[] = [
 
 export const leadership: ExperienceItem[] = [
   {
-    title: "Operations Director",
+    title: "Logistics Lead",
     org: "Aquabot / Acalanes Robotics · FTC Team 26567",
     period: "2025 – Present",
     type: "leadership",
     bullets: [
-      "Contributes to team operations, sponsorship outreach, mentor connections, and company-visit planning",
+      "Coordinates partnerships, operations, outreach, and social media for the team",
+      "Supports mentor connections, company visits, and team logistics",
       "Mentors younger students and contributes to mechanical design and prototyping",
     ],
-    skills: ["Operations", "Sponsorship Outreach", "Mentorship", "Mechanical Design"],
+    skills: ["Partnerships", "Operations", "Outreach", "Social Media", "Mentorship"],
   },
   {
     title: "Founder & President",
