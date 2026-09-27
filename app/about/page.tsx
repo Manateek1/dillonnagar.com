@@ -46,8 +46,8 @@ export default function AboutPage() {
           , a live AI chat and image-generation demo that I&apos;m continuing to develop.
         </p>
         <p>
-          Outside of software, I serve as Logistics Lead for Aquabot, Acalanes Robotics&apos; FTC
-          Team 26567. The role covers partnerships, operations, outreach, and social media, along with
+          Outside of software, I serve as Logistics Lead for 24689 - Acabots, Acalanes High School
+          Robotics. The role covers partnerships, operations, outreach, and social media, along with
           mentoring younger students. I founded Acalanes Data Science Club, a beginner-friendly, project-driven group
           exploring questions with data, AI, and code. I also founded Voices United, a
           beginner-friendly English conversation program for young English learners.

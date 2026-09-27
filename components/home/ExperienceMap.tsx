@@ -20,7 +20,7 @@ const lanes = [
   {
     category: "Leadership",
     items: [
-      "Logistics Lead — Aquabot, FTC Team 26567",
+      "Logistics Lead — 24689 - Acabots",
       "Founder & President — Acalanes Data Science Club",
       "Founder & Organizer — Voices United",
     ],

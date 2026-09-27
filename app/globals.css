@@ -254,8 +254,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .footer-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; width: min(100%, var(--max-width)); min-height: 7rem; margin: 0 auto; padding: 1.5rem var(--page-gutter); }
 .footer-brand { display: flex; align-items: center; gap: 1rem; color: var(--muted); font: 0.62rem/1 var(--font-geist-mono); }
 .footer-brand > span { display: grid; place-items: center; width: 2rem; height: 2rem; border: 1px solid var(--line-strong); border-radius: 50%; color: var(--signal-bright); font-size: 0.55rem; }
-.footer-links { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2.4rem); color: var(--muted); font-size: 0.68rem; }
-.footer-links a:hover { color: #fff; }
+.footer-links { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2.4rem); color: var(--muted); }
+.footer-links a { display: grid; place-items: center; width: 2.5rem; height: 2.5rem; border-radius: 0.45rem; color: inherit; transition: color 150ms ease, background 150ms ease; }
+.footer-links a svg { display: block; }
+.footer-links a:hover, .footer-links a:focus-visible { color: #fff; background: rgba(255, 255, 255, 0.055); }
+.footer-links a:focus-visible { outline: 2px solid rgba(var(--signal-rgb), 0.75); outline-offset: 2px; }
 .footer-note { justify-self: end; color: rgba(184, 192, 208, 0.34); font: 0.56rem/1 var(--font-geist-mono); letter-spacing: 0.06em; text-transform: uppercase; }
 
 /* Command palette and terminal */
@@ -442,7 +445,8 @@ html[data-overdrive="true"] .site-grid { filter: saturate(1.4) brightness(1.18);
   .contact-orbit { right: -2rem; bottom: 4rem; opacity: 0.5; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-links { flex-wrap: wrap; }
-  .contact-actions > div a, .footer-links a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  .contact-actions > div a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+  .footer-links a { width: 2.75rem; height: 2.75rem; }
   .project-index-grid { grid-template-columns: 1fr; }
   .project-index-card { min-height: 26rem; }
   .about-layout { grid-template-columns: 1fr; }
@@ -469,7 +473,7 @@ html[data-overdrive="true"] .site-grid { filter: saturate(1.4) brightness(1.18);
   .runway-tagline { font-size: 0.96rem; }
   .status-signal { font-size: 0.55rem; }
   .contact-email { overflow-wrap: anywhere; }
-  .footer-links { gap: 1.1rem; }
+  .footer-links { gap: 0.25rem; }
   .command-backdrop { padding: 0; place-items: stretch; }
   .command-plane { width: 100%; min-height: 100svh; max-height: 100svh; border: 0; border-radius: 0; }
   .command-results { max-height: calc(100svh - 8rem); }

@@ -61,7 +61,7 @@ export const experience: ExperienceItem[] = [
 export const leadership: ExperienceItem[] = [
   {
     title: "Logistics Lead",
-    org: "Aquabot / Acalanes Robotics · FTC Team 26567",
+    org: "Acalanes High School Robotics · 24689 - Acabots",
     period: "2025 – Present",
     type: "leadership",
     bullets: [
