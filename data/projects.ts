@@ -5,6 +5,7 @@ export type Project = {
   description: string;
   role: string;
   stack: string[];
+  themes?: string[];
   status: "live" | "prototype" | "in-development" | "in-progress";
   liveUrl?: string;
   githubUrl?: string;
@@ -15,30 +16,32 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "rentmax-ai",
-    name: "RentMax AI",
-    tagline: "Rental property analysis platform with AI-driven insights",
-    description:
-      "A live SaaS platform that helps landlords and property investors analyze rent ranges, cash flow, cap rate, and returns — with AI explanations and exportable reports.",
-    role: "Founder and developer — sole engineer across frontend, backend, and infrastructure",
-    stack: ["React", "Vite", "Supabase", "Stripe", "OpenAI", "Sentry", "Vercel"],
-    status: "live",
-    liveUrl: "https://rentmaxai.com",
-    featured: true,
-    caseStudy: "/projects/rentmax-ai",
-  },
-  {
     slug: "capital-in-code",
     name: "Capital in Code",
-    tagline: "Code-based market research with clear methods and limits",
+    tagline: "Market research with clear methods and honest limits",
     description:
       "A public portfolio of investing and quantitative research projects. CIC-001 studies historical SPY overnight and regular-hours returns; CIC-002, CycleQuant, is a Bitcoin paper-trading experiment. The work is educational research, not evidence of a profitable strategy.",
     role: "Founder, researcher, and developer",
     stack: ["Python", "FastAPI", "Quantitative Research"],
+    themes: ["SPY research", "Historical returns", "Paper trading"],
     status: "live",
     liveUrl: "https://capitalincode.com",
     githubUrl: "https://github.com/Manateek1/Capital-in-Code",
     featured: true,
+  },
+  {
+    slug: "rentmax-ai",
+    name: "RentMax AI",
+    tagline: "Rental-property analysis for cash flow and returns",
+    description:
+      "A live platform that helps landlords and property investors assess rent ranges, cash flow, cap rates, and returns, with explanations and exportable reports.",
+    role: "Founder and developer — sole engineer across frontend, backend, and infrastructure",
+    stack: ["React", "Vite", "Supabase", "Stripe", "OpenAI", "Sentry", "Vercel"],
+    themes: ["Rent ranges", "Cash flow", "Property returns"],
+    status: "live",
+    liveUrl: "https://rentmaxai.com",
+    featured: true,
+    caseStudy: "/projects/rentmax-ai",
   },
   {
     slug: "visualcover",
@@ -48,6 +51,7 @@ export const projects: Project[] = [
       "A desktop app that covers all connected monitors with a PIN-protected curtain while background programs keep running. Designed for leaving automation, downloads, and servers running while the screen is hidden from view.",
     role: "Founder and developer — sole engineer",
     stack: ["Tauri", "Rust", "TypeScript", "GitHub Actions"],
+    themes: ["Privacy", "Desktop tools", "Automation"],
     status: "live",
     githubUrl: "https://github.com/Manateek1/VisualCover",
     featured: true,

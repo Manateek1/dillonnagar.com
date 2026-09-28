@@ -12,8 +12,8 @@ export default function Home() {
       <section className="contact-band" data-reveal>
         <div className="contact-orbit" aria-hidden="true"><i /><i /><i /></div>
         <div>
-          <p className="section-code">SECTION_04</p>
-          <h2>Let&apos;s build<br />something together.</h2>
+          <p className="section-code">CONTACT / 04</p>
+          <h2>Let&apos;s explore<br />a question together.</h2>
         </div>
         <div className="contact-actions">
           <a href="mailto:dillon.nagar@gmail.com" className="contact-email" data-magnetic>

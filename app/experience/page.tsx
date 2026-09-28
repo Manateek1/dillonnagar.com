@@ -11,7 +11,7 @@ export default function ExperiencePage() {
     <div className="page-shell experience-page">
       <SectionHeader
         title="Experience"
-        subtitle="Professional work, independent projects, and leadership roles."
+        subtitle="Finance, research, practical work, and leadership."
       />
 
       <section className="experience-track" data-reveal>

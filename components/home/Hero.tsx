@@ -1,5 +1,5 @@
 import Link from "next/link";
-import OrbitalField from "@/components/effects/OrbitalField";
+import ResearchField from "@/components/home/ResearchField";
 import ScrambleText from "@/components/ui/ScrambleText";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 
@@ -9,34 +9,26 @@ export default function Hero() {
       <div className="hero-axis" aria-hidden="true"><i /><i /><i /></div>
       <div className="hero-content">
         <div className="hero-copy">
-          <p className="availability-line"><span />Available for internships &amp; collaboration</p>
+          <p className="availability-line"><span />Student exploring quantitative finance · Open to internships</p>
           <h1>
             <ScrambleText text="Dillon" className="hero-name-line" />
             <ScrambleText text="Nagar" className="hero-name-line" />
           </h1>
           <p className="hero-description">
-            Student developer building software at the intersection of financial analysis,
-            AI-assisted workflows, and practical operations.
+            I use data to study financial markets, test ideas, and build tools that make
+            complex decisions clearer.
           </p>
           <div className="hero-actions">
-            <Link href="/projects" className="signal-button signal-button-primary" data-magnetic>
-              <span>View Projects</span><ArrowIcon />
+            <Link href="/#research" className="signal-button signal-button-primary" data-magnetic>
+              <span>See the Research</span><ArrowIcon />
             </Link>
-            <a href="mailto:dillon.nagar@gmail.com" className="signal-button" data-magnetic>
-              <span>Get in touch</span><ArrowIcon />
-            </a>
-            <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer" className="hero-github" data-magnetic>
-              github.com/Manateek1 <ArrowIcon direction="up-right" />
-            </a>
+            <Link href="/projects" className="signal-button" data-magnetic>
+              <span>Explore My Work</span><ArrowIcon />
+            </Link>
           </div>
-          <p className="coordinate-readout" data-coordinates aria-hidden="true">X 000.0&nbsp; / &nbsp;Y 000.0</p>
         </div>
 
-        <div className="orbital-field">
-          <OrbitalField />
-          <div className="field-label field-label-top" aria-hidden="true"><span>DATA FIELD_01</span><i /></div>
-          <div className="field-label field-label-node" aria-hidden="true"><span>ORBITAL NODE</span><strong>ACTIVE</strong></div>
-        </div>
+        <ResearchField />
       </div>
       <div className="hero-bottom-rail" aria-hidden="true"><span>SCROLL TO EXPLORE</span><i /></div>
     </section>

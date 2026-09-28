@@ -56,10 +56,11 @@ export default function CommandPalette({
   const commands = useMemo<Command[]>(
     () => [
       { id: "home", group: "Navigation", label: "Home", meta: "01", run: () => navigate("/") },
-      { id: "projects", group: "Navigation", label: "Projects", meta: "02", run: () => navigate("/projects") },
-      { id: "experience", group: "Navigation", label: "Experience", meta: "03", run: () => navigate("/experience") },
-      { id: "about", group: "Navigation", label: "About", meta: "04", run: () => navigate("/about") },
-      { id: "contact", group: "Navigation", label: "Contact", meta: "05", run: () => navigate("/contact") },
+      { id: "research", group: "Navigation", label: "Research", meta: "02", run: () => navigate("/#research") },
+      { id: "projects", group: "Navigation", label: "Work", meta: "03", run: () => navigate("/projects") },
+      { id: "experience", group: "Navigation", label: "Experience", meta: "04", run: () => navigate("/experience") },
+      { id: "about", group: "Navigation", label: "About", meta: "05", run: () => navigate("/about") },
+      { id: "contact", group: "Navigation", label: "Contact", meta: "06", run: () => navigate("/contact") },
       { id: "email", group: "Actions", label: "Email Dillon", meta: "↗", run: () => { window.location.href = "mailto:dillon.nagar@gmail.com"; onClose(); } },
       { id: "github", group: "Actions", label: "Open GitHub", meta: "↗", run: () => { window.open(externalLinks.github, "_blank", "noopener,noreferrer"); onClose(); } },
       { id: "linkedin", group: "Actions", label: "Open LinkedIn", meta: "↗", run: () => { window.open(externalLinks.linkedin, "_blank", "noopener,noreferrer"); onClose(); } },
@@ -199,9 +200,6 @@ export default function CommandPalette({
               );
             })}
             {!filtered.length && <p className="command-empty">No command found. Type “terminal” for the command line.</p>}
-            <button type="button" className="terminal-hint" onClick={() => onTerminalChange(true)}>
-              Type <span>“terminal”</span> to access the command line
-            </button>
           </div>
         ) : (
           <div className="terminal-pane">

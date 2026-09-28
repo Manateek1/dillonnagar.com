@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s — Dillon Nagar",
   },
   description:
-    "Student developer building software at the intersection of financial analysis, AI-assisted workflows, and practical operations.",
+    "Dillon Nagar studies financial markets through data and builds practical tools for research and analysis.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

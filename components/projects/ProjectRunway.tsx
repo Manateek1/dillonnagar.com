@@ -67,7 +67,7 @@ export default function ProjectRunway({ projects }: { projects: Project[] }) {
               </div>
               <p className="runway-tagline">{project.tagline}</p>
               <div className="runway-stack">
-                {project.stack.slice(0, 4).map((tech) => <Badge key={tech}>{tech}</Badge>)}
+                {(project.themes ?? project.stack).slice(0, 4).map((theme) => <Badge key={theme}>{theme}</Badge>)}
               </div>
               <div className="runway-actions">
                 {project.caseStudy && (

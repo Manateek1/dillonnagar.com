@@ -9,19 +9,6 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
-    title: "Founder & Developer",
-    org: "RentMax AI",
-    period: "2024 – Present",
-    type: "professional",
-    bullets: [
-      "Architected and built a live rental property analytics SaaS platform as sole engineer",
-      "Implemented rent estimation, cash flow analysis, cap rate, and cash-on-cash return calculations with AI explanations",
-      "Integrated Stripe for subscription billing and Supabase for auth and data with Row Level Security",
-      "Deployed on Vercel with Sentry for error monitoring; manages ongoing production stability",
-    ],
-    skills: ["React", "Vite", "TypeScript", "Supabase", "Stripe", "Sentry", "Vercel"],
-  },
-  {
     title: "Private Wealth Management Intern",
     org: "Clarus Wealth Group",
     period: "Summer 2026",
@@ -33,6 +20,18 @@ export const experience: ExperienceItem[] = [
       "Participated in pro bono financial planning sessions and advisor-client meetings",
     ],
     skills: ["Financial Analysis", "Estate Planning", "Portfolio Research"],
+  },
+  {
+    title: "Founder & Developer",
+    org: "RentMax AI",
+    period: "2024 – Present",
+    type: "professional",
+    bullets: [
+      "Founded and operate a live rental-property analysis platform for landlords and investors",
+      "Built tools for rent estimation, cash flow, cap rates, and cash-on-cash returns, with explanatory reports",
+      "Built the platform independently and manage subscriptions, user accounts, and reliability",
+    ],
+    skills: ["Rental Property Analysis", "Cash Flow", "Product Development"],
   },
   {
     title: "Digital Marketing & Operations",

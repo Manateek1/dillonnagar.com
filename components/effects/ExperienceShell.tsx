@@ -213,7 +213,6 @@ export default function ExperienceShell() {
     let activeMagnetic: HTMLElement | null = null;
     let activeTilt: HTMLElement | null = null;
     const particles: TrailParticle[] = [];
-    const coordinate = document.querySelector<HTMLElement>("[data-coordinates]");
 
     const resizeCanvas = () => {
       width = window.innerWidth;
@@ -292,8 +291,6 @@ export default function ExperienceShell() {
         lastTrailY = targetY;
         if (!trailFrame) trailFrame = window.requestAnimationFrame(drawTrail);
       }
-
-      if (coordinate) coordinate.textContent = `X ${targetX.toFixed(1)}  /  Y ${targetY.toFixed(1)}`;
 
       const target = event.target instanceof Element ? event.target : null;
       const magnetic = target?.closest<HTMLElement>("[data-magnetic]") ?? null;

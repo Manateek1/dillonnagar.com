@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 function GitHubIcon() {
   return (
@@ -59,7 +60,14 @@ export default function Footer() {
       <div className="footer-signal" aria-hidden="true"><i /></div>
       <div className="footer-inner">
         <div className="footer-brand">
-          <span>DN</span>
+          <Image
+            className="footer-brand-mark"
+            src="/favicon.ico"
+            alt=""
+            width={32}
+            height={32}
+            unoptimized
+          />
           <p>© {new Date().getFullYear()} Dillon Nagar</p>
         </div>
         <div className="footer-links">
@@ -106,7 +114,7 @@ export default function Footer() {
             <ContactIcon />
           </Link>
         </div>
-        <p className="footer-note">Built to be explored.</p>
+        <p className="footer-note">Questions into evidence.</p>
       </div>
     </footer>
   );

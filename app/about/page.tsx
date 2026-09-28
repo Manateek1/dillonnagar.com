@@ -13,37 +13,48 @@ export default function AboutPage() {
 
       <div className="about-layout">
       <aside className="about-signal" data-reveal>
-        <span>01 / ORIGIN</span>
-        <p>Software × Finance × Operations</p>
+        <span>01 / FOCUS</span>
+        <p>Markets × Data × Practical Tools</p>
         <i aria-hidden="true" />
       </aside>
       <div className="about-story" data-reveal>
         <p>
-          I&apos;m a student developer at Acalanes High School (Lafayette, CA — expected graduation
-          May 2028) building software at the intersection of financial analysis, AI-assisted
-          workflows, and practical operations.
+          I&apos;m a student at Acalanes High School in Lafayette, California (expected graduation
+          May 2028). I use data to ask questions about markets and build tools that make financial
+          decisions easier to understand.
         </p>
         <p>
-          My work started with a real problem: landlords and property investors lack accessible
-          tools for rental market analysis. That led me to build{" "}
+          Through{" "}
+          <a href="https://capitalincode.com" target="_blank" rel="noopener noreferrer" className="inline-signal-link">
+            Capital in Code
+          </a>
+          , I publish independent market research. One study compares historical SPY overnight
+          and regular-session returns. CycleQuant is a Bitcoin paper-trading experiment. I share
+          the methods and limits alongside the results.
+        </p>
+        <p>
+          In Summer 2026 I completed a private wealth management internship at Clarus Wealth
+          Group in Houston, gaining exposure to commercial real estate, estate planning, and
+          retirement planning.
+        </p>
+        <p>
+          Rental-property analysis led me to build{" "}
           <Link href="/projects/rentmax-ai" className="inline-signal-link">
             RentMax AI
           </Link>
-          , a live SaaS platform that combines property analysis calculations with AI-generated
-          explanations. I designed it, built the full stack, and handle ongoing production
-          operations — sole engineer.
+          , a live platform that helps investors compare rent ranges, cash flow, and returns. I
+          built it and manage its ongoing operation.
         </p>
         <p>
-          I&apos;ve also built{" "}
+          I&apos;ve also built other tools, including{" "}
           <Link href="/projects/visualcover" className="inline-signal-link">
             VisualCover
           </Link>
-          , a desktop privacy curtain for Windows and macOS written in Rust and TypeScript with
-          Tauri, and{" "}
+          , a privacy curtain for Windows and macOS, and{" "}
           <Link href="/projects/larpchat-ai" className="inline-signal-link">
             LarpChat AI
           </Link>
-          , a live AI chat and image-generation demo that I&apos;m continuing to develop.
+          , a live AI chat and image-generation demo in active development.
         </p>
         <p>
           Outside of software, I serve as Logistics Lead for 24689 - Acabots, Acalanes High School
@@ -53,13 +64,8 @@ export default function AboutPage() {
           beginner-friendly English conversation program for young English learners.
         </p>
         <p>
-          In Summer 2026 I completed a private wealth management internship at Clarus
-          Wealth Group in Houston, gaining exposure to commercial real estate, estate planning,
-          and retirement planning.
-        </p>
-        <p>
-          I&apos;m interested in how software, finance, and data intersect — building tools that make
-          real processes faster, smarter, or more accessible.
+          I&apos;m interested in quantitative finance: asking precise questions, checking them
+          against data, and making the findings useful to other people.
         </p>
       </div>
       </div>

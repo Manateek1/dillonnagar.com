@@ -9,7 +9,7 @@ export default function ContactPage() {
       <SectionHeader title="Contact" subtitle="Get in touch." />
 
       <div className="contact-page-surface" data-reveal>
-        <p>OPEN CHANNEL / 01</p>
+        <p>CONTACT / 01</p>
         <a href="mailto:dillon.nagar@gmail.com" className="contact-page-email" data-magnetic>
           dillon.nagar@gmail.com <ArrowIcon direction="up-right" />
         </a>

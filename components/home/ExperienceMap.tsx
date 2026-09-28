@@ -6,22 +6,26 @@ import ArrowIcon from "@/components/ui/ArrowIcon";
 
 const lanes = [
   {
-    category: "Software & Product",
-    items: ["Founder & Developer — RentMax AI", "Founder & Developer — VisualCover"],
+    category: "Finance & Research",
+    items: [
+      "Independent Research — Capital in Code",
+      "Private Wealth Management Intern — Clarus Wealth Group",
+      "Founder & Developer — RentMax AI",
+    ],
   },
   {
-    category: "Finance & Operations",
+    category: "Products & Operations",
     items: [
-      "Private Wealth Management Intern — Clarus Group",
-      "Athletic Assistant — Acalanes UHSD",
+      "Founder & Developer — VisualCover",
       "Digital Operations — Ace Hardware",
+      "Athletic Assistant — Acalanes UHSD",
     ],
   },
   {
     category: "Leadership",
     items: [
-      "Logistics Lead — 24689 - Acabots",
       "Founder & President — Acalanes Data Science Club",
+      "Logistics Lead — 24689 - Acabots",
       "Founder & Organizer — Voices United",
     ],
   },
@@ -42,7 +46,7 @@ export default function ExperienceMap() {
       <div className="section-topline" aria-hidden="true" />
       <div className="section-heading-row">
         <div>
-          <p className="section-code">SECTION_03</p>
+          <p className="section-code">EXPERIENCE / 03</p>
           <h2>Experience</h2>
         </div>
         <Link href="/experience" className="text-link" data-magnetic>
@@ -51,7 +55,7 @@ export default function ExperienceMap() {
       </div>
 
       <div className="experience-map" data-pulse={pulse}>
-        <div className="time-axis" aria-hidden="true">TIME <ArrowIcon /></div>
+        <div className="time-axis" aria-hidden="true">AREAS OF WORK <ArrowIcon /></div>
         {lanes.map((lane, index) => (
           <div
             className={`experience-lane ${activeLane === index ? "is-active" : ""}`}
@@ -78,13 +82,6 @@ export default function ExperienceMap() {
         ))}
       </div>
 
-      <button
-        type="button"
-        className="terminal-tease"
-        onClick={() => window.dispatchEvent(new CustomEvent("dn:open-command", { detail: { terminal: true } }))}
-      >
-        &gt; type help and press enter
-      </button>
     </section>
   );
 }

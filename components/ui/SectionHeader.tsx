@@ -7,7 +7,7 @@ export default function SectionHeader({
 }) {
   return (
     <div className="page-heading" data-reveal>
-      <p className="section-code">DN / INDEX</p>
+      <p className="section-code">DILLON NAGAR / PORTFOLIO</p>
       <h1>{title}</h1>
       {subtitle && <p>{subtitle}</p>}
     </div>

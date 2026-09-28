@@ -16,8 +16,8 @@ export default function ProjectCard({ project }: { project: Project }) {
       </div>
       <p className="project-card-description">{project.description}</p>
       <div className="project-card-stack">
-        {project.stack.map((tech) => (
-          <Badge key={tech}>{tech}</Badge>
+        {(project.themes ?? project.stack).map((theme) => (
+          <Badge key={theme}>{theme}</Badge>
         ))}
       </div>
       <div className="project-card-actions">

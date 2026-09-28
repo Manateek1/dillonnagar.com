@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "Work" },
   { href: "/experience", label: "Experience" },
   { href: "/about", label: "About" },
 ];
@@ -28,7 +29,14 @@ export default function Navbar() {
     <header className="site-header">
       <nav className="site-nav" aria-label="Primary navigation">
         <Link href="/" className="brand-link" data-magnetic>
-          <span className="brand-mark" aria-hidden="true">DN</span>
+          <Image
+            className="brand-mark"
+            src="/favicon.ico"
+            alt=""
+            width={30}
+            height={30}
+            unoptimized
+          />
           <span>Dillon Nagar</span>
         </Link>
 
@@ -47,7 +55,7 @@ export default function Navbar() {
         </div>
 
         <div className="nav-actions">
-          <button type="button" className="command-trigger" onClick={openCommand} aria-label="Open command palette" data-magnetic>
+          <button type="button" className="command-trigger" onClick={openCommand} aria-label="Open site index" data-magnetic>
             <span>⌘K</span>
           </button>
           <Link href="/contact" className="nav-contact" data-magnetic>
@@ -87,7 +95,7 @@ export default function Navbar() {
               <span>{link.label}</span><ArrowIcon />
             </Link>
           ))}
-          <button type="button" onClick={openCommand}><span>Command palette</span><kbd>⌘K</kbd></button>
+          <button type="button" onClick={openCommand}><span>Site index</span><kbd>⌘K</kbd></button>
         </div>
       )}
     </header>

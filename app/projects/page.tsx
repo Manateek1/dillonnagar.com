@@ -3,7 +3,7 @@ import ProjectCard from "@/components/projects/ProjectCard";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata = {
-  title: "Projects",
+  title: "Work",
 };
 
 export default function ProjectsPage() {
@@ -14,12 +14,12 @@ export default function ProjectsPage() {
   return (
     <div className="page-shell projects-page">
       <SectionHeader
-        title="Projects"
-        subtitle="Software I've built — from live SaaS platforms to games, AI tools, and research."
+        title="Work"
+        subtitle="Market research, financial tools, and other projects I've built."
       />
 
       <section className="project-group" data-reveal>
-        <div className="project-group-heading"><span>01</span><h2>Featured systems</h2><i /></div>
+        <div className="project-group-heading"><span>01</span><h2>Featured research &amp; tools</h2><i /></div>
         <div className="project-index-grid">
           {featured.map((project) => <ProjectCard key={project.slug} project={project} />)}
         </div>
