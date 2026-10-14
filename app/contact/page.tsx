@@ -1,5 +1,6 @@
 import SectionHeader from "@/components/ui/SectionHeader";
 import ArrowIcon from "@/components/ui/ArrowIcon";
+import { contactPhoneLinkHtml } from "@/data/contact";
 
 export const metadata = { title: "Contact" };
 
@@ -13,6 +14,7 @@ export default function ContactPage() {
         <a href="mailto:dillon.nagar@gmail.com" className="contact-page-email" data-magnetic>
           dillon.nagar@gmail.com <ArrowIcon direction="up-right" />
         </a>
+        <div className="mb-5" dangerouslySetInnerHTML={{ __html: contactPhoneLinkHtml }} />
         <div>
           <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer" data-magnetic>
             LinkedIn <ArrowIcon direction="up-right" />
