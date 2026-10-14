@@ -6,7 +6,7 @@ import { normalizeAnswer, panelClass } from "./study-utils";
 
 export default function StudyGuide() {
   const [query, setQuery] = useState("");
-  const filtered = studyPlaces.filter((place) => normalizeAnswer([place.spanish, place.english, place.group, ...(place.nationality ?? [])].join(" ")).includes(normalizeAnswer(query)));
+  const filtered = studyPlaces.filter((place) => normalizeAnswer([place.spanish, place.english, place.group, place.nationality?.[0] ?? ""].join(" ")).includes(normalizeAnswer(query)));
   const groups = [...new Set(filtered.map((place) => place.group))];
 
   return <div className="space-y-6">
@@ -23,7 +23,7 @@ export default function StudyGuide() {
       <h3 className="border-b border-white/10 px-5 py-4 text-lg font-semibold">{group}</h3>
       <div className="divide-y divide-white/10">{filtered.filter((place) => place.group === group).map((place) => <div key={place.id} className="grid gap-2 px-5 py-5 sm:grid-cols-[minmax(150px,0.7fr)_minmax(150px,0.8fr)_minmax(0,1.7fr)] sm:gap-5">
         <div><p className="font-medium" lang="es">{place.spanish}</p><p className="mt-1 text-xs text-white/50">{place.english}</p></div>
-        <div>{place.nationality ? <><p className="text-xs text-white/40">MASCULINE / FEMININE</p><p className="mt-1 text-sm text-blue-200" lang="es">{place.nationality.join(" / ")}</p></> : <p className="text-xs text-white/45">{place.topic === "water" ? "Know the Spanish name and location." : "Locate this place on the map."}</p>}</div>
+        <div>{place.nationality ? <><p className="text-xs text-white/40">MASCULINE NATIONALITY</p><p className="mt-1 text-sm text-blue-200" lang="es">{place.nationality[0]}</p></> : <p className="text-xs text-white/45">{place.topic === "water" ? "Know the Spanish name and location." : "Locate this place on the map."}</p>}</div>
         <div><p className="text-sm leading-relaxed text-white/65">{place.clue}</p>{place.note && <p className="mt-2 text-xs leading-relaxed text-white/45">{place.note}</p>}</div>
       </div>)}</div>
     </section>)}

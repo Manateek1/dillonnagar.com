@@ -110,7 +110,7 @@ export default function MapGame({ progress, onAttempt }: Props) {
         <h2 className="mt-3 text-3xl font-semibold tracking-tight" lang="es">{shown.spanish}</h2>
         <p className="mt-2 text-sm text-white/55">{shown.english} · {shown.group}</p>
         <p className="mt-5 text-sm leading-relaxed text-white/75">{shown.clue}</p>
-        {shown.nationality && <div className="mt-5 border-t border-white/10 pt-4"><p className="text-xs text-white/50">NATIONALITY · MASCULINE / FEMININE</p><p className="mt-2 text-lg" lang="es">{shown.nationality.join(" / ")}</p></div>}
+        {shown.nationality && <div className="mt-5 border-t border-white/10 pt-4"><p className="text-xs text-white/50">NATIONALITY · MASCULINE</p><p className="mt-2 text-lg" lang="es">{shown.nationality[0]}</p></div>}
         {shown.note && <p className="mt-4 text-sm leading-relaxed text-blue-300">{shown.note}</p>}
         <label className="mt-6 block text-xs text-white/55">Jump to a place
           <select aria-label="Explore a place" value={selected.id} onChange={(event) => { const place = placeById.get(event.target.value); if (place) { setSelected(place); setView(place.region); } }} className="mt-2 min-h-11 w-full rounded-lg border border-white/15 bg-[#161616] px-3 text-sm text-white">
@@ -133,7 +133,7 @@ export default function MapGame({ progress, onAttempt }: Props) {
         {feedback ? <div className="mt-5" role="status" aria-live="polite">
           <p className={`font-medium ${feedback.status === "correct" ? "text-green-300" : feedback.status === "assisted" ? "text-blue-300" : "text-amber-300"}`}>{feedback.status === "correct" ? "Correct." : feedback.status === "assisted" ? "Correct with a hint." : feedback.chosen ? `You chose ${feedback.chosenName}.` : "Skipped. Added to your review."}</p>
           <p className="mt-2 text-sm leading-relaxed text-white/70">{feedback.status !== "correct" && <><span lang="es">{current.spanish}</span> is highlighted in green. </>}{current.clue}</p>
-          {current.nationality && <p className="mt-3 text-sm text-white/60" lang="es">{current.nationality.join(" / ")}</p>}
+          {current.nationality && <p className="mt-3 text-sm text-white/60" lang="es">{current.nationality[0]}</p>}
           <button type="button" onClick={nextQuestion} className={`${primaryButtonClass} mt-5 w-full`}>{index === deck.length - 1 ? "See results" : "Next place"}</button>
         </div> : <div className="mt-6 flex gap-3">
           <button type="button" disabled={hint} onClick={() => setHint(true)} className={primaryButtonClass}>Show hint</button>
