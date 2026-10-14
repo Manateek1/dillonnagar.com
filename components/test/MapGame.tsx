@@ -60,6 +60,16 @@ export default function MapGame({ progress, onAttempt }: Props) {
     if (next) setView(next.region);
   }
 
+  function beginPractice() {
+    setExplore(false);
+    if (current) setView(current.region);
+  }
+
+  function beginExplore() {
+    setExplore(true);
+    setView(selected.region);
+  }
+
   const shown = explore ? selected : current;
 
   return <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[minmax(0,1fr)_365px]">
@@ -79,8 +89,8 @@ export default function MapGame({ progress, onAttempt }: Props) {
           </select>
         </label>
         <div className="inline-flex rounded-lg border border-white/10 p-1" role="group" aria-label="Map mode">
-          <button type="button" aria-pressed={explore} onClick={() => setExplore(true)} className={`${buttonClass} border-transparent px-3 ${explore ? "bg-blue-500 text-white! hover:bg-blue-600" : "text-white/60!"}`}>Explore</button>
-          <button type="button" aria-pressed={!explore} onClick={() => setExplore(false)} className={`${buttonClass} border-transparent px-3 ${!explore ? "bg-blue-500 text-white! hover:bg-blue-600" : "text-white/60!"}`}>Practice</button>
+          <button type="button" aria-pressed={explore} onClick={beginExplore} className={`${buttonClass} border-transparent px-3 ${explore ? "bg-blue-500 text-white! hover:bg-blue-600" : "text-white/60!"}`}>Explore</button>
+          <button type="button" aria-pressed={!explore} onClick={beginPractice} className={`${buttonClass} border-transparent px-3 ${!explore ? "bg-blue-500 text-white! hover:bg-blue-600" : "text-white/60!"}`}>Practice</button>
         </div>
       </div>
       <div className="px-3 pt-3 sm:px-5">
@@ -107,7 +117,7 @@ export default function MapGame({ progress, onAttempt }: Props) {
             {studyPlaces.map((place) => <option key={place.id} value={place.id}>{place.spanish}</option>)}
           </select>
         </label>
-        <button type="button" onClick={() => setExplore(false)} className={`${primaryButtonClass} mt-5 w-full`}>Back to practice</button>
+        <button type="button" onClick={beginPractice} className={`${primaryButtonClass} mt-5 w-full`}>Back to practice</button>
       </> : complete ? <div aria-live="polite">
         <p className="text-xs tracking-wider text-white/60">ROUND COMPLETE</p>
         <h2 className="mt-3 text-3xl font-semibold">{scores.correct} / {deck.length}</h2>
