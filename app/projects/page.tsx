@@ -3,7 +3,7 @@ import ProjectCard from "@/components/projects/ProjectCard";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export const metadata = {
-  title: "Work",
+  title: "Projects",
 };
 
 export default function ProjectsPage() {
@@ -14,7 +14,7 @@ export default function ProjectsPage() {
   return (
     <div className="page-shell projects-page">
       <SectionHeader
-        title="Work"
+        title="Projects"
         subtitle="Market research, financial tools, and other projects I've built."
       />
 

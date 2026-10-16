@@ -57,7 +57,7 @@ export default function CommandPalette({
     () => [
       { id: "home", group: "Navigation", label: "Home", meta: "01", run: () => navigate("/") },
       { id: "research", group: "Navigation", label: "Research", meta: "02", run: () => navigate("/#research") },
-      { id: "projects", group: "Navigation", label: "Work", meta: "03", run: () => navigate("/projects") },
+      { id: "projects", group: "Navigation", label: "Projects", meta: "03", run: () => navigate("/projects") },
       { id: "experience", group: "Navigation", label: "Experience", meta: "04", run: () => navigate("/experience") },
       { id: "about", group: "Navigation", label: "About", meta: "05", run: () => navigate("/about") },
       { id: "contact", group: "Navigation", label: "Contact", meta: "06", run: () => navigate("/contact") },

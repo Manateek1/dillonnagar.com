@@ -8,7 +8,7 @@ import ArrowIcon from "@/components/ui/ArrowIcon";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/projects", label: "Work" },
+  { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
   { href: "/about", label: "About" },
 ];

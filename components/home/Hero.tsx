@@ -23,7 +23,7 @@ export default function Hero() {
               <span>See the Research</span><ArrowIcon />
             </Link>
             <Link href="/projects" className="signal-button" data-magnetic>
-              <span>Explore My Work</span><ArrowIcon />
+              <span>Explore My Projects</span><ArrowIcon />
             </Link>
           </div>
         </div>

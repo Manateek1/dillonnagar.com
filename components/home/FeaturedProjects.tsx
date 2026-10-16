@@ -14,10 +14,10 @@ export default function FeaturedProjects() {
       <div className="section-heading-row">
         <div>
           <p className="section-code">RESEARCH / 02</p>
-          <h2>Research &amp; Selected Work</h2>
+          <h2>Research &amp; Selected Projects</h2>
         </div>
         <Link href="/projects" className="text-link" data-magnetic>
-          All work <ArrowIcon />
+          All projects <ArrowIcon />
         </Link>
       </div>
       <div className="research-highlights" aria-label="Independent research">
