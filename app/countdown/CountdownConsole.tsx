@@ -823,7 +823,7 @@ export default function CountdownConsole() {
 
           <p className="mt-4 flex gap-2 text-xs leading-5 text-white/45">
             <span aria-hidden="true" className="font-mono text-blue-300">NOTE:</span>
-            Browsers need this page to stay open and sound to be armed. Your device's
+            Browsers need this page to stay open and sound to be armed. Your device&apos;s
             mute switch and volume still have final say.
           </p>
           <p className="mt-3 border-t border-white/10 pt-3 font-mono text-[0.6rem] leading-5 text-white/55" aria-live="polite">
@@ -877,7 +877,7 @@ export default function CountdownConsole() {
       </section>
 
       <footer className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-4 font-mono text-[0.58rem] uppercase tracking-[0.12em] text-white/35">
-        <span>GREETME · MOSS'S MORALE DESK · PACIFIC TIME AUTO-ADJUSTS FOR DST</span>
+        <span>GREETME · MOSS&apos;S MORALE DESK · PACIFIC TIME AUTO-ADJUSTS FOR DST</span>
         <span>It will be 8 PM eventually.</span>
       </footer>
     </div>
