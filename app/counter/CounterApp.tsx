@@ -21,10 +21,6 @@ type ClickSound = {
   duration: number;
 };
 
-type WindowWithWebkitAudio = Window & {
-  webkitAudioContext?: typeof AudioContext;
-};
-
 export default function CounterApp() {
   const [count, setCount] = useState(0);
   const [celebrating, setCelebrating] = useState(false);
@@ -58,7 +54,9 @@ export default function CounterApp() {
       return null;
     }
 
-    const win = window as WindowWithWebkitAudio;
+    const win = window as typeof window & {
+      webkitAudioContext?: typeof AudioContext;
+    };
     const AudioContextClass = win.AudioContext || win.webkitAudioContext;
 
     if (!AudioContextClass) {
@@ -71,7 +69,7 @@ export default function CounterApp() {
 
     const audioContext = audioContextRef.current;
 
-    if (audioContext.state === "suspended") {
+    if (audioContext && audioContext.state === "suspended") {
       void audioContext.resume();
     }
 
