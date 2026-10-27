@@ -80,3 +80,4 @@ npm run lint    # ESLint
 - Push to `main` triggers Vercel deploy automatically
 - Keep commits scoped (one feature/fix per commit)
 - Never commit `.env*` files or secrets
+- If Dillon explicitly asks me to merge a pull request, treat that as authorization to merge the identified PR once its required checks and reviews pass and repository rules allow it. This does not authorize self-approval or bypassing required checks, reviews, or branch protections.
