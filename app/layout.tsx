@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-import ExperienceShell from "@/components/effects/ExperienceShell";
+import RevealOnScroll from "@/components/effects/RevealOnScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,14 +31,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <div className="site-grid" aria-hidden="true" />
-        <div className="site-noise" aria-hidden="true" />
-        <ExperienceShell />
+        <a className="skip-link" href="#main-content">Skip to content</a>
+        <RevealOnScroll />
         <Navbar />
-        <main className="site-main flex-1">{children}</main>
+        <main id="main-content" tabIndex={-1} className="site-main flex-1">{children}</main>
         <Footer />
         <Analytics />
       </body>

@@ -1,42 +1,36 @@
 import Link from "next/link";
-import { Project } from "@/data/projects";
-import Badge from "@/components/ui/Badge";
 import ArrowIcon from "@/components/ui/ArrowIcon";
+import { Project } from "@/data/projects";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const topics = (project.themes ?? project.stack).slice(0, 3).join(" · ");
+
   return (
-    <article className="project-index-card" data-tilt data-reveal>
-      <div className="tilt-surface">
-      <div className="project-card-heading">
-        <div>
-          <h3>{project.name}</h3>
-          <p>{project.role.split("—")[0].trim()}</p>
-        </div>
-        <span className={`status-signal status-${project.status}`}><i />{project.status}</span>
+    <article className="project-list-item" data-reveal>
+      <span className="project-row-index">{String(index).padStart(2, "0")}</span>
+      <div className="project-row-title">
+        <p className="project-type">{topics || "Software"}</p>
+        <h3>{project.name}</h3>
+        <p>{project.tagline}</p>
+        <span className="status-signal">{project.status.replace(/-/g, " ")}</span>
       </div>
-      <p className="project-card-description">{project.description}</p>
-      <div className="project-card-stack">
-        {(project.themes ?? project.stack).map((theme) => (
-          <Badge key={theme}>{theme}</Badge>
-        ))}
-      </div>
-      <div className="project-card-actions">
-        {project.caseStudy && (
-          <Link href={project.caseStudy} data-magnetic>
-            Case Study <ArrowIcon />
+      <p className="project-row-description">{project.description}</p>
+      <div className="project-row-links">
+        {project.caseStudy ? (
+          <Link href={project.caseStudy}>
+            Case study <ArrowIcon size={15} />
           </Link>
-        )}
-        {project.liveUrl && (
-          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
-            Live site <ArrowIcon direction="up-right" />
+        ) : null}
+        {project.liveUrl ? (
+          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+            Live site <ArrowIcon direction="up-right" size={15} />
           </a>
-        )}
-        {project.githubUrl && (
-          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
-            GitHub <ArrowIcon direction="up-right" />
+        ) : null}
+        {project.githubUrl ? (
+          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+            GitHub <ArrowIcon direction="up-right" size={15} />
           </a>
-        )}
-      </div>
+        ) : null}
       </div>
     </article>
   );
