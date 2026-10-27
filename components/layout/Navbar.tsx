@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 
 const navLinks = [
@@ -17,12 +17,21 @@ const mobileNavLinks = [...navLinks, { href: "/contact", label: "Contact" }];
 export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const isActive = (href: string) =>
     pathname === href || (href === "/projects" && pathname.startsWith("/projects/"));
 
   return (
-    <header className="site-header">
+    <header
+      className="site-header"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && menuOpen) {
+          setMenuOpen(false);
+          menuButtonRef.current?.focus();
+        }
+      }}
+    >
       <nav className="site-nav" aria-label="Primary navigation">
         <Link href="/" className="brand-link" aria-label="Dillon Nagar home">
           Dillon Nagar
@@ -46,6 +55,7 @@ export default function Navbar() {
             Contact <ArrowIcon direction="up-right" size={16} />
           </Link>
           <button
+            ref={menuButtonRef}
             type="button"
             className="mobile-menu-trigger"
             onClick={() => setMenuOpen((open) => !open)}
@@ -70,9 +80,6 @@ export default function Navbar() {
         <div
           className="mobile-nav-panel"
           id="mobile-navigation"
-          onKeyDown={(event) => {
-            if (event.key === "Escape") setMenuOpen(false);
-          }}
         >
           <nav aria-label="Mobile navigation">
             {mobileNavLinks.map((link) => (
