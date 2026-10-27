@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import ArrowIcon from "@/components/ui/ArrowIcon";
@@ -17,27 +16,16 @@ const mobileNavLinks = [...navLinks, { href: "/contact", label: "Contact" }];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [openPath, setOpenPath] = useState<string | null>(null);
-  const menuOpen = openPath === pathname;
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const openCommand = () => {
-    setOpenPath(null);
-    window.dispatchEvent(new CustomEvent("dn:open-command"));
-  };
+  const isActive = (href: string) =>
+    pathname === href || (href === "/projects" && pathname.startsWith("/projects/"));
 
   return (
     <header className="site-header">
       <nav className="site-nav" aria-label="Primary navigation">
-        <Link href="/" className="brand-link" data-magnetic>
-          <Image
-            className="brand-mark"
-            src="/favicon.ico"
-            alt=""
-            width={30}
-            height={30}
-            unoptimized
-          />
-          <span>Dillon Nagar</span>
+        <Link href="/" className="brand-link" aria-label="Dillon Nagar home">
+          Dillon Nagar
         </Link>
 
         <div className="desktop-nav-links">
@@ -45,59 +33,63 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={pathname === link.href ? "is-active" : ""}
-              data-magnetic
+              className={isActive(link.href) ? "is-active" : ""}
+              aria-current={isActive(link.href) ? "page" : undefined}
             >
-              <i aria-hidden="true" />
               {link.label}
             </Link>
           ))}
         </div>
 
         <div className="nav-actions">
-          <button type="button" className="command-trigger" onClick={openCommand} aria-label="Open site index" data-magnetic>
-            <span>⌘K</span>
-          </button>
-          <Link href="/contact" className="nav-contact" data-magnetic>
-            Contact <ArrowIcon />
+          <Link href="/contact" className="nav-contact">
+            Contact <ArrowIcon direction="up-right" size={16} />
           </Link>
+          <button
+            type="button"
+            className="mobile-menu-trigger"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+          >
+            {menuOpen ? (
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+                <path d="m6 6 12 12M18 6 6 18" />
+              </svg>
+            ) : (
+              <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            )}
+          </button>
         </div>
-
-        <button
-          type="button"
-          className="mobile-menu-trigger"
-          onClick={() => setOpenPath(menuOpen ? null : pathname)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M3 12h18M3 6h18M3 18h18" />
-            </svg>
-          )}
-        </button>
       </nav>
 
-      {menuOpen && (
-        <div className="mobile-nav-panel">
-          <p>Navigate /</p>
-          {mobileNavLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={pathname === link.href ? "is-active" : ""}
-              onClick={() => setOpenPath(null)}
-            >
-              <span>{link.label}</span><ArrowIcon />
-            </Link>
-          ))}
-          <button type="button" onClick={openCommand}><span>Site index</span><kbd>⌘K</kbd></button>
+      {menuOpen ? (
+        <div
+          className="mobile-nav-panel"
+          id="mobile-navigation"
+          onKeyDown={(event) => {
+            if (event.key === "Escape") setMenuOpen(false);
+          }}
+        >
+          <nav aria-label="Mobile navigation">
+            {mobileNavLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={isActive(link.href) ? "is-active" : ""}
+                aria-current={isActive(link.href) ? "page" : undefined}
+                onClick={() => setMenuOpen(false)}
+              >
+                <span>{link.label}</span>
+                <ArrowIcon direction="up-right" size={16} />
+              </Link>
+            ))}
+          </nav>
         </div>
-      )}
+      ) : null}
     </header>
   );
 }

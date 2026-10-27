@@ -9,22 +9,22 @@ export default function Home() {
       <Hero />
       <FeaturedProjects />
       <ExperienceSnapshot />
-      <section className="contact-band" data-reveal>
-        <div className="contact-orbit" aria-hidden="true"><i /><i /><i /></div>
+      <section className="contact-band" id="contact" data-reveal>
         <div>
-          <p className="section-code">CONTACT / 04</p>
-          <h2>Let&apos;s explore<br />a question together.</h2>
+          <p className="section-code">Contact</p>
+          <h2>Let&apos;s connect.</h2>
+          <p>For questions about my research, projects, or experience, reach out.</p>
         </div>
         <div className="contact-actions">
-          <a href="mailto:dillon.nagar@gmail.com" className="contact-email" data-magnetic>
-            dillon.nagar@gmail.com
+          <a className="contact-email" href="mailto:dillon.nagar@gmail.com">
+            dillon.nagar@gmail.com <ArrowIcon direction="up-right" size={18} />
           </a>
-          <div>
-            <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer" data-magnetic>
-              LinkedIn <ArrowIcon direction="up-right" />
+          <div className="contact-social-links">
+            <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer">
+              LinkedIn <ArrowIcon direction="up-right" size={15} />
             </a>
-            <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer" data-magnetic>
-              GitHub <ArrowIcon direction="up-right" />
+            <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer">
+              GitHub <ArrowIcon direction="up-right" size={15} />
             </a>
           </div>
         </div>

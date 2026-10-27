@@ -612,7 +612,7 @@ export default function CountdownConsole() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-5 pb-16 pt-10 sm:px-8 sm:pt-16">
+    <div className="countdown-page mx-auto w-full max-w-6xl px-5 pb-16 pt-10 sm:px-8 sm:pt-16">
       <header className="border-b border-white/10 pb-8 sm:pb-10">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-blue-300">

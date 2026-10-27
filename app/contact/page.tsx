@@ -10,22 +10,19 @@ export default function ContactPage() {
       <SectionHeader title="Contact" subtitle="Get in touch." />
 
       <div className="contact-page-surface" data-reveal>
-        <p>CONTACT / 01</p>
-        <a href="mailto:dillon.nagar@gmail.com" className="contact-page-email" data-magnetic>
-          dillon.nagar@gmail.com <ArrowIcon direction="up-right" />
+        <p className="section-code">Contact details</p>
+        <a href="mailto:dillon.nagar@gmail.com" className="contact-page-email">
+          dillon.nagar@gmail.com <ArrowIcon direction="up-right" size={19} />
         </a>
-        <div className="mb-5" dangerouslySetInnerHTML={{ __html: contactPhoneLinkHtml }} />
-        <div>
-          <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer" data-magnetic>
-            LinkedIn <ArrowIcon direction="up-right" />
+        <div className="contact-phone" dangerouslySetInnerHTML={{ __html: contactPhoneLinkHtml }} />
+        <div className="contact-social-links">
+          <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer">
+            LinkedIn <ArrowIcon direction="up-right" size={15} />
           </a>
-          <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer" data-magnetic>
-            GitHub <ArrowIcon direction="up-right" />
+          <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer">
+            GitHub <ArrowIcon direction="up-right" size={15} />
           </a>
         </div>
-        <p className="contact-command-hint">
-          Press ⌘K anywhere to navigate.
-        </p>
       </div>
     </div>
   );

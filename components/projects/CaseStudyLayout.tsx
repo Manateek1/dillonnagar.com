@@ -28,38 +28,36 @@ export default function CaseStudyLayout({
 }: CaseStudyProps) {
   return (
     <div className="page-shell case-study-page">
-      <Link href="/projects" className="case-study-back" data-magnetic>
-        <ArrowIcon direction="left" /> All Projects
+      <Link href="/projects" className="case-study-back">
+        <ArrowIcon direction="left" size={15} /> All projects
       </Link>
 
       <header className="case-study-hero" data-reveal>
         <div className="case-study-title-row">
           <div>
-            <p className="section-code">PROJECT FILE / {name.toUpperCase()}</p>
+            <p className="section-code">Project / {name}</p>
             <h1>{name}</h1>
           </div>
-          <span className={`status-signal status-${status}`}><i />{status}</span>
+          <span className="status-signal">{status.replace(/-/g, " ")}</span>
         </div>
         <p className="case-study-tagline">{tagline}</p>
         {stack.length > 0 ? (
-          <div className="case-study-stack">
-            {stack.map((tech) => (
-              <Badge key={tech}>{tech}</Badge>
-            ))}
+          <div className="case-study-stack" aria-label="Technology">
+            {stack.map((tech) => <Badge key={tech}>{tech}</Badge>)}
           </div>
         ) : null}
         {liveUrl || githubUrl ? (
           <div className="case-study-actions">
-            {liveUrl && (
-              <a href={liveUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
-                Live site <ArrowIcon direction="up-right" />
+            {liveUrl ? (
+              <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+                Live site <ArrowIcon direction="up-right" size={15} />
               </a>
-            )}
-            {githubUrl && (
-              <a href={githubUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
-                GitHub <ArrowIcon direction="up-right" />
+            ) : null}
+            {githubUrl ? (
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                GitHub <ArrowIcon direction="up-right" size={15} />
               </a>
-            )}
+            ) : null}
           </div>
         ) : null}
       </header>
@@ -73,11 +71,7 @@ export default function CaseStudyLayout({
             </div>
             {Array.isArray(section.content) ? (
               <ul>
-                {section.content.map((item, i) => (
-                  <li key={i}>
-                    <span aria-hidden="true" />{item}
-                  </li>
-                ))}
+                {section.content.map((item) => <li key={item}>{item}</li>)}
               </ul>
             ) : (
               <p>{section.content}</p>

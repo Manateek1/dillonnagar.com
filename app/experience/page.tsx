@@ -9,13 +9,10 @@ export const metadata = {
 export default function ExperiencePage() {
   return (
     <div className="page-shell experience-page">
-      <SectionHeader
-        title="Experience"
-        subtitle="Finance, research, practical work, and leadership."
-      />
+      <SectionHeader title="Experience" subtitle="Finance, research, practical work, and leadership." />
 
       <section className="experience-track" data-reveal>
-        <div className="experience-track-heading"><span>01</span><h2>Professional</h2><i /></div>
+        <div className="experience-track-heading"><span>01</span><h2>Professional</h2></div>
         <div className="experience-track-items">
           {experience.map((item) => (
             <ExperienceItem key={`${item.org}-${item.title}`} item={item} />
@@ -24,7 +21,7 @@ export default function ExperiencePage() {
       </section>
 
       <section className="experience-track" data-reveal>
-        <div className="experience-track-heading"><span>02</span><h2>Leadership &amp; Community</h2><i /></div>
+        <div className="experience-track-heading"><span>02</span><h2>Leadership &amp; community</h2></div>
         <div className="experience-track-items">
           {leadership.map((item) => (
             <ExperienceItem key={`${item.org}-${item.title}`} item={item} />
