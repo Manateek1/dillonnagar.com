@@ -1,6 +1,7 @@
 import SectionHeader from "@/components/ui/SectionHeader";
 import Link from "next/link";
 import ArrowIcon from "@/components/ui/ArrowIcon";
+import { aboutContent } from "@/data/about";
 
 export const metadata = {
   title: "About",
@@ -9,63 +10,45 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="page-shell about-page">
-      <SectionHeader title="About" subtitle="Markets, data, and practical tools." />
+      <SectionHeader title="About" subtitle={aboutContent.subtitle} />
 
       <div className="about-layout">
         <aside className="about-signal" data-reveal>
-          <span>Focus</span>
-          <p>Markets · Data · Practical tools</p>
+          <span>{aboutContent.asideLabel}</span>
+          <p>{aboutContent.hobbies.join(" · ")}</p>
         </aside>
         <div className="about-story" data-reveal>
-          <p>
-            I&apos;m a student at Acalanes High School in Lafayette, California (expected graduation
-            May 2028). I use data to ask questions about markets and build tools that make financial
-            decisions easier to understand.
-          </p>
-          <p>
-            Through{" "}
-            <a href="https://capitalincode.com" target="_blank" rel="noopener noreferrer" className="inline-signal-link">
-              Capital in Code
-            </a>
-            , I publish independent market research. One study compares historical SPY overnight
-            and regular-session returns. CycleQuant is a Bitcoin paper-trading experiment. I share
-            the methods and limits alongside the results.
-          </p>
-          <p>
-            In Summer 2026 I completed a private wealth management internship at Clarus Wealth
-            Group in Houston, gaining exposure to commercial real estate, estate planning, and
-            retirement planning.
-          </p>
-          <p>
-            Rental-property analysis led me to build{" "}
-            <Link href="/projects/rentmax-ai" className="inline-signal-link">
-              RentMax AI
-            </Link>
-            , a live platform that helps investors compare rent ranges, cash flow, and returns. I
-            built it and manage its ongoing operation.
-          </p>
-          <p>
-            I&apos;ve also built other tools, including{" "}
-            <Link href="/projects/visualcover" className="inline-signal-link">
-              VisualCover
-            </Link>
-            , a privacy curtain for Windows and macOS, and{" "}
-            <Link href="/projects/larpchat-ai" className="inline-signal-link">
-              LarpChat AI
-            </Link>
-            , a live AI chat and image-generation demo in active development.
-          </p>
-          <p>
-            I work with Team Logistics for AcaBots, Acalanes High School&apos;s FIRST Tech Challenge
-            team 24689, supporting partnerships, operations, outreach, and social media while
-            mentoring younger students. I founded Acalanes Data Science Club, a beginner-friendly,
-            project-driven group exploring questions with data, AI, and code. I also founded Voices
-            United, a beginner-friendly English conversation program for young English learners.
-          </p>
-          <p>
-            I&apos;m interested in quantitative finance: asking precise questions, checking them
-            against data, and making the findings useful to other people.
-          </p>
+          {aboutContent.paragraphs.map((paragraph, paragraphIndex) => (
+            <p key={paragraphIndex}>
+              {paragraph.map((segment, segmentIndex) => {
+                const key = `${paragraphIndex}-${segmentIndex}`;
+
+                if (segment.kind === "internal-link") {
+                  return (
+                    <Link key={key} href={segment.href} className="inline-signal-link">
+                      {segment.text}
+                    </Link>
+                  );
+                }
+
+                if (segment.kind === "external-link") {
+                  return (
+                    <a
+                      key={key}
+                      href={segment.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-signal-link"
+                    >
+                      {segment.text}
+                    </a>
+                  );
+                }
+
+                return segment.text;
+              })}
+            </p>
+          ))}
         </div>
       </div>
 
