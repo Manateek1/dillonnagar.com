@@ -9,6 +9,7 @@ export type Project = {
   status: "live" | "prototype" | "in-development" | "in-progress";
   liveUrl?: string;
   githubUrl?: string;
+  releaseUrl?: string;
   featured: boolean;
   image?: string;
   caseStudy?: string;
@@ -56,6 +57,20 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Manateek1/VisualCover",
     featured: true,
     caseStudy: "/projects/visualcover",
+  },
+  {
+    slug: "mac-cleaner",
+    name: "Mac Cleaner",
+    tagline: "A native macOS utility for finding files worth reviewing",
+    description:
+      "A local-first SwiftUI app that scans accessible folders for duplicates, large and older files, recognized caches, app signatures, and startup items. Scans do not change files; people review results before moving anything to Trash. The open-source Apple silicon preview targets macOS Tahoe 26 and later.",
+    role: "Founder and developer",
+    stack: ["SwiftUI", "Swift", "macOS", "GitHub Actions"],
+    themes: ["Native macOS", "Local file review", "Safety and privacy"],
+    status: "prototype",
+    githubUrl: "https://github.com/Manateek1/MacCleaner",
+    releaseUrl: "https://github.com/Manateek1/MacCleaner/releases/tag/v0.5.9-preview.1",
+    featured: false,
   },
   {
     slug: "nexus-forge",

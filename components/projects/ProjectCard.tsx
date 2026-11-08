@@ -21,6 +21,11 @@ export default function ProjectCard({ project, index }: { project: Project; inde
             Case study <ArrowIcon size={15} />
           </Link>
         ) : null}
+        {project.releaseUrl ? (
+          <a href={project.releaseUrl} target="_blank" rel="noopener noreferrer">
+            Download preview <ArrowIcon direction="up-right" size={15} />
+          </a>
+        ) : null}
         {project.liveUrl ? (
           <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
             Live site <ArrowIcon direction="up-right" size={15} />
