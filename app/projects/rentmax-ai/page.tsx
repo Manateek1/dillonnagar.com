@@ -10,7 +10,7 @@ export default function RentMaxAIPage() {
       name="RentMax AI"
       tagline="Rental property analysis platform with AI-driven insights"
       status="live"
-      stack={["React", "Vite", "Supabase", "Stripe", "OpenAI", "Sentry", "Vercel"]}
+      stack={[]}
       liveUrl="https://rentmaxai.com"
       sections={[
         {
@@ -74,9 +74,9 @@ export default function RentMaxAIPage() {
           ],
         },
         {
-          title: "Current Status",
+          title: "Ongoing work",
           content:
-            "Available at rentmaxai.com. Active development — recent work includes Stripe webhook infrastructure, deployment stability, and resolving Sentry-reported stale frontend chunk issues.",
+            "I’m continuing to develop RentMax AI, with recent work focused on Stripe webhook infrastructure, deployment stability, and resolving stale frontend chunk issues reported by Sentry.",
         },
       ]}
     />
