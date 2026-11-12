@@ -8,14 +8,14 @@ export default function LarpChatAIPage() {
   return (
     <CaseStudyLayout
       name="LarpChat AI"
-      tagline="Live AI chat and image-generation demo"
+      tagline="AI chat and image-generation demo"
       status="live"
       stack={[]}
       liveUrl="https://larpchatai.vercel.app"
       sections={[
         {
           title: "What it is",
-          content: "A live AI chat and image-generation demo.",
+          content: "An AI chat and image-generation demo.",
         },
         {
           title: "Role",
@@ -23,7 +23,7 @@ export default function LarpChatAIPage() {
         },
         {
           title: "Current Status",
-          content: "The demo is live and usable, and I continue to develop the product.",
+          content: "The demo is available to try, and I continue to develop the product.",
         },
       ]}
     />

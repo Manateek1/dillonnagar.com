@@ -55,12 +55,12 @@ export default function CommandPalette({
 
   const commands = useMemo<Command[]>(
     () => [
-      { id: "home", group: "Navigation", label: "Home", meta: "01", run: () => navigate("/") },
-      { id: "research", group: "Navigation", label: "Research", meta: "02", run: () => navigate("/#research") },
-      { id: "projects", group: "Navigation", label: "Projects", meta: "03", run: () => navigate("/projects") },
-      { id: "experience", group: "Navigation", label: "Experience", meta: "04", run: () => navigate("/experience") },
-      { id: "about", group: "Navigation", label: "About", meta: "05", run: () => navigate("/about") },
-      { id: "contact", group: "Navigation", label: "Contact", meta: "06", run: () => navigate("/contact") },
+      { id: "home", group: "Navigation", label: "Home", run: () => navigate("/") },
+      { id: "research", group: "Navigation", label: "Research", run: () => navigate("/#research") },
+      { id: "projects", group: "Navigation", label: "Projects", run: () => navigate("/projects") },
+      { id: "experience", group: "Navigation", label: "Experience", run: () => navigate("/experience") },
+      { id: "about", group: "Navigation", label: "About", run: () => navigate("/about") },
+      { id: "contact", group: "Navigation", label: "Contact", run: () => navigate("/contact") },
       { id: "email", group: "Actions", label: "Email Dillon", meta: "↗", run: () => { window.location.href = "mailto:dillon.nagar@gmail.com"; onClose(); } },
       { id: "github", group: "Actions", label: "Open GitHub", meta: "↗", run: () => { window.open(externalLinks.github, "_blank", "noopener,noreferrer"); onClose(); } },
       { id: "linkedin", group: "Actions", label: "Open LinkedIn", meta: "↗", run: () => { window.open(externalLinks.linkedin, "_blank", "noopener,noreferrer"); onClose(); } },

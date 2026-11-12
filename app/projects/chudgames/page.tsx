@@ -63,7 +63,7 @@ export default function ChudGamesPage() {
         {
           title: "Current Status",
           content:
-            "Live at chudgames.vercel.app. No server required — fully static, deployed on Vercel.",
+            "Available at chudgames.vercel.app. No server required — fully static, deployed on Vercel.",
         },
       ]}
     />

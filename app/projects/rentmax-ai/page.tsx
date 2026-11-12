@@ -21,7 +21,7 @@ export default function RentMaxAIPage() {
         {
           title: "Solution",
           content:
-            "RentMax AI is a live SaaS platform that makes rental property analysis clear and accessible. Users input a property address and parameters to get rent estimates (low, mid, high), expense breakdowns, mortgage calculations, net operating income, cap rate, and cash-on-cash return — with AI-generated explanations of the numbers.",
+            "RentMax AI is an online platform that makes rental property analysis clear and accessible. Users input a property address and parameters to get rent estimates (low, mid, high), expense breakdowns, mortgage calculations, net operating income, cap rate, and cash-on-cash return — with AI-generated explanations of the numbers.",
         },
         {
           title: "Role",
@@ -76,7 +76,7 @@ export default function RentMaxAIPage() {
         {
           title: "Current Status",
           content:
-            "Live at rentmaxai.com. Active development — recent work includes Stripe webhook infrastructure, deployment stability, and resolving Sentry-reported stale frontend chunk issues.",
+            "Available at rentmaxai.com. Active development — recent work includes Stripe webhook infrastructure, deployment stability, and resolving Sentry-reported stale frontend chunk issues.",
         },
       ]}
     />

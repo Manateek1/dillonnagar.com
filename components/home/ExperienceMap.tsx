@@ -42,11 +42,10 @@ export default function ExperienceMap() {
 
   return (
     <section className="experience-map-section signal-section" id="experience" data-reveal>
-      <div className="section-rail" aria-hidden="true"><span>03</span><i /></div>
+      <div className="section-rail" aria-hidden="true"><i /></div>
       <div className="section-topline" aria-hidden="true" />
       <div className="section-heading-row">
         <div>
-          <p className="section-code">EXPERIENCE / 03</p>
           <h2>Experience</h2>
         </div>
         <Link href="/experience" className="text-link" data-magnetic>

@@ -8,35 +8,34 @@ export const metadata = {
 
 export default function ProjectsPage() {
   const featured = projects.filter((project) => project.featured);
-  const live = projects.filter((project) => !project.featured && project.status === "live");
+  const onlineProjects = projects.filter((project) => !project.featured && project.status === "live");
   const other = projects.filter((project) => project.status === "prototype" || project.status === "in-development" || project.status === "in-progress");
-  const projectNumber = (slug: string) => projects.findIndex((project) => project.slug === slug) + 1;
 
   return (
     <div className="page-shell projects-page">
       <SectionHeader title="Projects" subtitle="Market research, financial tools, and other projects I've built." />
 
       <section className="project-group" data-reveal>
-        <div className="project-group-heading"><span>01</span><h2>Featured research &amp; tools</h2></div>
+        <div className="project-group-heading"><h2>Featured research &amp; tools</h2></div>
         <div className="project-index-grid">
-          {featured.map((project) => <ProjectCard key={project.slug} project={project} index={projectNumber(project.slug)} />)}
+          {featured.map((project) => <ProjectCard key={project.slug} project={project} />)}
         </div>
       </section>
 
-      {live.length > 0 ? (
+      {onlineProjects.length > 0 ? (
         <section className="project-group" data-reveal>
-          <div className="project-group-heading"><span>02</span><h2>Also live</h2></div>
+          <div className="project-group-heading"><h2>More online projects</h2></div>
           <div className="project-index-grid">
-            {live.map((project) => <ProjectCard key={project.slug} project={project} index={projectNumber(project.slug)} />)}
+            {onlineProjects.map((project) => <ProjectCard key={project.slug} project={project} />)}
           </div>
         </section>
       ) : null}
 
       {other.length > 0 ? (
         <section className="project-group" data-reveal>
-          <div className="project-group-heading"><span>03</span><h2>In progress &amp; prototypes</h2></div>
+          <div className="project-group-heading"><h2>In progress &amp; prototypes</h2></div>
           <div className="project-index-grid">
-            {other.map((project) => <ProjectCard key={project.slug} project={project} index={projectNumber(project.slug)} />)}
+            {other.map((project) => <ProjectCard key={project.slug} project={project} />)}
           </div>
         </section>
       ) : null}

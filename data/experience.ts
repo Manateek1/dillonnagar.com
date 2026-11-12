@@ -27,7 +27,7 @@ export const experience: ExperienceItem[] = [
     period: "2024 – Present",
     type: "professional",
     bullets: [
-      "Founded and operate a live rental-property analysis platform for landlords and investors",
+      "Founded and operate an online rental-property analysis platform for landlords and investors",
       "Built tools for rent estimation, cash flow, cap rates, and cash-on-cash returns, with explanatory reports",
       "Built the platform independently and manage subscriptions, user accounts, and reliability",
     ],

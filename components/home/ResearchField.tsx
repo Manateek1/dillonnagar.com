@@ -30,14 +30,13 @@ export default function ResearchField() {
               onFocus={() => setActiveIndex(index)}
               onClick={() => setActiveIndex(index)}
             >
-              <span>{String(index + 1).padStart(2, "0")}</span>
               <strong>{topic.label}</strong>
             </button>
           ))}
         </div>
 
         <div className="research-readout" aria-live="polite">
-          <p>{activeTopic.code} / QUESTION {String(activeIndex + 1).padStart(2, "0")}</p>
+          <p>{activeTopic.code}</p>
           <h2>{activeTopic.question}</h2>
           <span>{activeTopic.context}</span>
           <a href={activeTopic.href} target="_blank" rel="noopener noreferrer" data-magnetic>
@@ -45,7 +44,7 @@ export default function ResearchField() {
           </a>
         </div>
 
-        <p className="research-axis-label">Illustrative field. No live prices.</p>
+        <p className="research-axis-label">Illustrative field. No market data.</p>
       </div>
     </div>
   );
