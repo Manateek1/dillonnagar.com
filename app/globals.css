@@ -334,6 +334,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .contact-social-links { display: flex; flex-wrap: wrap; gap: 1.2rem; }
 .contact-social-links a { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--muted-on-dark); font-size: 0.78rem; transition: color 160ms ease; }
 .contact-social-links a:hover { color: #fff; }
+.social-icons { display: flex; align-items: center; gap: 0.55rem; }
+.social-icons a { display: inline-flex; min-width: 1.75rem; min-height: 1.75rem; align-items: center; justify-content: center; color: inherit; }
+.social-icons svg { display: block; }
 .site-footer { background: var(--background); }
 .footer-inner {
   display: grid;

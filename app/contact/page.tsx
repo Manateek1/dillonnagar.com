@@ -1,6 +1,7 @@
 import SectionHeader from "@/components/ui/SectionHeader";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import { contactPhoneLinkHtml } from "@/data/contact";
+import SocialLinks from "@/components/layout/SocialLinks";
 
 export const metadata = { title: "Contact" };
 
@@ -16,9 +17,7 @@ export default function ContactPage() {
         </a>
         <div className="contact-phone" dangerouslySetInnerHTML={{ __html: contactPhoneLinkHtml }} />
         <div className="contact-social-links">
-          <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer">
-            LinkedIn <ArrowIcon direction="up-right" size={15} />
-          </a>
+          <SocialLinks />
           <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer">
             GitHub <ArrowIcon direction="up-right" size={15} />
           </a>
