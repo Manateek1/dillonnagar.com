@@ -11,7 +11,7 @@ export default function StudyGuide() {
 
   return <div className="space-y-6">
     <div className={`${panelClass} flex flex-col justify-between gap-5 p-5 sm:flex-row sm:items-center sm:p-6`}>
-      <div><h2 className="text-2xl font-semibold tracking-tight">Your quiz checklist.</h2><p className="mt-2 text-sm leading-relaxed text-white/60">21 Spanish-speaking places · 11 nearby places, including the U.S. and Miami · 5 bodies of water</p></div>
+      <div><h2 className="text-2xl font-semibold">Your quiz checklist.</h2><p className="mt-2 text-sm leading-relaxed text-white/60">21 Spanish-speaking places · 11 nearby places, including the U.S. and Miami · 5 bodies of water</p></div>
       <label className="shrink-0 text-xs text-white/60">Find a name or nationality<input type="search" aria-label="Search study guide" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Try Perú or costarricense" className="mt-2 block min-h-11 w-full rounded-lg border border-white/15 bg-white/5 px-3 text-sm text-white placeholder:text-white/35 sm:w-64" /></label>
     </div>
     {!query && <div className="grid gap-5 border-y border-white/10 py-6 md:grid-cols-3">

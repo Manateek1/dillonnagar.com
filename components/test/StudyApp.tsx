@@ -24,7 +24,7 @@ export default function StudyApp() {
 
   return <div className="relative bg-[#0a0a0a] text-[#ededed]">
     <div className="mx-auto w-full max-w-[1480px] px-5 pb-16 pt-9 sm:px-8 lg:px-12">
-      <header><h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl" lang="es">El mapa</h1><p className="mt-2 text-base text-white/60 sm:text-lg">Spanish 4 · Geography practice</p></header>
+      <header><h1 className="text-4xl font-semibold leading-tight sm:text-5xl" lang="es">El mapa</h1><p className="mt-2 text-base text-white/60 sm:text-lg">Spanish 4 · Geography practice</p></header>
       <div className="mt-6 flex gap-1 overflow-x-auto border-b border-white/15 sm:gap-5" role="tablist" aria-label="Study activities">{tabs.map((tab) => <button key={tab.id} id={`study-tab-${tab.id}`} type="button" role="tab" aria-selected={active === tab.id} aria-controls={`study-panel-${tab.id}`} tabIndex={active === tab.id ? 0 : -1} onClick={() => setActive(tab.id)} onKeyDown={(event) => {
         if (["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) {
           event.preventDefault();

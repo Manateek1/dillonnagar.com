@@ -107,7 +107,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   color: var(--surface);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.18rem;
-  letter-spacing: -0.035em;
 }
 .desktop-nav-links { display: flex; align-items: center; gap: clamp(1.25rem, 3vw, 2.8rem); }
 .desktop-nav-links a {
@@ -177,7 +176,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   color: #fbfaf6;
   font-size: clamp(3.8rem, 7.4vw, 6.9rem);
   font-weight: 560;
-  letter-spacing: -0.075em;
   line-height: 0.98;
 }
 .hero-description {
@@ -252,7 +250,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2rem, 3.7vw, 3.2rem);
   font-weight: 400;
-  letter-spacing: -0.04em;
   line-height: 1.08;
 }
 .text-link {
@@ -287,7 +284,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.45rem, 2.35vw, 2rem);
   font-weight: 400;
-  letter-spacing: -0.025em;
 }
 .project-type { margin: 0.55rem 0 0; color: var(--muted); font-size: 0.64rem; font-weight: 600; letter-spacing: 0.14em; line-height: 1.5; text-transform: uppercase; }
 .featured-project-description { min-height: 3.2rem; margin: 1rem 0 1.2rem; color: #4e5963; font-size: 0.86rem; line-height: 1.6; }
@@ -324,7 +320,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.2rem, 4.5vw, 3.8rem);
   font-weight: 400;
-  letter-spacing: -0.04em;
 }
 .contact-band > div > p:last-child { margin: 0.7rem 0 0; color: var(--muted-on-dark); font-size: 0.84rem; line-height: 1.6; }
 .contact-band .section-code { color: #d1c49d; }
@@ -359,13 +354,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(3.1rem, 6vw, 5.2rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
   line-height: 1;
 }
 .page-heading > p:last-child:not(.section-code) { max-width: 44rem; margin: 0.9rem 0 0; color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
 .project-group { margin-top: 3.5rem; }
 .project-group-heading { margin-bottom: 0.8rem; }
-.project-group-heading h2 { margin: 0; color: var(--foreground); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.65rem, 2.5vw, 2.25rem); font-weight: 400; letter-spacing: -0.03em; }
+.project-group-heading h2 { margin: 0; color: var(--foreground); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.65rem, 2.5vw, 2.25rem); font-weight: 400; }
 .project-index-grid { border-top: 1px solid var(--line); }
 .project-list-item {
   display: grid;
@@ -378,7 +372,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .project-list-item:hover { padding-left: 0.3rem; }
 .project-row-title .project-type { margin: 0 0 0.5rem; }
-.project-row-title h3 { margin: 0; color: var(--foreground); font-family: Georgia, "Times New Roman", serif; font-size: 1.65rem; font-weight: 400; letter-spacing: -0.025em; }
+.project-row-title h3 { margin: 0; color: var(--foreground); font-family: Georgia, "Times New Roman", serif; font-size: 1.65rem; font-weight: 400; }
 .project-row-title > p:not(.project-type) { margin: 0.45rem 0 0.7rem; color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
 .status-signal { display: inline-block; color: var(--olive-dark); font-size: 0.61rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
 .project-row-description { margin: 0; color: #4e5963; font-size: 0.82rem; line-height: 1.65; }
@@ -397,7 +391,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 /* Experience page */
 .experience-track { margin-top: 3.6rem; }
 .experience-track-heading { padding-bottom: 1rem; border-bottom: 1px solid var(--line); }
-.experience-track-heading h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.9rem; font-weight: 400; letter-spacing: -0.03em; }
+.experience-track-heading h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.9rem; font-weight: 400; }
 .experience-item { display: grid; grid-template-columns: minmax(8rem, 0.45fr) minmax(0, 1.8fr); gap: 1.3rem 2rem; padding: 1.7rem 0; border-bottom: 1px solid var(--line); }
 .experience-period { color: var(--olive-dark); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
 .experience-item-heading h3 { margin: 0; font-size: 1.05rem; font-weight: 560; }
@@ -423,7 +417,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 /* Contact page */
 .contact-page-surface { max-width: 50rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
-.contact-page-email { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 0.8rem; color: var(--foreground); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.5rem, 4vw, 2.5rem); letter-spacing: -0.03em; }
+.contact-page-email { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 0.8rem; color: var(--foreground); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.5rem, 4vw, 2.5rem); }
 .contact-page-surface > .contact-phone { margin-top: 0.5rem; }
 .contact-phone-link { display: inline-flex; min-height: 2.75rem; align-items: center; color: var(--muted); font-size: 0.95rem; }
 .contact-page .contact-social-links { margin-top: 1.5rem; }
