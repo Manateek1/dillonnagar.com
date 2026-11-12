@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SocialLinks from "@/components/layout/SocialLinks";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <Link href="/" className="footer-name">Dillon Nagar</Link>
         <p className="footer-copyright">© {new Date().getFullYear()} Dillon Nagar</p>
         <nav className="footer-links" aria-label="Social links">
-          <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <SocialLinks />
           <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="mailto:dillon.nagar@gmail.com">Email</a>
         </nav>

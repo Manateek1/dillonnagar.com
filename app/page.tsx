@@ -2,6 +2,7 @@ import Hero from "@/components/home/Hero";
 import FeaturedProjects from "@/components/home/FeaturedProjects";
 import ExperienceSnapshot from "@/components/home/ExperienceSnapshot";
 import ArrowIcon from "@/components/ui/ArrowIcon";
+import SocialLinks from "@/components/layout/SocialLinks";
 
 export default function Home() {
   return (
@@ -20,9 +21,7 @@ export default function Home() {
             dillon.nagar@gmail.com <ArrowIcon direction="up-right" size={18} />
           </a>
           <div className="contact-social-links">
-            <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer">
-              LinkedIn <ArrowIcon direction="up-right" size={15} />
-            </a>
+            <SocialLinks />
             <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer">
               GitHub <ArrowIcon direction="up-right" size={15} />
             </a>

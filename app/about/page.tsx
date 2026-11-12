@@ -2,6 +2,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Link from "next/link";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import { aboutContent } from "@/data/about";
+import SocialLinks from "@/components/layout/SocialLinks";
 
 export const metadata = {
   title: "About",
@@ -70,9 +71,7 @@ export default function AboutPage() {
           <p>Contact</p>
           <div className="about-contact-links">
             <a href="mailto:dillon.nagar@gmail.com">dillon.nagar@gmail.com</a>
-            <a href="https://linkedin.com/in/dillonnagar" target="_blank" rel="noopener noreferrer">
-              LinkedIn <ArrowIcon direction="up-right" size={14} />
-            </a>
+            <SocialLinks />
             <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer">
               GitHub <ArrowIcon direction="up-right" size={14} />
             </a>
