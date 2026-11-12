@@ -107,7 +107,7 @@ export default function CommandPalette({
     }
 
     const responses: Record<string, string> = {
-      help: "help · projects · experience · about · contact · theme · clear · exit",
+      help: "help, projects, experience, about, contact, theme, clear, exit",
       theme: `Visual mode is ${visualMode}. Run this again from the palette to switch.`,
       projects: "Opening project index…",
       experience: "Opening experience map…",
