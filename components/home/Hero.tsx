@@ -27,7 +27,6 @@ export default function Hero() {
     <section className="hero-shell" id="home">
       <div className="hero-content">
         <div className="hero-copy" data-reveal>
-          <p className="availability-line">Student · Quantitative finance · Software</p>
           <h1>Dillon Nagar</h1>
           <p className="hero-description">
             I use data to study financial markets, test ideas, and build tools that make

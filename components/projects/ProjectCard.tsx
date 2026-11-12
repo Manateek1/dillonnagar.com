@@ -3,7 +3,7 @@ import ArrowIcon from "@/components/ui/ArrowIcon";
 import { Project } from "@/data/projects";
 
 export default function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const topics = (project.themes ?? project.stack).slice(0, 3).join(" · ");
+  const topics = (project.themes ?? project.stack).slice(0, 3).join(", ");
 
   return (
     <article className="project-list-item" data-reveal>

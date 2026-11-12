@@ -45,7 +45,7 @@ export default function ResearchField() {
           </a>
         </div>
 
-        <p className="research-axis-label">Illustrative field · No live prices</p>
+        <p className="research-axis-label">Illustrative field. No live prices.</p>
       </div>
     </div>
   );

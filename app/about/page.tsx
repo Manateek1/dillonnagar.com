@@ -52,7 +52,7 @@ export default function AboutPage() {
       <div className="about-facts" data-reveal>
         <div className="about-fact">
           <p>Education</p>
-          <strong>Acalanes High School · Lafayette, CA</strong>
+          <strong>Acalanes High School, Lafayette, CA</strong>
           <span>Expected May 2028</span>
         </div>
         <div className="about-fact">
@@ -65,7 +65,7 @@ export default function AboutPage() {
             Rising housing costs and limited housing options in Lamorinda
             <ArrowIcon direction="up-right" size={15} />
           </a>
-          <span>Lamorinda Weekly · December 17, 2025</span>
+          <span>Lamorinda Weekly, December 17, 2025</span>
         </div>
         <div className="about-fact">
           <p>Contact</p>

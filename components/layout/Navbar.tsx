@@ -6,7 +6,6 @@ import { useRef, useState } from "react";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 
 const navLinks = [
-  { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
   { href: "/about", label: "About" },
@@ -33,8 +32,8 @@ export default function Navbar() {
       }}
     >
       <nav className="site-nav" aria-label="Primary navigation">
-        <Link href="/" className="brand-link" aria-label="Dillon Nagar home">
-          Dillon Nagar
+        <Link href="/" className="brand-link" aria-label="Home">
+          Home
         </Link>
 
         <div className="desktop-nav-links">
