@@ -107,7 +107,7 @@ export default function MapGame({ progress, onAttempt }: Props) {
       <div className={!explore && current ? "hidden lg:block" : undefined}>
       {explore && shown ? <>
         <p className="text-xs font-medium tracking-wider text-white/60">EXPLORE THE MAP</p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight" lang="es">{shown.spanish}</h2>
+        <h2 className="mt-3 text-3xl font-semibold" lang="es">{shown.spanish}</h2>
         <p className="mt-2 text-sm text-white/55">{shown.english} · {shown.group}</p>
         <p className="mt-5 text-sm leading-relaxed text-white/75">{shown.clue}</p>
         {shown.nationality && <div className="mt-5 border-t border-white/10 pt-4"><p className="text-xs text-white/50">NATIONALITY · MASCULINE</p><p className="mt-2 text-lg" lang="es">{shown.nationality[0]}</p></div>}
@@ -126,7 +126,7 @@ export default function MapGame({ progress, onAttempt }: Props) {
         <button type="button" onClick={() => start(studyPlaces.filter((place) => topics.includes(place.topic)))} className={`${buttonClass} mt-3 w-full`}>New round</button>
       </div> : <>
         <p className="text-xs font-medium tracking-wider text-white/60">FIND ON THE MAP</p>
-        <h2 data-testid="map-prompt" className="mt-3 text-3xl font-semibold leading-tight tracking-tight" lang="es">{current.spanish}</h2>
+        <h2 data-testid="map-prompt" className="mt-3 text-3xl font-semibold leading-tight" lang="es">{current.spanish}</h2>
         <p className="mt-2 text-sm text-white/55">{current.english}</p>
         <p className="mt-4 text-sm leading-relaxed text-white/65">{current.topic === "water" ? "Click the numbered water marker in the right body of water." : current.id === "MIA" ? "Click the city marker on Florida's coast." : "Click the country. Labels stay hidden in practice."}</p>
         {hint && !feedback && <p className="mt-4 rounded-lg border border-blue-400/25 bg-blue-500/10 p-3 text-sm leading-relaxed text-blue-200">{current.clue}</p>}
