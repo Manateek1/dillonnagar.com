@@ -6,13 +6,22 @@ export type Project = {
   role: string;
   stack: string[];
   themes?: string[];
-  status: "live" | "prototype" | "in-development" | "in-progress";
+  status: ProjectStatus;
   liveUrl?: string;
   githubUrl?: string;
   releaseUrl?: string;
   featured: boolean;
   image?: string;
   caseStudy?: string;
+};
+
+export type ProjectStatus = "live" | "prototype" | "in-development" | "in-progress";
+
+export const projectStatusLabel: Record<ProjectStatus, string> = {
+  live: "Published",
+  prototype: "Prototype",
+  "in-development": "In development",
+  "in-progress": "In progress",
 };
 
 export const projects: Project[] = [
@@ -35,7 +44,7 @@ export const projects: Project[] = [
     name: "RentMax AI",
     tagline: "Rental-property analysis for cash flow and returns",
     description:
-      "A live platform that helps landlords and property investors assess rent ranges, cash flow, cap rates, and returns, with explanations and exportable reports.",
+      "An online platform that helps landlords and property investors assess rent ranges, cash flow, cap rates, and returns, with explanations and exportable reports.",
     role: "Founder and developer — sole engineer across frontend, backend, and infrastructure",
     stack: ["React", "Vite", "Supabase", "Stripe", "OpenAI", "Sentry", "Vercel"],
     themes: ["Rent ranges", "Cash flow", "Property returns"],
@@ -87,9 +96,9 @@ export const projects: Project[] = [
   {
     slug: "larpchat-ai",
     name: "LarpChat AI",
-    tagline: "Live AI chat and image-generation demo",
+    tagline: "AI chat and image-generation demo",
     description:
-      "A live AI chat and image-generation demo, currently in active development.",
+      "An AI chat and image-generation demo that is still in development.",
     role: "Founder and developer",
     stack: [],
     status: "live",

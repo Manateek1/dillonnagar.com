@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ArrowIcon from "@/components/ui/ArrowIcon";
-import { projects } from "@/data/projects";
+import { projectStatusLabel, projects } from "@/data/projects";
 
 export default function FeaturedProjects() {
   const featured = projects.filter((project) => project.featured).slice(0, 3);
@@ -18,15 +18,14 @@ export default function FeaturedProjects() {
       </div>
 
       <div className="featured-project-grid" id="projects">
-        {featured.map((project, index) => {
+        {featured.map((project) => {
           const destination = project.caseStudy ?? project.liveUrl ?? project.githubUrl;
           const external = !project.caseStudy;
 
           return (
             <article className="featured-project" key={project.slug}>
               <div className="featured-project-meta">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <span>{project.status.replace(/-/g, " ")}</span>
+                <span>{projectStatusLabel[project.status]}</span>
               </div>
               <h3>{project.name}</h3>
               <p className="project-type">{project.themes?.[0] ?? project.stack[0] ?? "Software"}</p>

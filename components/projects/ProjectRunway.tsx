@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import type { Project } from "@/data/projects";
+import { projectStatusLabel, type Project } from "@/data/projects";
 import Badge from "@/components/ui/Badge";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 
@@ -37,10 +37,7 @@ export default function ProjectRunway({ projects }: { projects: Project[] }) {
         }
       }}
     >
-      <div className="runway-index" aria-live="polite">
-        <strong>{String(activeIndex + 1).padStart(2, "0")}</strong>
-        <span>/ {String(projects.length).padStart(2, "0")}</span>
-      </div>
+      <span className="sr-only" aria-live="polite">Showing {projects[activeIndex]?.name}</span>
 
       <div className="runway-stage">
         {ordered.map(({ project, index, depth }) => (
@@ -63,7 +60,7 @@ export default function ProjectRunway({ projects }: { projects: Project[] }) {
                   <h3>{project.name}</h3>
                   <p>{project.role.split("—")[0].trim()}</p>
                 </div>
-                <span className="status-signal"><i />{project.status}</span>
+                <span className="status-signal"><i />{projectStatusLabel[project.status]}</span>
               </div>
               <p className="runway-tagline">{project.tagline}</p>
               <div className="runway-stack">
@@ -77,7 +74,7 @@ export default function ProjectRunway({ projects }: { projects: Project[] }) {
                 )}
                 {project.liveUrl && (
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" data-magnetic>
-                    Live <ArrowIcon direction="up-right" />
+                    Visit site <ArrowIcon direction="up-right" />
                   </a>
                 )}
                 {project.githubUrl && (
@@ -86,7 +83,6 @@ export default function ProjectRunway({ projects }: { projects: Project[] }) {
                   </a>
                 )}
               </div>
-              <small className="runway-card-number">{String(index + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}</small>
             </div>
           </article>
         ))}

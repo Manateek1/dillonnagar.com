@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Badge from "@/components/ui/Badge";
 import ArrowIcon from "@/components/ui/ArrowIcon";
+import { projectStatusLabel, type ProjectStatus } from "@/data/projects";
 
 type Section = {
   title: string;
@@ -10,7 +11,7 @@ type Section = {
 type CaseStudyProps = {
   name: string;
   tagline: string;
-  status: string;
+  status: ProjectStatus;
   stack: string[];
   liveUrl?: string;
   githubUrl?: string;
@@ -38,7 +39,7 @@ export default function CaseStudyLayout({
             <p className="section-code">Project / {name}</p>
             <h1>{name}</h1>
           </div>
-          <span className="status-signal">{status.replace(/-/g, " ")}</span>
+          <span className="status-signal">{projectStatusLabel[status]}</span>
         </div>
         <p className="case-study-tagline">{tagline}</p>
         {stack.length > 0 ? (
@@ -50,7 +51,7 @@ export default function CaseStudyLayout({
           <div className="case-study-actions">
             {liveUrl ? (
               <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-                Live site <ArrowIcon direction="up-right" size={15} />
+                Visit site <ArrowIcon direction="up-right" size={15} />
               </a>
             ) : null}
             {githubUrl ? (
@@ -63,10 +64,9 @@ export default function CaseStudyLayout({
       </header>
 
       <div className="case-study-sections">
-        {sections.map((section, index) => (
+        {sections.map((section) => (
           <section key={section.title} data-reveal>
             <div className="case-study-section-label">
-              <span>{String(index + 1).padStart(2, "0")}</span>
               <h2>{section.title}</h2>
             </div>
             {Array.isArray(section.content) ? (
