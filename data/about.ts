@@ -55,7 +55,7 @@ export const aboutContent = {
     [
       {
         kind: "text",
-        text: "At Acalanes, I help with logistics and outreach for Aqabot (FTC 24689), started the Acalanes Data Science Club, and founded Voices United, an English conversation program for young learners. My summer internship at Clarus Wealth Group in Houston gave me a closer look at private wealth management.",
+        text: "At Acalanes, I help with logistics and outreach for AcaBots, started the Acalanes Data Science Club, and founded Voices United, an English conversation program for young learners. My summer internship at Clarus Wealth Group in Houston gave me a closer look at private wealth management.",
       },
     ],
     [
