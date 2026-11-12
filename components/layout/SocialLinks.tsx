@@ -20,6 +20,11 @@ const profiles: readonly {
     network: "linkedin",
     href: "https://linkedin.com/in/dillonnagar",
   },
+  {
+    label: "GitHub",
+    network: "github",
+    href: "https://github.com/Manateek1",
+  },
 ];
 
 export default function SocialLinks({ className = "social-icons" }: { className?: string }) {
