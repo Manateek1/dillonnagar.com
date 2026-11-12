@@ -13,10 +13,6 @@ export default function AboutPage() {
       <SectionHeader title="About" subtitle={aboutContent.subtitle} />
 
       <div className="about-layout">
-        <aside className="about-signal" data-reveal>
-          <span>{aboutContent.asideLabel}</span>
-          <p>{aboutContent.hobbies.join(" · ")}</p>
-        </aside>
         <div className="about-story" data-reveal>
           {aboutContent.paragraphs.map((paragraph, paragraphIndex) => (
             <p key={paragraphIndex}>

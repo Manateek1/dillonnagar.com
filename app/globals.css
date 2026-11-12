@@ -414,10 +414,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .tech-badge + .tech-badge::before { content: "·"; margin-right: 0.8rem; color: #aaa394; }
 
 /* About page */
-.about-layout { display: grid; grid-template-columns: minmax(12rem, 0.55fr) minmax(0, 1.45fr); gap: clamp(2rem, 6vw, 6rem); margin-top: 3rem; }
-.about-signal { align-self: start; padding-top: 0.25rem; color: var(--olive-dark); }
-.about-signal span { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
-.about-signal p { max-width: 15rem; margin: 0.7rem 0 0; color: var(--foreground); font-family: Georgia, "Times New Roman", serif; font-size: 1.55rem; line-height: 1.25; }
+.about-layout { margin-top: 3rem; }
 .about-story { display: grid; gap: 1.2rem; }
 .about-story p { max-width: 55rem; margin: 0; color: #414c57; font-size: 0.9rem; line-height: 1.8; }
 .inline-signal-link { color: var(--olive-dark); text-decoration: underline; text-decoration-color: #bfb492; text-underline-offset: 3px; }
@@ -486,8 +483,7 @@ html[data-reveal-ready="true"] [data-reveal][data-revealed="true"] { opacity: 1;
   .project-row-description, .project-row-links { grid-column: 2; }
   .project-row-description { padding-top: 0.2rem; }
   .project-row-links { gap: 0.8rem; }
-  .about-layout { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; }
-  .about-signal p { max-width: none; font-size: 1.25rem; }
+  .about-layout { margin-top: 2rem; }
   .about-facts { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2.7rem; }
   .experience-item { grid-template-columns: 1fr; gap: 0.7rem; }
   .experience-track-heading { grid-template-columns: 2rem 1fr; }
