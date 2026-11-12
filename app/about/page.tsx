@@ -1,4 +1,5 @@
 import SectionHeader from "@/components/ui/SectionHeader";
+import Image from "next/image";
 import Link from "next/link";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import { aboutContent } from "@/data/about";
@@ -14,6 +15,15 @@ export default function AboutPage() {
       <SectionHeader title="About" subtitle={aboutContent.subtitle} />
 
       <div className="about-layout">
+        <figure className="about-portrait" data-reveal>
+          <Image
+            src="/images/dillon-nagar-headshot.png"
+            alt="Portrait of Dillon Nagar"
+            width={1086}
+            height={1440}
+            sizes="(max-width: 760px) 80vw, 24rem"
+          />
+        </figure>
         <div className="about-story" data-reveal>
           {aboutContent.paragraphs.map((paragraph, paragraphIndex) => (
             <p key={paragraphIndex}>
