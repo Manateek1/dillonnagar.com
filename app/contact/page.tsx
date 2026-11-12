@@ -18,9 +18,6 @@ export default function ContactPage() {
         <div className="contact-phone" dangerouslySetInnerHTML={{ __html: contactPhoneLinkHtml }} />
         <div className="contact-social-links">
           <SocialLinks />
-          <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer">
-            GitHub <ArrowIcon direction="up-right" size={15} />
-          </a>
         </div>
       </div>
     </div>

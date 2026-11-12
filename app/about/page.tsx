@@ -72,9 +72,6 @@ export default function AboutPage() {
           <div className="about-contact-links">
             <a href="mailto:dillon.nagar@gmail.com">dillon.nagar@gmail.com</a>
             <SocialLinks />
-            <a href="https://github.com/Manateek1" target="_blank" rel="noopener noreferrer">
-              GitHub <ArrowIcon direction="up-right" size={14} />
-            </a>
           </div>
         </div>
       </div>
