@@ -5,20 +5,16 @@ type AboutSegment =
 
 type AboutContent = {
   subtitle: string;
-  asideLabel: string;
-  hobbies: readonly string[];
   paragraphs: readonly (readonly AboutSegment[])[];
 };
 
 export const aboutContent = {
-  subtitle: "A little about what I’m working on and what I’m into outside school.",
-  asideLabel: "Outside school",
-  hobbies: ["Swim team", "Hiking", "Golf", "Running"],
+  subtitle: "A little about what I’m curious about, what I’m building, and what I like outside school.",
   paragraphs: [
     [
       {
         kind: "text",
-        text: "I’m a student at Acalanes High School in Lafayette. I’m interested in markets, data, and software, and most of what I build starts with a question I want to understand for myself.",
+        text: "I’m a student at Acalanes High School in Lafayette, and I’m interested in markets, data, and software. Most of what I build starts with a question I want to understand for myself. Building something gives me a way to explore it beyond just reading about it.",
       },
     ],
     [
@@ -29,7 +25,7 @@ export const aboutContent = {
       },
       {
         kind: "text",
-        text: " is where I share the market questions I’ve been exploring. So far, that includes comparing SPY’s overnight and regular-session returns and building CycleQuant, a Bitcoin paper-trading experiment. I try to be upfront about the methods and what the results can and can’t show.",
+        text: " is where I share some of the market questions I’ve been exploring. That has included comparing SPY’s overnight and regular-session returns and building CycleQuant, a Bitcoin paper-trading experiment. I try to be upfront about my methods and what the results can and can’t show.",
       },
     ],
     [
@@ -41,7 +37,7 @@ export const aboutContent = {
       },
       {
         kind: "text",
-        text: " after getting interested in rental properties and wanting an easier way to compare rent estimates, expenses, and returns. I’ve also built other projects, including ",
+        text: " after getting interested in rental properties and wanting an easier way to compare rent estimates, expenses, and returns. I’ve also built projects like ",
       },
       {
         kind: "internal-link",
@@ -54,12 +50,18 @@ export const aboutContent = {
         text: "LarpChat AI",
         href: "/projects/larpchat-ai",
       },
-      { kind: "text", text: "." },
+      { kind: "text", text: ". I like that each one gives me a different problem to work through." },
     ],
     [
       {
         kind: "text",
-        text: "At Acalanes, I help with logistics and outreach for AcaBots, started Acalanes Data Science Club, and founded Voices United, an English conversation program for young learners. My Summer 2026 internship at Clarus Wealth Group in Houston gave me a closer look at private wealth management.",
+        text: "At Acalanes, I help with logistics and outreach for Aqabot (FTC 24689), started the Acalanes Data Science Club, and founded Voices United, an English conversation program for young learners. My summer internship at Clarus Wealth Group in Houston gave me a closer look at private wealth management.",
+      },
+    ],
+    [
+      {
+        kind: "text",
+        text: "Outside school, swimming takes up a good part of my week. I also like getting out for a hike or a run, and I play golf when I can. I’m still working on my golf game, but I like being outside and getting a break from the screen.",
       },
     ],
   ],
