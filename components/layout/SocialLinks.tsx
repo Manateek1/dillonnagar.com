@@ -1,36 +1,10 @@
-import SocialIcon, { type SocialNetwork } from "@/components/ui/SocialIcon";
-
-const profiles: readonly {
-  label: string;
-  network: SocialNetwork;
-  href: string;
-}[] = [
-  {
-    label: "Instagram",
-    network: "instagram",
-    href: "https://www.instagram.com/dillonnagar",
-  },
-  {
-    label: "X (@dillonnagar)",
-    network: "x",
-    href: "https://x.com/dillonnagar",
-  },
-  {
-    label: "LinkedIn",
-    network: "linkedin",
-    href: "https://linkedin.com/in/dillonnagar",
-  },
-  {
-    label: "GitHub",
-    network: "github",
-    href: "https://github.com/Manateek1",
-  },
-];
+import SocialIcon from "@/components/ui/SocialIcon";
+import { socialProfiles } from "@/data/site";
 
 export default function SocialLinks({ className = "social-icons" }: { className?: string }) {
   return (
     <div className={className}>
-      {profiles.map((profile) => (
+      {socialProfiles.map((profile) => (
         <a
           key={profile.network}
           href={profile.href}

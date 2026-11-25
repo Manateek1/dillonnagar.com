@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { siteUrl } from "./data/site";
 
 const nextConfig: NextConfig = {
   async rewrites() {
@@ -14,6 +15,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www\\.dillonnagar\\.com" }],
+        destination: siteUrl + "/:path*",
+        permanent: true,
+      },
       {
         source: "/datascience",
         destination:
