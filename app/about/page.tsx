@@ -1,23 +1,49 @@
+import type { Metadata } from "next";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Image from "next/image";
 import Link from "next/link";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import { aboutContent } from "@/data/about";
 import SocialLinks from "@/components/layout/SocialLinks";
+import { siteUrl, socialProfiles } from "@/data/site";
 
-export const metadata = {
+const profileUrl = new URL("/about", siteUrl).href;
+const portraitPath = "/images/dillon-nagar-headshot.png";
+
+export const metadata: Metadata = {
   title: "About",
+  description: "About Dillon Nagar and his work in financial markets, data, and software.",
+};
+
+const profilePage = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: profileUrl,
+  mainEntity: {
+    "@type": "Person",
+    "@id": profileUrl + "#person",
+    name: "Dillon Nagar",
+    url: profileUrl,
+    image: new URL(portraitPath, siteUrl).href,
+    sameAs: socialProfiles.map(({ href }) => href),
+  },
 };
 
 export default function AboutPage() {
   return (
     <div className="page-shell about-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(profilePage).replace(/</g, "\\u003c"),
+        }}
+      />
       <SectionHeader title="About" subtitle={aboutContent.subtitle} />
 
       <div className="about-layout">
         <figure className="about-portrait" data-reveal>
           <Image
-            src="/images/dillon-nagar-headshot.png"
+            src={portraitPath}
             alt="Portrait of Dillon Nagar"
             width={1086}
             height={1440}

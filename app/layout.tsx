@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RevealOnScroll from "@/components/effects/RevealOnScroll";
+import { siteUrl } from "@/data/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: "./" },
   title: {
     default: "Dillon Nagar",
     template: "%s — Dillon Nagar",
