@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import SectionHeader from "@/components/ui/SectionHeader";
 import Image from "next/image";
-import Link from "next/link";
+import SectionHeader from "@/components/ui/SectionHeader";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import { aboutContent } from "@/data/about";
-import SocialLinks from "@/components/layout/SocialLinks";
 import { siteUrl, socialProfiles } from "@/data/site";
 
 const profileUrl = new URL("/about", siteUrl).href;
@@ -12,7 +10,7 @@ const portraitPath = "/images/dillon-nagar-headshot.png";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "About Dillon Nagar and his work in financial markets, data, and software.",
+  description: "About Dillon Nagar, based in the San Francisco Bay Area.",
 };
 
 const profilePage = {
@@ -38,76 +36,26 @@ export default function AboutPage() {
           __html: JSON.stringify(profilePage).replace(/</g, "\\u003c"),
         }}
       />
-      <SectionHeader title="About" subtitle={aboutContent.subtitle} />
+      <SectionHeader title="About" subtitle={aboutContent.location} />
 
       <div className="about-layout">
-        <figure className="about-portrait" data-reveal>
+        <figure className="about-portrait">
           <Image
             src={portraitPath}
             alt="Portrait of Dillon Nagar"
             width={1086}
             height={1440}
-            sizes="(max-width: 760px) 80vw, 24rem"
+            sizes="(max-width: 704px) min(72vw, 256px), (max-width: 1024px) 30vw, 384px"
           />
         </figure>
-        <div className="about-story" data-reveal>
-          {aboutContent.paragraphs.map((paragraph, paragraphIndex) => (
-            <p key={paragraphIndex}>
-              {paragraph.map((segment, segmentIndex) => {
-                const key = `${paragraphIndex}-${segmentIndex}`;
 
-                if (segment.kind === "internal-link") {
-                  return (
-                    <Link key={key} href={segment.href} className="inline-signal-link">
-                      {segment.text}
-                    </Link>
-                  );
-                }
-
-                if (segment.kind === "external-link") {
-                  return (
-                    <a
-                      key={key}
-                      href={segment.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-signal-link"
-                    >
-                      {segment.text}
-                    </a>
-                  );
-                }
-
-                return segment.text;
-              })}
-            </p>
-          ))}
-        </div>
-      </div>
-
-      <div className="about-facts" data-reveal>
-        <div className="about-fact">
-          <p>Education</p>
-          <strong>Acalanes High School, Lafayette, CA</strong>
-          <span>Expected May 2028</span>
-        </div>
-        <div className="about-fact">
-          <p>Published writing</p>
-          <a
-            href="https://lamorindaweekly.com/articles/2025/letters-to-the-editor-12-17-2025/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Rising housing costs and limited housing options in Lamorinda
-            <ArrowIcon direction="up-right" size={15} />
-          </a>
-          <span>Lamorinda Weekly, December 17, 2025</span>
-        </div>
-        <div className="about-fact">
-          <p>Contact</p>
-          <div className="about-contact-links">
-            <a href="mailto:dillon.nagar@gmail.com">dillon.nagar@gmail.com</a>
-            <SocialLinks />
+        <div className="grid max-w-prose gap-5 text-[1.05rem] leading-[1.75] text-[#414c57]">
+          {aboutContent.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          <div className="mt-4 border-t border-(--line) pt-5">
+            <a className="inline-signal-link" href={aboutContent.writing.href} target="_blank" rel="noopener noreferrer">
+              {aboutContent.writing.title} <ArrowIcon className="inline align-middle" direction="up-right" size={15} />
+            </a>
+            <p className="mt-1 text-sm text-(--muted)">{aboutContent.writing.publication}</p>
           </div>
         </div>
       </div>

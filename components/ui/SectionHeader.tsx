@@ -6,7 +6,7 @@ export default function SectionHeader({
   subtitle?: string;
 }) {
   return (
-    <div className="page-heading" data-reveal>
+    <div className="page-heading">
       <h1>{title}</h1>
       {subtitle ? <p>{subtitle}</p> : null}
     </div>

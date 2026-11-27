@@ -1,9 +1,8 @@
-import { ExperienceItem as ExperienceItemType } from "@/data/experience";
-import Badge from "@/components/ui/Badge";
+import type { ExperienceItem as ExperienceItemType } from "@/data/experience";
 
 export default function ExperienceItem({ item }: { item: ExperienceItemType }) {
   return (
-    <article className="experience-item" data-reveal>
+    <article id={item.id} className="experience-item scroll-mt-3">
       <span className="experience-period">{item.period}</span>
       <div className="experience-item-main">
         <div className="experience-item-heading">
@@ -13,11 +12,6 @@ export default function ExperienceItem({ item }: { item: ExperienceItemType }) {
         <ul>
           {item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}
         </ul>
-        {item.skills ? (
-          <div className="experience-skills" aria-label="Areas of work">
-            {item.skills.map((skill) => <Badge key={skill}>{skill}</Badge>)}
-          </div>
-        ) : null}
       </div>
     </article>
   );

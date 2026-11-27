@@ -25,7 +25,7 @@ const lanes = [
     category: "Leadership",
     items: [
       "Founder & President — Acalanes Data Science Club",
-      "Logistics Lead — AcaBots",
+      "Logistics Lead — Acabots",
       "Founder & Organizer — Voices United",
     ],
   },

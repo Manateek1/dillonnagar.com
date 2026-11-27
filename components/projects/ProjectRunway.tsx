@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
-import { projectStatusLabel, type Project } from "@/data/projects";
+import { projectCaseStudyPath, projectStatusLabel, type Project } from "@/data/projects";
 import Badge from "@/components/ui/Badge";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 
-export default function ProjectRunway({ projects }: { projects: Project[] }) {
+export default function ProjectRunway({ projects }: { projects: readonly Project[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const ordered = useMemo(
@@ -68,7 +68,7 @@ export default function ProjectRunway({ projects }: { projects: Project[] }) {
               </div>
               <div className="runway-actions">
                 {project.caseStudy && (
-                  <Link href={project.caseStudy} data-magnetic>
+                  <Link href={projectCaseStudyPath(project.slug)} data-magnetic>
                     View Case Study <ArrowIcon />
                   </Link>
                 )}
