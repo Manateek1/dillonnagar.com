@@ -1,95 +1,83 @@
 export type ExperienceItem = {
+  id: string;
   title: string;
   org: string;
   period: string;
-  type: "professional" | "leadership";
-  bullets: string[];
-  skills?: string[];
+  bullets: readonly string[];
 };
 
-export const experience: ExperienceItem[] = [
+export const experience: readonly ExperienceItem[] = [
   {
+    id: "clarus-wealth-group",
     title: "Private Wealth Management Intern",
     org: "Clarus Wealth Group",
-    period: "Summer 2026",
-    type: "professional",
+    period: "May – June 2026",
     bullets: [
-      "Completed a private wealth management internship at a firm in Houston",
-      "Gained exposure to commercial real estate, estate planning, trusts, and retirement planning",
-      "Supported competitor analysis and prepared materials for client review sessions",
-      "Participated in pro bono financial planning sessions and advisor-client meetings",
+      "Built Excel projections for retirement and trust-disbursement scenarios and helped prepare and present financial analysis for clients.",
+      "Reviewed the firm’s website and competitors, then recommended improvements to content, navigation, and usability.",
+      "Observed advisor-client meetings and participated in pro bono financial planning sessions in Houston.",
     ],
-    skills: ["Financial Analysis", "Estate Planning", "Portfolio Research"],
   },
   {
+    id: "rentmax-ai",
     title: "Founder & Developer",
     org: "RentMax AI",
-    period: "2024 – Present",
-    type: "professional",
+    period: "2025 – Present",
     bullets: [
-      "Founded and operate an online rental-property analysis platform for landlords and investors",
-      "Built tools for rent estimation, cash flow, cap rates, and cash-on-cash returns, with explanatory reports",
-      "Built the platform independently and manage subscriptions, user accounts, and reliability",
+      "Founded and operate a rental-property analysis platform for landlords and investors.",
+      "Built the platform independently and manage subscriptions, user accounts, and reliability.",
     ],
-    skills: ["Rental Property Analysis", "Cash Flow", "Product Development"],
   },
   {
+    id: "ace-hardware",
     title: "Digital Marketing & Operations",
     org: "Ace Hardware",
     period: "Current",
-    type: "professional",
     bullets: [
-      "Supports digital operations through social media content, customer-review responses, paid search, and online listings",
-      "Assists with marketing planning and related store operations",
+      "Support digital operations through social media content, customer-review responses, paid search, and online listings.",
+      "Assist with marketing planning and related store operations.",
     ],
-    skills: ["Digital Marketing", "Social Media", "E-commerce"],
   },
   {
+    id: "athletic-assistant",
     title: "Athletic Assistant",
     org: "Acalanes Union High School District",
     period: "Since 2024",
-    type: "professional",
     bullets: [
-      "Supports game and school-event logistics, including announcements, scoreboard and shot-clock operation, and event setup",
-      "Helps with entrances, equipment, and event setup and breakdown",
+      "Support athletic events through game announcements, scoreboard and shot-clock operation, venue access, and equipment setup and breakdown.",
     ],
-    skills: ["Event Operations", "Logistics"],
   },
 ];
 
-export const leadership: ExperienceItem[] = [
+export const leadership: readonly ExperienceItem[] = [
   {
-    title: "Team Logistics",
-    org: "AcaBots",
+    id: "acabots",
+    title: "Logistics Lead",
+    org: "Acabots",
     period: "2025 – Present",
-    type: "leadership",
     bullets: [
-      "Coordinates partnerships, operations, outreach, and social media for the team",
-      "Supports mentor connections, company visits, and team logistics",
-      "Mentors younger students and contributes to mechanical design and prototyping",
+      "Coordinate partnerships, operations, outreach, and social media for FTC Team 24689.",
+      "Help organize company visits and mentor connections, mentor younger teammates, and contribute to mechanical prototypes.",
     ],
-    skills: ["Partnerships", "Operations", "Outreach", "Social Media", "Mentorship"],
   },
   {
+    id: "data-science-club",
     title: "Founder & President",
     org: "Acalanes Data Science Club",
     period: "Aug 2026 – Present",
-    type: "leadership",
     bullets: [
-      "Founded a beginner-friendly, project-driven club focused on data, AI, and code",
-      "Introduces members to a question-to-insight workflow through small projects",
+      "Founded a beginner-friendly club where students learn data science and AI through hands-on projects.",
+      "Helped organize Acalanes Data Fest, the club’s student hackathon held at BRIDGEGOOD in Oakland on November 21, 2026.",
     ],
-    skills: ["Data Science", "Project Leadership"],
   },
   {
+    id: "voices-united",
     title: "Founder & Organizer",
     org: "Voices United",
     period: "2025 – Present",
-    type: "leadership",
     bullets: [
-      "Founded a beginner-friendly English conversation and tutoring program for young English learners",
-      "Organizes in-person and online sessions and prepares conversation activities",
-      "Coordinates with local organizers and supports volunteer participation",
+      "Founded a beginner-friendly English conversation and tutoring program for young English learners.",
+      "Organize sessions, prepare conversation activities, and coordinate with local organizers and volunteers.",
     ],
   },
 ];
