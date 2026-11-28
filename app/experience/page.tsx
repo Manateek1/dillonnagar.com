@@ -1,6 +1,5 @@
-import Link from "next/link";
 import { experience, leadership } from "@/data/experience";
-import { skills } from "@/data/skills";
+import { skillGroups } from "@/data/skills";
 import ExperienceItem from "@/components/experience/ExperienceItem";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 
@@ -30,16 +29,21 @@ export default function ExperiencePage() {
 
       <section id="skills" className="experience-track" aria-labelledby="skills-heading">
         <div className="experience-track-heading"><h2 id="skills-heading">Skills</h2></div>
-        <ul className="divide-y divide-(--line) border-b border-(--line)">
-          {skills.map(({ name, evidence, href }) => (
-            <li key={name} className="grid items-baseline gap-x-8 gap-y-1 py-3.5 sm:grid-cols-[minmax(11rem,1fr)_minmax(0,2fr)]">
-              <span className="font-medium">{name}</span>
-              <Link href={href} className="inline-flex w-fit items-center gap-2 text-sm leading-relaxed text-(--olive-dark) hover:underline underline-offset-4">
-                {evidence} <ArrowIcon size={14} className="shrink-0" />
-              </Link>
-            </li>
+        <div className="grid gap-x-10 gap-y-6 border-b border-(--line) pb-7 sm:grid-cols-2">
+          {skillGroups.map(({ topic, skills }) => (
+            <div key={topic} className="border-t border-(--line) pt-4">
+              <h3 className="font-medium">{topic}</h3>
+              <ul role="list" className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-sm leading-relaxed text-[#414c57]">
+                {skills.map((skill) => (
+                  <li key={skill} className="inline-flex items-baseline gap-3">
+                    <span aria-hidden="true" className="text-(--olive-dark)">·</span>
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </div>
       </section>
     </div>
   );
