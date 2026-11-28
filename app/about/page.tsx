@@ -50,7 +50,7 @@ export default function AboutPage() {
         </figure>
 
         <div className="grid max-w-prose gap-5 text-[1.05rem] leading-[1.75] text-[#414c57]">
-          {aboutContent.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          <p>{aboutContent.bio}</p>
           <div className="mt-4 border-t border-(--line) pt-5">
             <a className="inline-signal-link" href={aboutContent.writing.href} target="_blank" rel="noopener noreferrer">
               {aboutContent.writing.title} <ArrowIcon className="inline align-middle" direction="up-right" size={15} />
