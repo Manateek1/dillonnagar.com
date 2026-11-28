@@ -1,14 +1,38 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
 import { satVocabulary } from "@/data/sat-vocabulary";
 
-const initialDeck = { remaining: satVocabulary, index: 0, revealed: false };
+type Deck = {
+  remaining: typeof satVocabulary;
+  index: number;
+  revealed: boolean;
+  transition: "previous" | "next" | "flip" | null;
+};
+
+function shuffleDeck(): Deck {
+  const remaining = [...satVocabulary];
+  for (let index = remaining.length - 1; index > 0; index--) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [remaining[index], remaining[swapIndex]] = [remaining[swapIndex], remaining[index]];
+  }
+  return { remaining, index: 0, revealed: false, transition: null };
+}
+
+const subscribeToHydration = () => () => {};
+const clientSnapshot = () => true;
+const serverSnapshot = () => false;
 const secondaryButton =
   "cursor-pointer border border-[var(--line)] px-4 py-2 text-sm font-medium hover:bg-[var(--background)] disabled:cursor-default disabled:opacity-40";
 
 export default function VocabularyDeck() {
-  const [deck, setDeck] = useState(initialDeck);
+  const hydrated = useSyncExternalStore(subscribeToHydration, clientSnapshot, serverSnapshot);
+  return hydrated ? <StudyDeck /> : <div className="mt-8 min-h-64" aria-busy="true">Preparing deck…</div>;
+}
+
+function StudyDeck() {
+  const [deck, setDeck] = useState(shuffleDeck);
+  const cardContent = useRef<HTMLDivElement>(null);
   const flipButton = useRef<HTMLButtonElement>(null);
   const restartButton = useRef<HTMLButtonElement>(null);
   const restoreFocus = useRef(false);
@@ -20,14 +44,19 @@ export default function VocabularyDeck() {
     setDeck((current) => {
       const nextIndex = current.index + direction;
       if (nextIndex < 0 || nextIndex >= current.remaining.length) return current;
-      return { ...current, index: nextIndex, revealed: false };
+      return {
+        ...current,
+        index: nextIndex,
+        revealed: false,
+        transition: direction < 0 ? "previous" : "next",
+      };
     });
   }, []);
 
   const flipCard = useCallback(() => {
     setDeck((current) => {
       if (!current.remaining.length) return current;
-      return { ...current, revealed: !current.revealed };
+      return { ...current, revealed: !current.revealed, transition: "flip" };
     });
   }, []);
 
@@ -68,6 +97,23 @@ export default function VocabularyDeck() {
     (card ? flipButton.current : restartButton.current)?.focus();
   }, [card, deck]);
 
+  useLayoutEffect(() => {
+    const content = cardContent.current;
+    const { transition } = deck;
+    if (!content || !transition || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const flip = transition === "flip";
+    const start = flip
+      ? `perspective(900px) rotateY(${deck.revealed ? -75 : 75}deg)`
+      : `translateX(${transition === "previous" ? -20 : 20}px)`;
+    const end = flip ? "perspective(900px) rotateY(0deg)" : "translateX(0)";
+    const animation = content.animate(
+      [{ transform: start, opacity: 0.25 }, { transform: end, opacity: 1 }],
+      { duration: flip ? 240 : 180, easing: "ease-out" },
+    );
+    return () => animation.cancel();
+  }, [deck]);
+
   function navigateFromButton(direction: -1 | 1) {
     moveCard(direction);
     flipButton.current?.focus();
@@ -82,7 +128,7 @@ export default function VocabularyDeck() {
       nextCards.splice(current.index, 1);
       if (studyAgain) nextCards.splice(current.index + 5, 0, currentCard);
       const nextIndex = current.index < nextCards.length ? current.index : 0;
-      return { remaining: nextCards, index: nextIndex, revealed: false };
+      return { remaining: nextCards, index: nextIndex, revealed: false, transition: "next" };
     });
   }
 
@@ -105,7 +151,7 @@ export default function VocabularyDeck() {
       >
         {card ? (
           <>
-            <div aria-live="polite" aria-atomic="true">
+            <div ref={cardContent} aria-live="polite" aria-atomic="true">
               <h2 id="vocabulary-word" className="break-words font-[Georgia,serif] text-4xl sm:text-5xl">
                 {card[0]}
               </h2>
@@ -177,7 +223,7 @@ export default function VocabularyDeck() {
               type="button"
               onClick={() => {
                 restoreFocus.current = true;
-                setDeck(initialDeck);
+                setDeck(shuffleDeck());
               }}
             >
               Start over
