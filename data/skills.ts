@@ -21,7 +21,7 @@ export const skillGroups: readonly SkillGroup[] = [
   {
     topic: "Finance & investing",
     skills: [
-      "Excel", "Financial modeling", "Investment analysis",
+      "Excel", "DCF modeling", "Equity and fixed-income research", "Investment analysis",
       "Rental property underwriting", "Historical returns analysis", "Backtesting",
     ],
   },
@@ -32,5 +32,9 @@ export const skillGroups: readonly SkillGroup[] = [
   {
     topic: "Leadership & outreach",
     skills: ["Event planning", "Sponsorship outreach", "Public speaking", "Digital marketing"],
+  },
+  {
+    topic: "Robotics & engineering",
+    skills: ["Robot programming", "Mechanical prototyping", "Team logistics"],
   },
 ];

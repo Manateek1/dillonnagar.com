@@ -19,6 +19,7 @@ const homeNavLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
+  const isPortfolio = isHome || pathname === "/projects" || pathname === "/experience" || pathname === "/about";
   const links = isHome ? homeNavLinks : navLinks;
   const contactHref = isHome ? "#contact" : "/contact";
   const [menuOpen, setMenuOpen] = useState(false);
@@ -73,7 +74,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={isHome ? "site-header home-site-header" : "site-header"}
+      className={isPortfolio ? "site-header home-site-header" : "site-header"}
       onKeyDown={(event) => {
         if (event.key === "Escape" && menuOpen) {
           setMenuOpen(false);
@@ -83,7 +84,7 @@ export default function Navbar() {
     >
       <nav className="site-nav" aria-label="Primary navigation">
         <Link href={isHome ? "#home" : "/"} className="brand-link" aria-label="Home">
-          {isHome ? "Dillon Nagar" : "Home"}
+          Home
         </Link>
 
         <div className="desktop-nav-links">
@@ -124,7 +125,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {menuOpen && !isHome ? (
+      {menuOpen && !isPortfolio ? (
         <div
           className="mobile-nav-panel"
           id="mobile-navigation"

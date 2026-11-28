@@ -1,28 +1,16 @@
-import { Newsreader } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
+import PortfolioPage from "@/components/layout/PortfolioPage";
 import SocialLinks from "@/components/layout/SocialLinks";
+import AboutBiography from "@/components/portfolio/AboutBiography";
+import SkillsGrid from "@/components/portfolio/SkillsGrid";
 import ArrowIcon from "@/components/ui/ArrowIcon";
-import { capitalInCode, homeContent, homeExperience, homeProjects } from "@/data/home";
-
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-home-serif",
-  display: "swap",
-});
-
-function HomeLogo({ src }: { src: string }) {
-  return (
-    <span className="home-logo">
-      <Image src={src} alt="" width={60} height={60} unoptimized />
-    </span>
-  );
-}
+import PortfolioLogo from "@/components/ui/PortfolioLogo";
+import { aboutContent } from "@/data/about";
+import { homeContent, homeExperience, homeProjects } from "@/data/home";
 
 export default function Home() {
   return (
-    <div className={`portfolio-home ${newsreader.variable}`}>
+    <PortfolioPage className="portfolio-home">
       <section id="home" className="home-hero" aria-labelledby="home-title">
         <div className="home-wrap relative grid items-center gap-9 py-10 sm:py-14 md:grid-cols-[1fr_1.06fr] md:gap-10 lg:gap-18 lg:py-16">
           <div className="min-w-0">
@@ -40,33 +28,23 @@ export default function Home() {
             </div>
           </div>
 
-          <article className="home-study home-enter home-delay-2 min-w-0" aria-labelledby="home-study-title">
-            <div className="flex items-center gap-3">
-              <HomeLogo src={capitalInCode.logo} />
-              <div>
-                <p className="home-meta text-[#315b7e]">{capitalInCode.name}</p>
-                <h2 id="home-study-title" className="home-display mt-1 text-[clamp(1.75rem,3.25vw,2.65rem)] leading-tight">
-                  {homeContent.featuredStudy.label}
-                </h2>
-              </div>
-            </div>
-            <div className="home-chart mt-4 overflow-hidden rounded-sm border border-[#d7e2ec] bg-white">
-              <Image
-                src="/screenshots/capital-in-code-spy-returns.png"
-                alt="Capital in Code chart comparing the growth of one dollar during SPY’s overnight and regular trading sessions, alongside buy and hold."
-                width={1969}
-                height={1167}
-                sizes="(max-width: 767px) 90vw, (max-width: 1240px) 46vw, 545px"
-                className="h-auto w-full"
-              />
-            </div>
-            <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-              <p className="text-[0.8rem] text-[#506176]">Overnight and regular trading sessions</p>
-              <a href={homeContent.featuredStudy.href} className="home-link">
-                Read the study <ArrowIcon direction="up-right" />
-              </a>
-            </div>
-          </article>
+          <nav className="portfolio-index home-enter home-delay-2 min-w-0" aria-label="Selected projects">
+            <h2 className="home-display text-[clamp(1.85rem,3.3vw,2.65rem)] leading-tight">Selected projects</h2>
+            <ul role="list" className="mt-3">
+              {homeProjects.map((project) => (
+                <li key={project.slug}>
+                  <Link href={`#${project.slug}`} className="portfolio-index-link">
+                    <PortfolioLogo src={project.logo} />
+                    <span className="min-w-0 grow">
+                      <span className="block font-semibold">{project.name}</span>
+                      <span className="mt-0.5 block text-[0.86rem] text-[#506176]">{project.focus}</span>
+                    </span>
+                    <ArrowIcon size={18} />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </section>
 
@@ -81,9 +59,9 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-2 md:gap-6">
             {homeProjects.map((project, index) => (
               <div key={project.name} data-reveal className={index > 0 ? "home-reveal-later" : undefined}>
-                <article className="home-project-card h-full">
+                <article id={project.slug} className="home-project-card h-full scroll-mt-4">
                   <div className="flex items-center gap-4">
-                    <HomeLogo src={project.logo} />
+                    <PortfolioLogo src={project.logo} />
                     <h3 className="home-display text-[clamp(1.85rem,3.3vw,2.85rem)] leading-tight">{project.name}</h3>
                   </div>
                   <p className="mt-4 mb-5 max-w-[53ch] grow text-[0.98rem] leading-relaxed text-[#506176]">{project.description}</p>
@@ -117,14 +95,7 @@ export default function Home() {
               <div key={role.id} data-reveal className={index % 2 === 1 ? "home-reveal-later" : undefined}>
                 <article className="home-experience-card h-full">
                   <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-3.5">
-                    {role.logo ? (
-                      <HomeLogo src={role.logo} />
-                    ) : (
-                      <span className="home-logo home-team-number" aria-label={`FTC Team ${role.teamNumber}`}>
-                        <span>FTC</span>
-                        {role.teamNumber}
-                      </span>
-                    )}
+                    <PortfolioLogo src={role.logo} wide={role.wideLogo} />
                     <div>
                       <h3 className="home-display text-[clamp(1.52rem,2.5vw,2.12rem)] leading-tight">
                         <a href={role.href} className="home-role-link">
@@ -147,25 +118,41 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="home-section bg-white" aria-labelledby="home-about-title">
-        <div className="home-wrap grid items-center gap-6 sm:grid-cols-[minmax(0,1fr)_11rem] sm:gap-12 md:grid-cols-[minmax(0,1fr)_13rem]">
-          <div data-reveal>
-            <h2 id="home-about-title" className="home-heading">About me</h2>
-            <p className="mt-4 max-w-[54ch] text-base leading-[1.75] text-[#506176] sm:text-[1.06rem]">{homeContent.about}</p>
-            <Link href="/about" className="home-link mt-4">
-              More about me <ArrowIcon />
+      <section id="skills" className="home-section bg-white" aria-labelledby="home-skills-title">
+        <div className="home-wrap">
+          <div className="home-section-heading" data-reveal>
+            <h2 id="home-skills-title" className="home-heading">Skills</h2>
+            <Link href="/experience#skills" className="home-link">
+              All skills <ArrowIcon />
             </Link>
           </div>
-          <div data-reveal className="home-reveal-later">
-            <Image
-              src="/images/dillon-nagar-headshot.png"
-              alt="Dillon Nagar"
-              width={1086}
-              height={1448}
-              sizes="(max-width: 639px) 148px, (max-width: 767px) 176px, 208px"
-              className="aspect-[1.18] w-37 rounded-sm object-cover object-[center_38%] sm:w-full"
-            />
+          <SkillsGrid compact />
+        </div>
+      </section>
+
+      <section id="editorial" className="home-section bg-[#f3f6fa]" aria-labelledby="home-editorial-title">
+        <div className="home-wrap">
+          <div className="home-section-heading" data-reveal>
+            <h2 id="home-editorial-title" className="home-heading">Editorial</h2>
           </div>
+          <article data-reveal className="portfolio-editorial grid items-end gap-5 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-10">
+            <div>
+              <p className="home-meta text-[#c5d9eb]">{aboutContent.writing.publication}</p>
+              <h3 className="home-display mt-2 text-[clamp(1.75rem,3.8vw,2.9rem)] leading-tight">{aboutContent.writing.title}</h3>
+              <p className="mt-2 max-w-[58ch] text-[0.95rem] leading-relaxed text-[#dbe6f0]">{aboutContent.writing.description}</p>
+            </div>
+            <a href={aboutContent.writing.href} className="home-link">Read the letter <ArrowIcon direction="up-right" /></a>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" className="home-section bg-white" aria-labelledby="home-about-title">
+        <div className="home-wrap">
+          <div className="home-section-heading" data-reveal>
+            <h2 id="home-about-title" className="home-heading">About me</h2>
+            <Link href="/about" className="home-link">About page <ArrowIcon /></Link>
+          </div>
+          <AboutBiography />
         </div>
       </section>
 
@@ -182,6 +169,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </PortfolioPage>
   );
 }
