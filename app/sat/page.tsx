@@ -13,7 +13,7 @@ export default function SatPage() {
     <div className="page-shell max-w-3xl">
       <SectionHeader
         title="SAT vocabulary"
-        subtitle="Type what the word means, then reveal the definition to check your answer."
+        subtitle="Think of what the word means, then flip the card to check your answer."
       />
       <VocabularyDeck />
     </div>
