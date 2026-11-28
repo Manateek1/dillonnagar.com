@@ -67,7 +67,7 @@ export const leadership: readonly ExperienceItem[] = [
     period: "Aug 2026 – Present",
     bullets: [
       "Founded a beginner-friendly club where students learn data science and AI through hands-on projects.",
-      "Helped organize Acalanes Data Fest, the club’s student hackathon held at BRIDGEGOOD in Oakland on November 21, 2026.",
+      "Hosted Acalanes Data Fest, the club’s student hackathon held at BRIDGEGOOD in Oakland on November 21, 2026.",
     ],
   },
   {

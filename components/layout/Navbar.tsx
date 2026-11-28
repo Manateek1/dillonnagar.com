@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 
 const navLinks = [
@@ -11,19 +11,69 @@ const navLinks = [
   { href: "/about", label: "About" },
 ];
 
-const mobileNavLinks = [...navLinks, { href: "/contact", label: "Contact" }];
+const homeNavLinks = [
+  { href: "#projects", label: "Projects" },
+  { href: "#experience", label: "Experience" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
+  const links = isHome ? homeNavLinks : navLinks;
+  const contactHref = isHome ? "#contact" : "/contact";
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const progressRef = useRef<HTMLSpanElement>(null);
 
-  const isActive = (href: string) =>
-    pathname === href || (href === "/projects" && pathname.startsWith("/projects/"));
+  useEffect(() => {
+    if (!isHome) return;
+
+    const sections = Array.from(document.querySelectorAll<HTMLElement>(
+      ".portfolio-home > section[id]",
+    ));
+    let frame = 0;
+    let currentSection: string | undefined;
+
+    function update() {
+      const root = document.documentElement;
+      const distance = root.scrollHeight - root.clientHeight;
+      const progress = distance > 0 ? Math.min(1, Math.max(0, window.scrollY / distance)) : 0;
+      const headerHeight = progressRef.current?.parentElement?.offsetHeight ?? 72;
+      const section = sections.findLast((entry) => entry.getBoundingClientRect().top <= headerHeight + 36);
+
+      if (progressRef.current) progressRef.current.style.transform = `scaleX(${progress})`;
+      if (section?.id !== currentSection) {
+        currentSection = section?.id;
+        setActiveSection(currentSection ?? "");
+      }
+
+      frame = 0;
+    }
+
+    function scheduleUpdate() {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    }
+
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    scheduleUpdate();
+
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      window.cancelAnimationFrame(frame);
+    };
+  }, [isHome]);
+
+  function currentFor(href: string): "page" | "location" | undefined {
+    if (isHome) return href === `#${activeSection}` ? "location" : undefined;
+    if (pathname === href || (href === "/projects" && pathname.startsWith("/projects/"))) return "page";
+  }
 
   return (
     <header
-      className="site-header"
+      className={isHome ? "site-header home-site-header" : "site-header"}
       onKeyDown={(event) => {
         if (event.key === "Escape" && menuOpen) {
           setMenuOpen(false);
@@ -32,17 +82,16 @@ export default function Navbar() {
       }}
     >
       <nav className="site-nav" aria-label="Primary navigation">
-        <Link href="/" className="brand-link" aria-label="Home">
-          Home
+        <Link href={isHome ? "#home" : "/"} className="brand-link" aria-label="Home">
+          {isHome ? "Dillon Nagar" : "Home"}
         </Link>
 
         <div className="desktop-nav-links">
-          {navLinks.map((link) => (
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={isActive(link.href) ? "is-active" : ""}
-              aria-current={isActive(link.href) ? "page" : undefined}
+              aria-current={currentFor(link.href)}
             >
               {link.label}
             </Link>
@@ -50,7 +99,7 @@ export default function Navbar() {
         </div>
 
         <div className="nav-actions">
-          <Link href="/contact" className="nav-contact">
+          <Link href={contactHref} className="nav-contact" aria-current={isHome ? currentFor(contactHref) : undefined}>
             Contact <ArrowIcon direction="up-right" size={16} />
           </Link>
           <button
@@ -75,18 +124,17 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {menuOpen ? (
+      {menuOpen && !isHome ? (
         <div
           className="mobile-nav-panel"
           id="mobile-navigation"
         >
           <nav aria-label="Mobile navigation">
-            {mobileNavLinks.map((link) => (
+            {[...links, { href: contactHref, label: "Contact" }].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={isActive(link.href) ? "is-active" : ""}
-                aria-current={isActive(link.href) ? "page" : undefined}
+                aria-current={currentFor(link.href)}
                 onClick={() => setMenuOpen(false)}
               >
                 <span>{link.label}</span>
@@ -96,6 +144,7 @@ export default function Navbar() {
           </nav>
         </div>
       ) : null}
+      {isHome && <span ref={progressRef} className="home-scroll-progress" aria-hidden="true" />}
     </header>
   );
 }
