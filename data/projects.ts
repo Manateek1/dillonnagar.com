@@ -11,6 +11,7 @@ export type Project = {
   stack: readonly string[];
   themes?: readonly string[];
   status: ProjectStatus;
+  icon?: string;
   liveUrl?: string;
   liveLabel?: string;
   githubUrl?: string;
@@ -64,6 +65,7 @@ export const projects: readonly Project[] = [
   {
     slug: "chudgames",
     name: "ChudGames",
+    icon: "/images/brands/chudgames.svg",
     tagline: "Browser arcade built on a shared game engine",
     description:
       "A browser arcade that includes the Apex Run time trial and the BuildBlox sandbox. I built a shared launcher, game controls, and audio tools so each game can focus on its own mechanics. The browser keeps high scores, achievements, and progress.",

@@ -19,7 +19,7 @@ export default function ProjectsPage() {
         <ul role="list" className="home-wrap grid gap-3.5">
           {orderedProjects.map((project) => (
             <li key={project.slug} data-reveal>
-              <ProjectCard project={project} logo={homeProjects.find(({ slug }) => slug === project.slug)?.logo} />
+              <ProjectCard project={project} logo={project.icon ?? homeProjects.find(({ slug }) => slug === project.slug)?.logo} />
             </li>
           ))}
         </ul>
