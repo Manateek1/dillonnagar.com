@@ -122,7 +122,7 @@ export default function Home() {
         <div className="home-wrap">
           <div className="home-section-heading" data-reveal>
             <h2 id="home-skills-title" className="home-heading">Skills</h2>
-            <Link href="/experience#skills" className="home-link">
+            <Link href="/skills" className="home-link">
               All skills <ArrowIcon />
             </Link>
           </div>
@@ -160,9 +160,14 @@ export default function Home() {
         <div className="home-wrap flex flex-wrap items-end justify-between gap-x-12 gap-y-5 py-9 sm:py-12">
           <div data-reveal>
             <h2 id="home-contact-title" className="home-heading">Contact</h2>
-            <a href={`mailto:${homeContent.email}`} className="home-link mt-3">
-              {homeContent.email} <ArrowIcon direction="up-right" />
-            </a>
+            <div className="mt-3 flex flex-wrap items-baseline gap-x-5 gap-y-1">
+              <a href={`mailto:${homeContent.email}`} className="home-link">
+                {homeContent.email} <ArrowIcon direction="up-right" />
+              </a>
+              <Link href="/contact" className="home-link">
+                Phone and contact details <ArrowIcon />
+              </Link>
+            </div>
           </div>
           <div data-reveal className="home-reveal-later">
             <SocialLinks className="home-socials" />

@@ -11,11 +11,20 @@ export default function ContactPage() {
       <SectionHeader title="Contact" subtitle="Get in touch." />
 
       <div className="contact-page-surface" data-reveal>
-        <p className="section-code">Contact details</p>
-        <a href="mailto:dillon.nagar@gmail.com" className="contact-page-email">
-          dillon.nagar@gmail.com <ArrowIcon direction="up-right" size={19} />
-        </a>
-        <div className="contact-phone" dangerouslySetInnerHTML={{ __html: contactPhoneLinkHtml }} />
+        <dl className="grid gap-4">
+          <div>
+            <dt className="section-code">Email</dt>
+            <dd>
+              <a href="mailto:dillon.nagar@gmail.com" className="contact-page-email">
+                dillon.nagar@gmail.com <ArrowIcon direction="up-right" size={19} />
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt className="section-code">Phone</dt>
+            <dd dangerouslySetInnerHTML={{ __html: contactPhoneLinkHtml }} />
+          </div>
+        </dl>
         <div className="contact-social-links">
           <SocialLinks />
         </div>

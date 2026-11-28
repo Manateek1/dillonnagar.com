@@ -291,9 +291,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .inline-signal-link:hover { color: var(--navy); }
 /* Contact page */
 .contact-page-surface { max-width: 50rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
-.contact-page-email { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 0.8rem; color: var(--foreground); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.5rem, 4vw, 2.5rem); }
-.contact-page-surface > .contact-phone { margin-top: 0.5rem; }
-.contact-phone-link { display: inline-flex; min-height: 2.75rem; align-items: center; color: var(--muted); font-size: 0.95rem; }
+.contact-page-email { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 0.3rem; color: var(--foreground); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.5rem, 4vw, 2.5rem); }
+.contact-phone-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  color: var(--foreground);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 4vw, 1.9rem);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 .contact-page .contact-social-links { margin-top: 1.5rem; }
 .contact-page .contact-social-links a { color: var(--olive-dark); }
 

@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const caseStudies = projects.flatMap(({ slug, caseStudy }) =>
     caseStudy ? [projectCaseStudyPath(slug)] : [],
   );
-  const paths = ["/", "/about", "/projects", ...caseStudies, "/experience", "/contact"];
+  const paths = ["/", "/about", "/projects", ...caseStudies, "/experience", "/skills", "/contact"];
 
   return paths.map((path) => ({ url: new URL(path, siteUrl).href }));
 }

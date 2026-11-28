@@ -20,7 +20,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const isPortfolioIndex = pathname === "/projects" || pathname === "/experience";
-  const hasPortfolioHeader = isHome || pathname === "/about";
+  const hasPortfolioHeader = isHome || pathname === "/about" || pathname === "/skills";
   const links = isHome ? homeNavLinks : navLinks;
   const contactHref = isHome ? "#contact" : "/contact";
   const [menuOpen, setMenuOpen] = useState(false);

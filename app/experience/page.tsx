@@ -2,7 +2,6 @@ import { experience, leadership } from "@/data/experience";
 import { homeExperience, homeProjects } from "@/data/home";
 import ExperienceItem, { type ExperienceBrand } from "@/components/experience/ExperienceItem";
 import PortfolioPage from "@/components/layout/PortfolioPage";
-import SkillsGrid from "@/components/portfolio/SkillsGrid";
 
 export const metadata = {
   title: "Experience",
@@ -35,13 +34,6 @@ export default function ExperiencePage() {
               <li key={item.id} data-reveal><ExperienceItem item={item} brand={brands.get(item.id)} /></li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section id="skills" className="home-section bg-white" aria-labelledby="skills-heading">
-        <div className="home-wrap">
-          <div data-reveal className="home-section-heading"><h2 id="skills-heading" className="home-heading">Skills</h2></div>
-          <SkillsGrid />
         </div>
       </section>
     </PortfolioPage>
