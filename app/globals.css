@@ -535,8 +535,8 @@ html[data-reveal-ready="true"] .portfolio-page [data-reveal]:focus-within { opac
 }
 
 @media (max-width: 58rem) {
-  html:has(.portfolio-page) { --header-height: 5.25rem; }
-  .home-site-header .site-nav {
+  html:has(.portfolio-home) { --header-height: 5.25rem; }
+  .home-site-header:not(.portfolio-return-header) .site-nav {
     grid-template: 3rem 2.25rem / 1fr auto;
     align-items: center;
   }

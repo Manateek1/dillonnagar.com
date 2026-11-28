@@ -24,7 +24,11 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   const { slug } = await params;
   const { project } = projectWithCaseStudy(slug);
 
-  return { title: project.name, description: project.description };
+  return {
+    title: project.name,
+    description: project.description,
+    icons: project.icon ? { icon: { url: project.icon, type: "image/svg+xml", sizes: "any" } } : undefined,
+  };
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
