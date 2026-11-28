@@ -8,12 +8,17 @@ import ArrowIcon from "@/components/ui/ArrowIcon";
 const navLinks = [
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
+  { href: "/skills", label: "Skills" },
+  { href: "/#editorial", label: "Editorial" },
   { href: "/about", label: "About" },
 ];
 
 const homeNavLinks = [
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
+  { href: "#editorial", label: "Editorial" },
+  { href: "#about", label: "About" },
 ];
 
 export default function Navbar() {
