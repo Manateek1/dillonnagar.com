@@ -6,6 +6,7 @@ import SkillsGrid from "@/components/portfolio/SkillsGrid";
 import ArrowIcon from "@/components/ui/ArrowIcon";
 import PortfolioLogo from "@/components/ui/PortfolioLogo";
 import { aboutContent } from "@/data/about";
+import { contactPhoneLinkHtml } from "@/data/contact";
 import { homeContent, homeExperience, homeProjects } from "@/data/home";
 
 export default function Home() {
@@ -164,9 +165,7 @@ export default function Home() {
               <a href={`mailto:${homeContent.email}`} className="home-link">
                 {homeContent.email} <ArrowIcon direction="up-right" />
               </a>
-              <Link href="/contact" className="home-link">
-                Phone and contact details <ArrowIcon />
-              </Link>
+              <span className="inline-flex" dangerouslySetInnerHTML={{ __html: contactPhoneLinkHtml }} />
             </div>
           </div>
           <div data-reveal className="home-reveal-later">
