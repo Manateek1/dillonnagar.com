@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="footer-inner">
         <p className="footer-copyright">© {new Date().getFullYear()}</p>
         <a href="/resume.pdf" download="Dillon-Nagar-Resume.pdf" className="footer-resume">
-          Résumé (PDF) <ArrowIcon className="rotate-90" size={15} />
+          Resume (PDF) <ArrowIcon className="rotate-90" size={15} />
         </a>
       </div>
     </footer>
