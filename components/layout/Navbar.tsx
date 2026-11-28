@@ -19,8 +19,8 @@ const homeNavLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const isPortfolioSubpage = pathname === "/projects" || pathname.startsWith("/projects/") ||
-    pathname === "/experience" || pathname === "/about" || pathname === "/contact";
+  const isPortfolioIndex = pathname === "/projects" || pathname === "/experience";
+  const hasPortfolioHeader = isHome || pathname === "/about";
   const links = isHome ? homeNavLinks : navLinks;
   const contactHref = isHome ? "#contact" : "/contact";
   const [menuOpen, setMenuOpen] = useState(false);
@@ -68,7 +68,7 @@ export default function Navbar() {
     };
   }, [isHome]);
 
-  if (isPortfolioSubpage) {
+  if (isPortfolioIndex) {
     return (
       <header className="site-header home-site-header portfolio-return-header">
         <nav className="site-nav" aria-label="Primary navigation">
@@ -80,12 +80,12 @@ export default function Navbar() {
 
   function currentFor(href: string): "page" | "location" | undefined {
     if (isHome) return href === `#${activeSection}` ? "location" : undefined;
-    if (pathname === href) return "page";
+    if (pathname === href || (href === "/projects" && pathname.startsWith("/projects/"))) return "page";
   }
 
   return (
     <header
-      className={isHome ? "site-header home-site-header" : "site-header"}
+      className={hasPortfolioHeader ? "site-header home-site-header" : "site-header"}
       onKeyDown={(event) => {
         if (event.key === "Escape" && menuOpen) {
           setMenuOpen(false);
@@ -136,7 +136,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {menuOpen && !isHome ? (
+      {menuOpen && !hasPortfolioHeader ? (
         <div
           className="mobile-nav-panel"
           id="mobile-navigation"

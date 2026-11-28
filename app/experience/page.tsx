@@ -3,7 +3,6 @@ import { homeExperience, homeProjects } from "@/data/home";
 import ExperienceItem, { type ExperienceBrand } from "@/components/experience/ExperienceItem";
 import PortfolioPage from "@/components/layout/PortfolioPage";
 import SkillsGrid from "@/components/portfolio/SkillsGrid";
-import ArrowIcon from "@/components/ui/ArrowIcon";
 
 export const metadata = {
   title: "Experience",
@@ -16,14 +15,7 @@ export default function ExperiencePage() {
   ]);
 
   return (
-    <PortfolioPage
-      title="Experience"
-      action={
-        <a href="/resume.pdf" download="Dillon-Nagar-Resume.pdf" className="home-primary">
-          Résumé (PDF) <ArrowIcon className="rotate-90" />
-        </a>
-      }
-    >
+    <PortfolioPage title="Experience">
       <section className="home-section bg-white" aria-labelledby="professional-experience">
         <div className="home-wrap">
           <div data-reveal className="home-section-heading"><h2 id="professional-experience" className="home-heading">Professional</h2></div>
