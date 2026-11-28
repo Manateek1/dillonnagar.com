@@ -324,8 +324,8 @@ html[data-reveal-ready="true"] [data-reveal][data-revealed="true"] { opacity: 1;
   html[data-reveal-ready="true"] [data-reveal] { opacity: 1; transform: none; }
 }
 
-/* Homepage */
-.portfolio-home {
+/* Portfolio pages */
+.portfolio-page {
   --home-ink: #142338;
   --home-accent: #244f72;
   --home-line: #d9e2eb;
@@ -356,23 +356,29 @@ html[data-reveal-ready="true"] [data-reveal][data-revealed="true"] { opacity: 1;
   animation: home-light-in 1.8s var(--ease-out) both;
 }
 
-.home-study {
-  padding: clamp(1rem, 2.4vw, 1.55rem);
+.portfolio-index {
+  padding: clamp(1.1rem, 3vw, 1.85rem);
   border: 1px solid #c5d5e3;
   border-radius: 0.45rem;
   background: linear-gradient(145deg, #fcfdfe, #eaf1f7);
   color: var(--home-ink);
   box-shadow: 0 18px 50px #0818293d;
-  transition: transform 380ms var(--ease-out), box-shadow 380ms var(--ease-out);
 }
 
-.home-study:hover, .home-study:focus-within {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 55px #08182957;
+.portfolio-index-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-block: 0.8rem;
+  border-top: 1px solid var(--home-line);
+  transition: color 220ms ease, padding 290ms var(--ease-out);
 }
 
-.home-chart img { transition: transform 750ms var(--ease-out); }
-.home-study:hover .home-chart img { transform: scale(1.018); }
+.portfolio-index-link:hover { color: var(--home-accent); padding-inline: 0.35rem; }
+.portfolio-index-link:focus-visible { outline-color: var(--home-accent); }
+.portfolio-index-link > svg { flex: none; color: var(--home-accent); transition: translate 290ms var(--ease-out); }
+.portfolio-index-link:hover > svg { translate: 3px 0; }
+.portfolio-index-link .home-logo { width: 2.8rem; height: 2.8rem; }
 
 .home-primary, .home-link {
   display: inline-flex;
@@ -418,7 +424,8 @@ html[data-reveal-ready="true"] [data-reveal][data-revealed="true"] { opacity: 1;
 
 .home-project-card { background: linear-gradient(155deg, #fff 58%, #edf3f8); }
 .home-project-card:hover, .home-project-card:focus-within,
-.home-experience-card:hover, .home-experience-card:focus-within {
+.home-experience-card:hover, .home-experience-card:focus-within,
+.portfolio-directory-row:hover, .portfolio-directory-row:focus-within {
   transform: translateY(-4px);
   border-color: #9cb3c8;
   box-shadow: 0 8px 24px #13273f0d;
@@ -442,17 +449,26 @@ html[data-reveal-ready="true"] [data-reveal][data-revealed="true"] { opacity: 1;
 }
 
 .home-logo img { width: 100%; height: 100%; object-fit: contain; }
-.home-study .home-logo { width: 2.8rem; height: 2.8rem; }
+.portfolio-logo-wide { width: 5.3rem; }
 .home-project-card:hover .home-logo, .home-experience-card:hover .home-logo { transform: translateY(-2px); border-color: #9cb3c8; }
-.home-team-number {
-  align-content: center;
-  row-gap: 0.14rem;
-  color: var(--home-accent);
-  font-size: 0.82rem;
-  font-weight: 600;
-  line-height: 1;
+
+.portfolio-directory-row, .portfolio-skill-card {
+  padding: clamp(1rem, 2.65vw, 1.6rem);
+  border: 1px solid var(--home-line);
+  border-radius: 0.38rem;
+  background: linear-gradient(153deg, #fff 66%, #eef4f9);
 }
-.home-team-number span { font-size: 0.62rem; font-weight: 500; }
+
+.portfolio-directory-row { transition: transform 380ms var(--ease-out), border-color 280ms ease, box-shadow 380ms var(--ease-out); }
+
+.portfolio-editorial {
+  padding: clamp(1.35rem, 4vw, 2.75rem);
+  border-radius: 0.38rem;
+  background: linear-gradient(118deg, #17283d, #34536e);
+  color: #f7fbff;
+}
+.portfolio-editorial .home-link { color: #d6e8f9; }
+.portfolio-editorial a:focus-visible { outline-color: #d8ebfb; }
 
 .home-contact {
   background: linear-gradient(116deg, #142337, #2b4662);
@@ -498,15 +514,15 @@ html[data-reveal-ready="true"] [data-reveal][data-revealed="true"] { opacity: 1;
   transform-origin: left;
   pointer-events: none;
 }
-body:has(.portfolio-home) .site-footer { background: #142337; }
-body:has(.portfolio-home) .footer-copyright { color: #c4d6e6; }
+body:has(.portfolio-page) .site-footer { background: #142337; }
+body:has(.portfolio-page) .footer-copyright { color: #c4d6e6; }
 
 .home-enter { animation: home-arrive 680ms var(--ease-out) both; }
 .home-delay-1 { animation-delay: 90ms; }
 .home-delay-2 { animation-delay: 175ms; }
 .home-delay-3 { animation-delay: 255ms; }
-html[data-reveal-ready="true"] .portfolio-home .home-reveal-later[data-revealed="true"] { transition-delay: 95ms; }
-html[data-reveal-ready="true"] .portfolio-home [data-reveal]:focus-within { opacity: 1; transform: none; transition-delay: 0ms; }
+html[data-reveal-ready="true"] .portfolio-page .home-reveal-later[data-revealed="true"] { transition-delay: 95ms; }
+html[data-reveal-ready="true"] .portfolio-page [data-reveal]:focus-within { opacity: 1; transform: none; transition-delay: 0ms; }
 
 @keyframes home-arrive {
   from { opacity: 0; translate: 0 0.75rem; }
@@ -519,7 +535,7 @@ html[data-reveal-ready="true"] .portfolio-home [data-reveal]:focus-within { opac
 }
 
 @media (max-width: 58rem) {
-  html:has(.portfolio-home) { --header-height: 5.25rem; }
+  html:has(.portfolio-page) { --header-height: 5.25rem; }
   .home-site-header .site-nav {
     grid-template: 3rem 2.25rem / 1fr auto;
     align-items: center;
@@ -532,16 +548,17 @@ html[data-reveal-ready="true"] .portfolio-home [data-reveal]:focus-within { opac
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .portfolio-home *, .portfolio-home *::before, .portfolio-home *::after,
+  .portfolio-page *, .portfolio-page *::before, .portfolio-page *::after,
   .home-site-header * {
     animation: none !important;
     transition: none !important;
   }
-  .home-study:hover, .home-study:focus-within,
-  .home-study:hover .home-chart img,
   .home-project-card:hover, .home-project-card:focus-within,
   .home-experience-card:hover, .home-experience-card:focus-within,
+  .portfolio-directory-row:hover, .portfolio-directory-row:focus-within,
   .home-project-card:hover .home-logo, .home-experience-card:hover .home-logo,
   .home-socials a:hover, .home-socials a:focus-visible { transform: none; }
-  .home-primary:hover svg, .home-link:hover svg, .home-role-link:hover svg { translate: none; }
+  .home-primary:hover svg, .home-link:hover svg, .home-role-link:hover svg,
+  .portfolio-index-link:hover > svg { translate: none; }
+  .portfolio-index-link:hover { padding-inline: 0; }
 }

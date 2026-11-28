@@ -1,40 +1,43 @@
 import { experience, leadership } from "@/data/experience";
-import { researchTopics } from "@/data/research";
 
 type HomeProject = {
+  slug: string;
   name: string;
+  focus: string;
   description: string;
   href: string;
   logo: string;
   caseStudy?: string;
 };
 
-export const capitalInCode = {
-  name: "Capital in Code",
-  description:
-    "I publish independent market research that uses historical data and paper trading to test ideas. I share my methods, findings, and what the results can tell us.",
-  href: "https://capitalincode.com",
-  logo: "/images/brands/capital-in-code.webp",
-} satisfies HomeProject;
-
 export const homeProjects: readonly HomeProject[] = [
   {
+    slug: "rentmax-ai",
     name: "RentMax AI",
+    focus: "Rental-property analytics",
     description:
       "I built RentMax AI to help landlords and investors estimate rent and see how expenses and financing affect a property’s cash flow and returns.",
     href: "https://www.rentmaxai.com/",
     logo: "/images/brands/rentmax-ai.webp",
     caseStudy: "/projects/rentmax-ai",
   },
-  capitalInCode,
+  {
+    slug: "capital-in-code",
+    name: "Capital in Code",
+    focus: "Independent market research",
+    description:
+      "I publish independent market research that uses historical data and paper trading to test ideas. I share my methods, findings, and what the results can tell us.",
+    href: "https://capitalincode.com",
+    logo: "/images/brands/capital-in-code.webp",
+  },
 ];
 
 type HomeExperienceDetails = {
   id: string;
   summary: string;
   href: string;
-  logo?: string;
-  teamNumber?: string;
+  logo: string;
+  wideLogo?: boolean;
   event?: { name: string; href: string };
 };
 
@@ -60,9 +63,10 @@ const experienceDetails: readonly HomeExperienceDetails[] = [
   },
   {
     id: "acabots",
-    summary: "I help run outreach and partnerships, mentor younger teammates, and contribute to mechanical prototypes.",
+    summary: "I help with programming, logistics, and outreach, and mentor younger teammates.",
     href: "https://ftc-events.firstinspires.org/team/24689",
-    teamNumber: "24689",
+    logo: "/images/brands/acabots.webp",
+    wideLogo: true,
   },
 ];
 
@@ -77,8 +81,5 @@ export const homeContent = {
   headline: "Market research and software",
   introduction:
     "I write software to explore how markets work and build tools that make financial decisions easier to understand.",
-  about:
-    "I’m from the San Francisco Bay Area. When I’m away from my computer, I like swimming, getting out for a hike, and playing clarinet in my school band.",
-  featuredStudy: researchTopics[0],
   email: "dillon.nagar@gmail.com",
 } as const;

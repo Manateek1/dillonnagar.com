@@ -34,8 +34,8 @@ export const experience: readonly ExperienceItem[] = [
     org: "Ace Hardware",
     period: "Current",
     bullets: [
-      "Support digital operations through social media content, customer-review responses, paid search, and online listings.",
-      "Assist with marketing planning and related store operations.",
+      "Work the register and help customers at my family’s Ace Hardware store.",
+      "Help with paid search ads, social media, customer reviews, and online listings.",
     ],
   },
   {
@@ -56,7 +56,7 @@ export const leadership: readonly ExperienceItem[] = [
     org: "Acabots",
     period: "2025 – Present",
     bullets: [
-      "Coordinate partnerships, operations, outreach, and social media for FTC Team 24689.",
+      "Help with robot programming and coordinate partnerships, logistics, and outreach for FTC Team 24689.",
       "Help organize company visits and mentor connections, mentor younger teammates, and contribute to mechanical prototypes.",
     ],
   },
