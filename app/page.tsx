@@ -23,9 +23,9 @@ export default function Home() {
               {homeContent.introduction}
             </p>
             <div className="home-enter home-delay-3 mt-6 sm:mt-7">
-              <Link href="#projects" className="home-primary">
+              <a href="#projects" className="home-primary">
                 Explore projects <ArrowIcon className="home-down-arrow rotate-90" size={17} />
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -34,14 +34,14 @@ export default function Home() {
             <ul role="list" className="mt-3">
               {homeProjects.map((project) => (
                 <li key={project.slug}>
-                  <Link href={`#${project.slug}`} className="portfolio-index-link">
+                  <a href={`#${project.slug}`} className="portfolio-index-link">
                     <PortfolioLogo src={project.logo} />
                     <span className="min-w-0 grow">
                       <span className="block font-semibold">{project.name}</span>
                       <span className="mt-0.5 block text-[0.86rem] text-[#506176]">{project.focus}</span>
                     </span>
                     <ArrowIcon size={18} />
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

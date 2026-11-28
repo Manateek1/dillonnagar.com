@@ -23,9 +23,14 @@ const homeNavLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  return <RouteNavbar key={pathname} pathname={pathname} />;
+}
+
+function RouteNavbar({ pathname }: { pathname: string }) {
   const isHome = pathname === "/";
-  const isPortfolioIndex = pathname === "/projects" || pathname === "/experience";
-  const hasPortfolioHeader = isHome || pathname === "/about" || pathname === "/skills";
+  const isPortfolioIndex = pathname === "/projects" || pathname === "/experience" || pathname === "/skills";
+  const hasPortfolioHeader = isHome || pathname === "/about";
+  const HeaderLink = isHome ? "a" : Link;
   const links = isHome ? homeNavLinks : navLinks;
   const contactHref = isHome ? "#contact" : "/contact";
   const [menuOpen, setMenuOpen] = useState(false);
@@ -99,26 +104,26 @@ export default function Navbar() {
       }}
     >
       <nav className="site-nav" aria-label="Primary navigation">
-        <Link href={isHome ? "#home" : "/"} className="brand-link" aria-label="Home">
+        <HeaderLink href={isHome ? "#home" : "/"} className="brand-link" aria-label="Home">
           Home
-        </Link>
+        </HeaderLink>
 
         <div className="desktop-nav-links">
           {links.map((link) => (
-            <Link
+            <HeaderLink
               key={link.href}
               href={link.href}
               aria-current={currentFor(link.href)}
             >
               {link.label}
-            </Link>
+            </HeaderLink>
           ))}
         </div>
 
         <div className="nav-actions">
-          <Link href={contactHref} className="nav-contact" aria-current={isHome ? currentFor(contactHref) : undefined}>
+          <HeaderLink href={contactHref} className="nav-contact" aria-current={isHome ? currentFor(contactHref) : undefined}>
             Contact <ArrowIcon direction="up-right" size={16} />
-          </Link>
+          </HeaderLink>
           <button
             ref={menuButtonRef}
             type="button"
